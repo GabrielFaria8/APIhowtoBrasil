@@ -1,6 +1,6 @@
 export declare class AlteraUsuarioDTO {
     nome: string;
-    idade: BigInteger;
+    idade: number;
     cidade: string;
     email: string;
     telefone: string;

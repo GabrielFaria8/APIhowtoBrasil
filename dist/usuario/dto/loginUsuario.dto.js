@@ -11,15 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginUsuarioDTO = void 0;
 const class_validator_1 = require("class-validator");
+const swagger_1 = require("@nestjs/swagger");
 class LoginUsuarioDTO {
 }
 exports.LoginUsuarioDTO = LoginUsuarioDTO;
 __decorate([
     (0, class_validator_1.IsEmail)(undefined, { message: "email é inválido" }),
+    (0, swagger_1.ApiProperty)({
+        example: 'teste@teste.com',
+        description: `Email utilizado no cadastro.`,
+    }),
     __metadata("design:type", String)
 ], LoginUsuarioDTO.prototype, "email", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
-    __metadata("design:type", Object)
-], LoginUsuarioDTO.prototype, "s", void 0);
+    (0, swagger_1.ApiProperty)({
+        example: 'Asd@1234444',
+        description: `Senha utilizada no cadastro.`,
+    }),
+    __metadata("design:type", String)
+], LoginUsuarioDTO.prototype, "senha", void 0);
 //# sourceMappingURL=loginUsuario.dto.js.map

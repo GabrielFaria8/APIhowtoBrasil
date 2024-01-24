@@ -17,7 +17,7 @@ let EmailUnicoValidator = class EmailUnicoValidator {
     constructor(clsUsuariosArmazenados) {
         this.clsUsuariosArmazenados = clsUsuariosArmazenados;
     }
-    async validate(value, validationArguments) {
+    async validate(value, _validationArguments) {
         const validarEmail = await this.clsUsuariosArmazenados.validaEmail(value);
         return !validarEmail;
     }

@@ -18,18 +18,25 @@ const usuario_dto_1 = require("./dto/usuario.dto");
 const usuario_entity_1 = require("./usuario.entity");
 const usuario_dm_1 = require("./usuario.dm");
 const uuid_1 = require("uuid");
+const listaUsuario_dto_1 = require("./dto/listaUsuario.dto");
 const atualizaUsuario_dto_1 = require("./dto/atualizaUsuario.dto");
 const loginUsuario_dto_1 = require("./dto/loginUsuario.dto");
+const swagger_1 = require("@nestjs/swagger");
 let UsuarioController = class UsuarioController {
     constructor(clsUsuariosArmazenados) {
         this.clsUsuariosArmazenados = clsUsuariosArmazenados;
+    }
+    async RetornoUsuarios() {
+        const usuariosListados = await this.clsUsuariosArmazenados.Usuarios;
+        const listaRetorno = usuariosListados.map(usuario => new listaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.cidade, usuario.email, usuario.senha));
+        return listaRetorno;
     }
     async Login(dadosUsuario) {
         var login = this.clsUsuariosArmazenados.validarLogin(dadosUsuario.email, dadosUsuario.senha);
         return {
             usuario: login[1] ? login[0] : null,
             status: login[1],
-            message: login[1] ? "Login Efetuado" : "Usuario ou senha inválidos"
+            message: login[1] ? "Login efetuado" : "Usuario ou senha inválidos"
         };
     }
     async removeUsuario(id) {
@@ -58,6 +65,14 @@ let UsuarioController = class UsuarioController {
 };
 exports.UsuarioController = UsuarioController;
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna os usuários cadastrados.' }),
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "RetornoUsuarios", null);
+__decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna se houve sucesso no login. O retorno "Status" diz se houve sucesso ou não.' }),
     (0, common_1.Get)('/login'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -65,6 +80,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Login", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao excluir o usuário.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o usuário não foi encontrado.' }),
     (0, common_1.Delete)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -72,6 +89,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "removeUsuario", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao alterar o usuário.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o usuário não foi encontrado.' }),
     (0, common_1.Put)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -80,6 +99,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "atualizaUsuario", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ description: 'Retorna que houve sucesso ao cadastrar o usuário e retorna o ID criado.' }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -87,6 +107,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "criaUsuario", null);
 exports.UsuarioController = UsuarioController = __decorate([
+    (0, swagger_1.ApiTags)('usuario'),
     (0, common_1.Controller)('/usuarios'),
     __metadata("design:paramtypes", [usuario_dm_1.UsuariosArmazenados])
 ], UsuarioController);

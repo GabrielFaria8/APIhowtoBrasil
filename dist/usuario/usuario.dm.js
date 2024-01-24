@@ -34,7 +34,7 @@ let UsuariosArmazenados = class UsuariosArmazenados {
                 return;
             }
             else if (chave === 'senha') {
-                usuario.trocasenha(valor);
+                usuario.trocaSenha(valor);
                 return;
             }
             usuario[chave] = valor;
@@ -53,13 +53,13 @@ let UsuariosArmazenados = class UsuariosArmazenados {
         __classPrivateFieldSet(this, _UsuariosArmazenados_usuarios, __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").filter(usuarioSalvo => usuarioSalvo.id !== id), "f");
         return usuario;
     }
-    validaEmail(email) {
-        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find(usuario => usuario.email === email);
-        return (possivelUsuario !== undefined);
-    }
     buscaPorEmail(email) {
         const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find(usuario => usuario.email === email);
         return possivelUsuario;
+    }
+    validaEmail(email) {
+        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find(usuario => usuario.email === email);
+        return (possivelUsuario !== undefined);
     }
     validarLogin(email, senha) {
         const usuario = this.buscaPorEmail(email);

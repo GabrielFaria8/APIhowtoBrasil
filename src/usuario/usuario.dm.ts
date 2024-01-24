@@ -1,9 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { UsuarioEntity } from "./usuario.entity";
 
+
 @Injectable()
 export class UsuariosArmazenados{
-    #usuarios: UsuarioEntity[] = [];  
+    #usuarios = [];    
 
     AdicionarUsuario(usuario: UsuarioEntity){
         this.#usuarios.push(usuario);
@@ -17,9 +18,10 @@ export class UsuariosArmazenados{
                 if(chave === 'id'){
                     return
                 }else if(chave === 'senha'){
-                    usuario.trocasenha(valor);
+                    usuario.trocaSenha(valor);
                     return
                 }
+
                 usuario[chave] = valor;
             }
         )
@@ -49,13 +51,6 @@ export class UsuariosArmazenados{
         return usuario;
     }
 
-    validaEmail(email:string){
-        const possivelUsuario = this.#usuarios.find(
-            usuario => usuario.email === email
-        );
-        return (possivelUsuario !== undefined);
-    }
-
     buscaPorEmail(email:string){
         const possivelUsuario = this.#usuarios.find(
             usuario => usuario.email === email
@@ -63,12 +58,23 @@ export class UsuariosArmazenados{
         return possivelUsuario;
     }
 
+    validaEmail(email:string){
+        const possivelUsuario = this.#usuarios.find(
+            usuario => usuario.email === email
+        );
+        return (possivelUsuario !== undefined);
+    }
+
+    
+
     validarLogin(email:string,senha:string){
         const usuario = this.buscaPorEmail(email);
         if (usuario)
             return [usuario,usuario.login(senha)];
         else
             return [null,false];
+        
+        
     }
 
 

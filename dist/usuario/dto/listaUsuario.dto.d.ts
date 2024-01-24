@@ -3,5 +3,6 @@ export declare class ListaUsuarioDTO {
     readonly nome: string;
     readonly cidade: string;
     readonly email: string;
-    constructor(id: string, nome: string, cidade: string, email: string);
+    readonly senha: string;
+    constructor(id: string, nome: string, cidade: string, email: string, senha: string);
 }
