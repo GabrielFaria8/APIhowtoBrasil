@@ -7,7 +7,7 @@ export class criaUsuarioDTO{
     @IsNotEmpty({message: "nome Não pode ser vazio"})
     nome:string;
     
-    @IsInt()
+    @IsString()
     ultimoNome: string;
 
     @IsString()
