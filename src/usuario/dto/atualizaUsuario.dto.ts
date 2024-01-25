@@ -7,22 +7,24 @@ export class AlteraUsuarioDTO{
     @IsOptional()
     nome:string;
     
-    @IsInt()
+    @IsString()
     @IsOptional()
-    idade: BigInteger;
+    ultimoNome: string;
 
     @IsString()
     @IsOptional()
-    cidade: string;
+    statusMigratório: string;
+
+    
+    @IsString()
+    @IsOptional()
+    interesses: string;
+
 
     @IsEmail(undefined,{message:"email é inválido"})
     @EmailUnico({message:"O email informado já existe"})
     @IsOptional()
     email: string;
-
-    @IsString()
-    @IsOptional()
-    telefone: string;
 
     @MinLength(6,{message: "Senha precisa de pelo menos 6 digitos"})
     @IsOptional()

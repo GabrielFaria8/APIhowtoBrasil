@@ -15,6 +15,7 @@ export class criaUsuarioDTO{
 
     @IsString()
     interesses: string;
+
     @IsEmail(undefined,{message:"email é inválido"})
     @EmailUnico({message:"O email informado já existe"})
     email: string;

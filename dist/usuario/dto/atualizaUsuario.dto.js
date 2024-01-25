@@ -22,26 +22,26 @@ __decorate([
     __metadata("design:type", String)
 ], AlteraUsuarioDTO.prototype, "nome", void 0);
 __decorate([
-    (0, class_validator_1.IsInt)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Object)
-], AlteraUsuarioDTO.prototype, "idade", void 0);
+    __metadata("design:type", String)
+], AlteraUsuarioDTO.prototype, "ultimoNome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
-], AlteraUsuarioDTO.prototype, "cidade", void 0);
+], AlteraUsuarioDTO.prototype, "statusMigrat\u00F3rio", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], AlteraUsuarioDTO.prototype, "interesses", void 0);
 __decorate([
     (0, class_validator_1.IsEmail)(undefined, { message: "email é inválido" }),
     (0, email_unico_validator_1.EmailUnico)({ message: "O email informado já existe" }),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], AlteraUsuarioDTO.prototype, "email", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], AlteraUsuarioDTO.prototype, "telefone", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
     (0, class_validator_1.IsOptional)(),

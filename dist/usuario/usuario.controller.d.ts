@@ -1,11 +1,13 @@
-import { criaUsuarioDTO } from "./dto/usuario.dto";
-import { UsuarioEntity } from "./usuario.entity";
-import { UsuariosArmazenados } from "./usuario.dm";
-import { AlteraUsuarioDTO } from "./dto/atualizaUsuario.dto";
-import { LoginUsuarioDTO } from "./dto/loginUsuario.dto";
+import { criaUsuarioDTO } from './dto/usuario.dto';
+import { UsuarioEntity } from './usuario.entity';
+import { UsuariosArmazenados } from './usuario.dm';
+import { ListaUsuarioDTO } from './dto/listaUsuario.dto';
+import { AlteraUsuarioDTO } from './dto/atualizaUsuario.dto';
+import { LoginUsuarioDTO } from './dto/loginUsuario.dto';
 export declare class UsuarioController {
     private clsUsuariosArmazenados;
     constructor(clsUsuariosArmazenados: UsuariosArmazenados);
+    RetornoUsuarios(): Promise<ListaUsuarioDTO[]>;
     Login(dadosUsuario: LoginUsuarioDTO): Promise<{
         usuario: any;
         status: any;

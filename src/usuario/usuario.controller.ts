@@ -19,6 +19,23 @@ import { LoginUsuarioDTO } from './dto/loginUsuario.dto';
 @Controller('/usuarios')
 export class UsuarioController {
   constructor(private clsUsuariosArmazenados: UsuariosArmazenados) {}
+  @Get()
+  async RetornoUsuarios(){
+      const usuariosListados = await this.clsUsuariosArmazenados.Usuarios;
+      const listaRetorno = usuariosListados.map(
+          usuario => new ListaUsuarioDTO(
+              usuario.id,
+              usuario.nome,
+              usuario.ultimoNome,
+              usuario.statusMigratório,
+              usuario.interesses,
+              usuario.email,
+              usuario.senha,
+          )
+      );
+      
+      return listaRetorno;
+  }
 
   @Get('/login')
   async Login(@Body() dadosUsuario: LoginUsuarioDTO) {

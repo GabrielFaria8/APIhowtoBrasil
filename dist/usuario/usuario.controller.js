@@ -18,45 +18,57 @@ const usuario_dto_1 = require("./dto/usuario.dto");
 const usuario_entity_1 = require("./usuario.entity");
 const usuario_dm_1 = require("./usuario.dm");
 const uuid_1 = require("uuid");
+const listaUsuario_dto_1 = require("./dto/listaUsuario.dto");
 const atualizaUsuario_dto_1 = require("./dto/atualizaUsuario.dto");
 const loginUsuario_dto_1 = require("./dto/loginUsuario.dto");
 let UsuarioController = class UsuarioController {
     constructor(clsUsuariosArmazenados) {
         this.clsUsuariosArmazenados = clsUsuariosArmazenados;
     }
+    async RetornoUsuarios() {
+        const usuariosListados = await this.clsUsuariosArmazenados.Usuarios;
+        const listaRetorno = usuariosListados.map(usuario => new listaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratório, usuario.interesses, usuario.email, usuario.senha));
+        return listaRetorno;
+    }
     async Login(dadosUsuario) {
         var login = this.clsUsuariosArmazenados.validarLogin(dadosUsuario.email, dadosUsuario.senha);
         return {
             usuario: login[1] ? login[0] : null,
             status: login[1],
-            message: login[1] ? "Login Efetuado" : "Usuario ou senha inválidos"
+            message: login[1] ? 'Login Efetuado' : 'Usuario ou senha inválidos',
         };
     }
     async removeUsuario(id) {
         const usuarioRemovido = await this.clsUsuariosArmazenados.removeUsuario(id);
         return {
             usuario: usuarioRemovido,
-            message: 'Usuário removido'
+            message: 'Usuário removido',
         };
     }
     async atualizaUsuario(id, novosDados) {
         const usuarioAtualizado = await this.clsUsuariosArmazenados.atualizaUSuario(id, novosDados);
         return {
             usuario: usuarioAtualizado,
-            message: 'Usuário atualizado'
+            message: 'Usuário atualizado',
         };
     }
     async criaUsuario(dadosUsuario) {
-        var usuario = new usuario_entity_1.UsuarioEntity((0, uuid_1.v4)(), dadosUsuario.nome, dadosUsuario.statusMigratório, dadosUsuario.email, dadosUsuario.interesses, dadosUsuario.senha);
+        var usuario = new usuario_entity_1.UsuarioEntity((0, uuid_1.v4)(), dadosUsuario.nome, dadosUsuario.ultimoNome, dadosUsuario.statusMigratório, dadosUsuario.interesses, dadosUsuario.email, dadosUsuario.senha);
         this.clsUsuariosArmazenados.AdicionarUsuario(usuario);
         var retorno = {
             id: usuario.id,
-            message: 'Usuário Criado'
+            message: 'Usuário Criado',
         };
         return retorno;
     }
 };
 exports.UsuarioController = UsuarioController;
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "RetornoUsuarios", null);
 __decorate([
     (0, common_1.Get)('/login'),
     __param(0, (0, common_1.Body)()),
