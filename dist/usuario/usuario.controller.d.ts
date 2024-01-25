@@ -7,8 +7,8 @@ export declare class UsuarioController {
     private clsUsuariosArmazenados;
     constructor(clsUsuariosArmazenados: UsuariosArmazenados);
     Login(dadosUsuario: LoginUsuarioDTO): Promise<{
-        usuario: boolean | UsuarioEntity;
-        status: boolean | UsuarioEntity;
+        usuario: any;
+        status: any;
         message: string;
     }>;
     removeUsuario(id: string): Promise<{

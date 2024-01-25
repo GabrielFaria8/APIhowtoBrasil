@@ -21,13 +21,9 @@ __decorate([
     __metadata("design:type", String)
 ], criaUsuarioDTO.prototype, "nome", void 0);
 __decorate([
-    (0, class_validator_1.IsInt)(),
-    __metadata("design:type", Object)
-], criaUsuarioDTO.prototype, "idade", void 0);
-__decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "cidade", void 0);
+], criaUsuarioDTO.prototype, "statusMigrat\u00F3rio", void 0);
 __decorate([
     (0, class_validator_1.IsEmail)(undefined, { message: "email é inválido" }),
     (0, email_unico_validator_1.EmailUnico)({ message: "O email informado já existe" }),
@@ -36,7 +32,7 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "telefone", void 0);
+], criaUsuarioDTO.prototype, "interesses", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
     __metadata("design:type", String)

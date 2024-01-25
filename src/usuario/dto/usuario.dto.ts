@@ -8,17 +8,17 @@ export class criaUsuarioDTO{
     nome:string;
     
     @IsInt()
-    idade: BigInteger;
+    ultimoNome: string;
 
     @IsString()
-    cidade: string;
+    statusMigratório: string;
 
+    @IsString()
+    interesses: string;
     @IsEmail(undefined,{message:"email é inválido"})
     @EmailUnico({message:"O email informado já existe"})
     email: string;
 
-    @IsString()
-    telefone: string;
 
     @MinLength(6,{message: "Senha precisa de pelo menos 6 digitos"})
     senha: string; 

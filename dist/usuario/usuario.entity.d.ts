@@ -1,13 +1,12 @@
 export declare class UsuarioEntity {
     id: string;
     nome: string;
-    idade: BigInteger;
-    cidade: string;
+    statusMigratório: string;
     email: string;
-    telefone: string;
+    interesses: string;
     senha: string;
-    constructor(id: string, nome: string, idade: BigInteger, cidade: string, email: string, telefone: string, senha: string);
-    login(senha: any): boolean;
+    constructor(id: string, nome: string, statusMigratório: string, email: string, interesses: string, senha: string);
+    login(senha: any): any;
     trocasenha(senha: any): void;
     validarUsuario(): any[];
 }

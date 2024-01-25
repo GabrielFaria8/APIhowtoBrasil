@@ -7,6 +7,6 @@ export declare class UsuariosArmazenados {
     removeUsuario(id: string): Promise<UsuarioEntity>;
     validaEmail(email: string): boolean;
     buscaPorEmail(email: string): UsuarioEntity;
-    validarLogin(email: string, senha: string): (boolean | UsuarioEntity)[];
+    validarLogin(email: string, senha: string): any[];
     get Usuarios(): UsuarioEntity[];
 }

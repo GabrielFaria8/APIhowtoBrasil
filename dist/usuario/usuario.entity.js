@@ -3,14 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsuarioEntity = void 0;
 const bcrypt = require("bcrypt");
 class UsuarioEntity {
-    constructor(id, nome, idade, cidade, email, telefone, senha) {
+    constructor(id, nome, statusMigratório, email, interesses, senha) {
         const saltOrRounds = 10;
         this.id = id;
         this.nome = nome;
-        this.idade = idade;
-        this.cidade = cidade;
+        this.statusMigratório = statusMigratório;
         this.email = email;
-        this.telefone = telefone;
+        this.interesses = interesses;
         this.senha = bcrypt.hashSync(senha, saltOrRounds);
     }
     login(senha) {
@@ -25,20 +24,17 @@ class UsuarioEntity {
         if (this.nome == "") {
             retorno.push("Nome inválido ou vazio");
         }
-        if (this.telefone == "") {
+        if (this.interesses == "") {
             retorno.push("Telefone inválido ou vazio");
         }
-        if (this.cidade == "") {
-            retorno.push("Cidade inválida ou vazia");
+        if (this.statusMigratório == "") {
+            retorno.push("Status migratório inválida ou vazia");
         }
         if (this.email == "") {
             retorno.push("Email inválido ou vazio");
         }
         if (this.senha == "" || this.senha.length < 6) {
             retorno.push("Senha inválida ou vazia");
-        }
-        if (this.idade == null || this.idade.toString() == "") {
-            retorno.push("Idade inválida ou vazia");
         }
         return retorno;
     }
