@@ -7,7 +7,7 @@ import { UsuariosArmazenados } from "src/usuario/usuario.dm";
 export class EmailUnicoValidator implements ValidatorConstraintInterface{
     constructor (private clsUsuariosArmazenados: UsuariosArmazenados){}
     
-    async validate(value: any, _validationArguments?: ValidationArguments): Promise<boolean> {
+    async validate(value: any, validationArguments?: ValidationArguments): Promise<boolean> {
         const validarEmail = await this.clsUsuariosArmazenados.validaEmail(value);
         return !validarEmail;
     }    
