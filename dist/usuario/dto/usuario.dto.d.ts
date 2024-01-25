@@ -1,8 +1,8 @@
 export declare class criaUsuarioDTO {
     nome: string;
-    idade: number;
-    cidade: string;
+    ultimoNome: string;
+    statusMigratório: string;
+    interesses: string;
     email: string;
-    telefone: string;
     senha: string;
 }
