@@ -17,6 +17,7 @@ async function bootstrap() {
         .setDescription('A presente API tem como objetivo simular cadastros possiveis para uma API de Stream de filmes e series')
         .setVersion('1.0')
         .addTag('usuario')
+        .addTag('saude')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);

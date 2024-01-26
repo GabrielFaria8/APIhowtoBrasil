@@ -4,7 +4,7 @@ import { UsuariosArmazenados } from "./usuario.dm";
 import { EmailUnicoValidator } from "./validacao/email-unico.validator";
 
 @Module({
-    controllers:[UsuarioController],
+    controllers:[UsuarioController,],
     providers: [UsuariosArmazenados,EmailUnicoValidator]
 })
 

@@ -16,7 +16,7 @@ let UsuarioModule = class UsuarioModule {
 exports.UsuarioModule = UsuarioModule;
 exports.UsuarioModule = UsuarioModule = __decorate([
     (0, common_1.Module)({
-        controllers: [usuario_controller_1.UsuarioController],
+        controllers: [usuario_controller_1.UsuarioController,],
         providers: [usuario_dm_1.UsuariosArmazenados, email_unico_validator_1.EmailUnicoValidator]
     })
 ], UsuarioModule);

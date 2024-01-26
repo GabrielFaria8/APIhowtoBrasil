@@ -1,0 +1,1 @@
+{"version":3,"file":"saude.module.js","sourceRoot":"","sources":["../../src/saude/saude.module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,yDAAqD;AACrD,yCAA8C;AAQvC,IAAM,WAAW,GAAjB,MAAM,WAAW;CAEvB,CAAA;AAFY,kCAAW;sBAAX,WAAW;IALvB,IAAA,eAAM,EAAC;QACJ,WAAW,EAAC,CAAC,kCAAe,EAAE;QAC9B,SAAS,EAAE,CAAC,2BAAgB,EAAE;KACjC,CAAC;GAEW,WAAW,CAEvB"}
