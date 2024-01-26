@@ -9,14 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.criaUsuarioDTO = void 0;
+exports.AlteraUsuarioDTO = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const email_unico_validator_1 = require("../validacao/email-unico.validator");
 const strongpass_validator_1 = require("../validacao/strongpass.validator");
-class criaUsuarioDTO {
+class AlteraUsuarioDTO {
 }
-exports.criaUsuarioDTO = criaUsuarioDTO;
+exports.AlteraUsuarioDTO = AlteraUsuarioDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
@@ -26,7 +26,7 @@ __decorate([
         description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
     }),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "nome", void 0);
+], AlteraUsuarioDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
@@ -35,7 +35,7 @@ __decorate([
         description: `O ultimo nome é usado para identificar o usuário, em telas, cadastros e outros.`,
     }),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "ultimoNome", void 0);
+], AlteraUsuarioDTO.prototype, "ultimoNome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsOptional)(),
@@ -44,7 +44,7 @@ __decorate([
         description: `O status migratório é utilizada para saber o motivo da imigração do usuário ao brasil.`,
     }),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "statusMigrat\u00F3rio", void 0);
+], AlteraUsuarioDTO.prototype, "statusMigrat\u00F3rio", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
@@ -53,7 +53,7 @@ __decorate([
     }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "interesses", void 0);
+], AlteraUsuarioDTO.prototype, "interesses", void 0);
 __decorate([
     (0, class_validator_1.IsEmail)(undefined, { message: 'email é inválido' }),
     (0, email_unico_validator_1.EmailUnico)({ message: 'O email informado já existe' }),
@@ -63,7 +63,7 @@ __decorate([
         description: `O email é utilizado para o login e identificação do usuário. Deve ser único.`,
     }),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "email", void 0);
+], AlteraUsuarioDTO.prototype, "email", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
     (0, strongpass_validator_1.SenhaForte)({ message: "Senha muito fraca" }),
@@ -73,5 +73,5 @@ __decorate([
         description: `A senha deve conter pelo menos 6 caracteres, contar com letras minusculas e maiusculas, numeros e caracteres especiais.`,
     }),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "senha", void 0);
+], AlteraUsuarioDTO.prototype, "senha", void 0);
 //# sourceMappingURL=atualizaUsuario.dto.js.map

@@ -10,7 +10,7 @@ import {
 import { EmailUnico } from '../validacao/email-unico.validator';
 import { SenhaForte } from '../validacao/strongpass.validator';
 
-export class criaUsuarioDTO {
+export class AlteraUsuarioDTO {
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
   @IsOptional()

@@ -8,6 +8,7 @@ import {
     Put,
   } from '@nestjs/common';
   import { criaUsuarioDTO } from './dto/usuario.dto';
+  import { ApiCreatedResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
   import { UsuarioEntity } from './usuario.entity';
   import { UsuariosArmazenados } from './usuario.dm';
   import { v4 as uuid } from 'uuid';
@@ -75,7 +76,7 @@ import {
         message: 'Usuário atualizado',
       };
     }
-  
+    
     @Post()
     async criaUsuario(@Body() dadosUsuario: criaUsuarioDTO) {
       var usuario = new UsuarioEntity(

@@ -1,4 +1,4 @@
-export declare class criaUsuarioDTO {
+export declare class AlteraUsuarioDTO {
     nome: string;
     ultimoNome: string;
     statusMigratório: string;
