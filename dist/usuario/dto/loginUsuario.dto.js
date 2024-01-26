@@ -20,6 +20,6 @@ __decorate([
 ], LoginUsuarioDTO.prototype, "email", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
-    __metadata("design:type", Object)
-], LoginUsuarioDTO.prototype, "s", void 0);
+    __metadata("design:type", String)
+], LoginUsuarioDTO.prototype, "senha", void 0);
 //# sourceMappingURL=loginUsuario.dto.js.map

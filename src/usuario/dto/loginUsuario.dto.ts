@@ -6,7 +6,7 @@ export class LoginUsuarioDTO{
 
     email:string;
 
-    @MinLength(6,{message: "Senha precisa de pelo menos 6 digitos"})s
+    @MinLength(6,{message: "Senha precisa de pelo menos 6 digitos"})
 
     senha:string;
 }

@@ -41,7 +41,7 @@ import {
     async Login(@Body() dadosUsuario: LoginUsuarioDTO) {
       var login = this.clsUsuariosArmazenados.validarLogin(
         dadosUsuario.email,
-        dadosUsuario.senha,
+        dadosUsuario.senha, 
       );
       return {
         usuario: login[1] ? login[0] : null,
