@@ -7,6 +7,10 @@ export declare class SaudeController {
     private clssaudeArmazenados;
     constructor(clssaudeArmazenados: SaudeArmazenados);
     Retornosaude(): Promise<ListaSaudeDTO[]>;
+    removeSaude(id: string): Promise<{
+        usuario: SaudeEntity;
+        message: string;
+    }>;
     atualizaSaude(id: string, novosDadados: AleteraSaudeDTO): Promise<{
         Saude: SaudeEntity;
         message: string;

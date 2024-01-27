@@ -11,7 +11,7 @@ import {
 export class criaSaudeDTO{
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'saude Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'farmácia',
@@ -29,7 +29,7 @@ export class criaSaudeDTO{
   nome: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'endereco Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Rua dom pedro 5-40',
@@ -38,7 +38,7 @@ export class criaSaudeDTO{
   endereco: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: "14 9968-6852",
@@ -47,7 +47,7 @@ export class criaSaudeDTO{
   Numero: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Dás 14:00 até 22:0',

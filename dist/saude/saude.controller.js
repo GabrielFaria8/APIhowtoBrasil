@@ -29,6 +29,13 @@ let SaudeController = class SaudeController {
         const listaRetorno = saudeListados.map((saude) => new lista_saude_dto_1.ListaSaudeDTO(saude.id, saude.saude, saude.nome, saude.endereco, saude.Numero, saude.Horario));
         return listaRetorno;
     }
+    async removeSaude(id) {
+        const saudeRemovido = await this.clssaudeArmazenados.removeSaude(id);
+        return {
+            usuario: saudeRemovido,
+            message: 'Usuário removido',
+        };
+    }
     async atualizaSaude(id, novosDadados) {
         const saudeAtualizado = await this.clssaudeArmazenados.atualizaSaude(id, novosDadados);
         return {
@@ -53,6 +60,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], SaudeController.prototype, "Retornosaude", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], SaudeController.prototype, "removeSaude", null);
 __decorate([
     (0, common_1.Put)('/:id'),
     __param(0, (0, common_1.Param)('id')),

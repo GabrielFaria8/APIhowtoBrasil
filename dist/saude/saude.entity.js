@@ -10,6 +10,25 @@ class SaudeEntity {
         this.Horario = Horario;
         this.saude = saude;
     }
+    validarUsuario() {
+        var retorno = [];
+        if (this.nome == "") {
+            retorno.push("N");
+        }
+        if (this.endereco == "") {
+            retorno.push("endereco inválido ou vazio");
+        }
+        if (this.Numero == "") {
+            retorno.push("Numero inválida ou vazia");
+        }
+        if (this.Horario == "") {
+            retorno.push("Horario inválido ou vazio");
+        }
+        if (this.saude == "") {
+            retorno.push("saude inválido ou vazio");
+        }
+        return retorno;
+    }
 }
 exports.SaudeEntity = SaudeEntity;
 //# sourceMappingURL=saude.entity.js.map

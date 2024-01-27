@@ -34,6 +34,16 @@ export class SaudeController {
 
     return listaRetorno;
   }
+  
+  @Delete(':id')
+  async removeSaude(@Param('id') id: string) {
+    const saudeRemovido = await this.clssaudeArmazenados.removeSaude(id);
+
+    return {
+      usuario : saudeRemovido,
+      message: 'Usuário removido',
+    }
+  }
 
   @Put('/:id')
   async atualizaSaude(
