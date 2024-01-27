@@ -21,6 +21,22 @@ let SaudeArmazenados = class SaudeArmazenados {
     AdicionarSaude(saude) {
         __classPrivateFieldGet(this, _SaudeArmazenados_saude, "f").push(saude);
     }
+    atualizaSaude(id, dadosAtualizacao) {
+        const saude = this.buscaporID(id);
+        Object.entries(dadosAtualizacao).forEach(([chave, valor]) => {
+            if (chave === 'id') {
+                return;
+            }
+            saude[chave] = valor;
+        });
+        return saude;
+    }
+    buscaporID(id) {
+        const possivelSaude = __classPrivateFieldGet(this, _SaudeArmazenados_saude, "f").find((saudeSalva) => saudeSalva.id === id);
+        if (!possivelSaude) {
+            return possivelSaude;
+        }
+    }
     get Saude() {
         return __classPrivateFieldGet(this, _SaudeArmazenados_saude, "f");
     }

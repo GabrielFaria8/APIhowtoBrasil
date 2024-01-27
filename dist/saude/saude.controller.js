@@ -19,6 +19,7 @@ const lista_saude_dto_1 = require("./dto/lista.saude.dto");
 const saude_entity_1 = require("./saude.entity");
 const uuid_1 = require("uuid");
 const saude_dto_1 = require("./dto/saude.dto");
+const atualiza_saude_dto_1 = require("./dto/atualiza.saude.dto");
 let SaudeController = class SaudeController {
     constructor(clssaudeArmazenados) {
         this.clssaudeArmazenados = clssaudeArmazenados;
@@ -27,6 +28,13 @@ let SaudeController = class SaudeController {
         const saudeListados = await this.clssaudeArmazenados.Saude;
         const listaRetorno = saudeListados.map((saude) => new lista_saude_dto_1.ListaSaudeDTO(saude.id, saude.saude, saude.nome, saude.endereco, saude.Numero, saude.Horario));
         return listaRetorno;
+    }
+    async atualizaSaude(id, novosDadados) {
+        const saudeAtualizado = await this.clssaudeArmazenados.atualizaSaude(id, novosDadados);
+        return {
+            Saude: saudeAtualizado,
+            message: 'Usuário atualizado',
+        };
     }
     async criaSaude(dadosSaude) {
         var saude = new saude_entity_1.SaudeEntity((0, uuid_1.v4)(), dadosSaude.saude, dadosSaude.nome, dadosSaude.endereco, dadosSaude.Numero, dadosSaude.Horario);
@@ -45,6 +53,14 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], SaudeController.prototype, "Retornosaude", null);
+__decorate([
+    (0, common_1.Put)('/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, atualiza_saude_dto_1.AleteraSaudeDTO]),
+    __metadata("design:returntype", Promise)
+], SaudeController.prototype, "atualizaSaude", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

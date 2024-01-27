@@ -12,6 +12,7 @@ import { ListaSaudeDTO } from './dto/lista.saude.dto';
 import { SaudeEntity } from './saude.entity';
 import { v4 as uuid } from 'uuid';
 import { criaSaudeDTO } from './dto/saude.dto';
+import { AleteraSaudeDTO } from './dto/atualiza.saude.dto';
 
 @Controller('/saude')
 export class SaudeController {
@@ -32,6 +33,21 @@ export class SaudeController {
     );
 
     return listaRetorno;
+  }
+
+  @Put('/:id')
+  async atualizaSaude(
+    @Param('id') id: string,
+    @Body()  novosDadados: AleteraSaudeDTO,
+  ){
+    const saudeAtualizado = await this.clssaudeArmazenados.atualizaSaude(
+      id,
+      novosDadados,
+    );
+    return{
+      Saude: saudeAtualizado,
+      message: 'Usuário atualizado',
+    };
   }
 
   @Post()

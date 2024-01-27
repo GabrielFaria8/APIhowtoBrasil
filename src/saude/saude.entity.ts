@@ -15,4 +15,5 @@ export class SaudeEntity{
       this.Horario = Horario;
       this.saude = saude;
   }
+  
 }
