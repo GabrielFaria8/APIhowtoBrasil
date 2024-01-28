@@ -1,79 +1,73 @@
-import { Injectable } from "@nestjs/common";
-import { UsuarioEntity } from "./usuario.entity";
+import { Injectable } from '@nestjs/common';
+import { UsuarioEntity } from './usuario.entity';
 
 @Injectable()
-export class UsuariosArmazenados{
-    #usuarios: UsuarioEntity[] = [];  
+export class UsuariosArmazenados {
+  #usuarios: UsuarioEntity[] = [];
 
-    AdicionarUsuario(usuario: UsuarioEntity){
-        this.#usuarios.push(usuario);
+  AdicionarUsuario(usuario: UsuarioEntity) {
+    this.#usuarios.push(usuario);
+  }
+
+  atualizaUSuario(id: string, dadosAtualizacao: Partial<UsuarioEntity>) {
+    const usuario = this.buscaPorID(id);
+
+    Object.entries(dadosAtualizacao).forEach(([chave, valor]) => {
+      if (chave === 'id') {
+        return;
+      } else if (chave === 'senha') {
+        usuario.trocasenha(valor);
+        return;
+      }
+      usuario[chave] = valor;
+    });
+
+    return usuario;
+  }
+
+  private buscaPorID(id: string) {
+    const possivelUsuario = this.#usuarios.find(
+      (usuarioSalvo) => usuarioSalvo.id === id,
+    );
+
+    if (!possivelUsuario) {
+      throw new Error('Usuario nao encontrado');
     }
 
-    atualizaUSuario(id: string, dadosAtualizacao: Partial<UsuarioEntity>){
-        const usuario = this.buscaPorID(id);
+    return possivelUsuario;
+  }
 
-        Object.entries(dadosAtualizacao).forEach(
-            ([chave,valor]) => {
-                if(chave === 'id'){
-                    return
-                }else if(chave === 'senha'){
-                    usuario.trocasenha(valor);
-                    return
-                }
-                usuario[chave] = valor;
-            }
-        )
+  async removeUsuario(id: string) {
+    const usuario = this.buscaPorID(id);
 
-        return usuario;
-    }
+    this.#usuarios = this.#usuarios.filter(
+      (usuarioSalvo) => usuarioSalvo.id !== id,
+    );
 
-    private buscaPorID(id: string){
-        const possivelUsuario = this.#usuarios.find(
-            usuarioSalvo => usuarioSalvo.id === id
-        )
+    return usuario;
+  }
 
-        if (!possivelUsuario){
-            throw new Error('Usuario nao encontrado')
-        }
-        
-        return possivelUsuario;
-    }
+  validaEmail(email: string) {
+    const possivelUsuario = this.#usuarios.find(
+      (usuario) => usuario.email === email,
+    );
+    return possivelUsuario !== undefined;
+  }
 
-    async removeUsuario(id: string){
-        const usuario = this.buscaPorID(id);
+  buscaPorEmail(email: string) {
+    const possivelUsuario = this.#usuarios.find(
+      (usuario) => usuario.email === email,
+    );
+    return possivelUsuario;
+  }
 
-        this.#usuarios = this.#usuarios.filter(
-            usuarioSalvo => usuarioSalvo.id !== id
-        )
+  validarLogin(email: string, senha: string) {
+    const usuario = this.buscaPorEmail(email);
+    if (usuario) return [usuario, usuario.login(senha)];
+    else return [null, false];
+  }
 
-        return usuario;
-    }
-
-    validaEmail(email:string){
-        const possivelUsuario = this.#usuarios.find(
-            usuario => usuario.email === email
-        );
-        return (possivelUsuario !== undefined);
-    }
-
-    buscaPorEmail(email:string){
-        const possivelUsuario = this.#usuarios.find(
-            usuario => usuario.email === email
-        );
-        return possivelUsuario;
-    }
-
-    validarLogin(email:string,senha:string){
-        const usuario = this.buscaPorEmail(email);
-        if (usuario)
-            return [usuario,usuario.login(senha)];
-        else
-            return [null,false];
-    }
-
-
-
-    get Usuarios(){        
-        return this.#usuarios;
-    }
+  get Usuarios() {
+    return this.#usuarios;
+  }
 }

@@ -45,7 +45,7 @@ let SaudeArmazenados = class SaudeArmazenados {
     }
     async removeSaude(id) {
         const saude = this.buscaporID(id);
-        __classPrivateFieldSet(this, _SaudeArmazenados_saude, __classPrivateFieldGet(this, _SaudeArmazenados_saude, "f").filter(saudeSalvo => saudeSalvo.id !== id), "f");
+        __classPrivateFieldSet(this, _SaudeArmazenados_saude, __classPrivateFieldGet(this, _SaudeArmazenados_saude, "f").filter((saudeSalvo) => saudeSalvo.id !== id), "f");
         return saude;
     }
     get Saude() {

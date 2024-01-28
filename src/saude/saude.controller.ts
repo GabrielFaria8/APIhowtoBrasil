@@ -13,10 +13,13 @@ import { SaudeEntity } from './saude.entity';
 import { v4 as uuid } from 'uuid';
 import { criaSaudeDTO } from './dto/saude.dto';
 import { AleteraSaudeDTO } from './dto/atualiza.saude.dto';
+import { ApiCreatedResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
 
 @Controller('/saude')
 export class SaudeController {
   constructor(private clssaudeArmazenados: SaudeArmazenados) {}
+
+  @ApiResponse({ status: 200, description: 'Retorna a lista de cadastros de saúde existentes.'})
   @Get()
   async Retornosaude() {
     const saudeListados = await this.clssaudeArmazenados.Saude;
@@ -35,6 +38,8 @@ export class SaudeController {
     return listaRetorno;
   }
   
+  @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de saúde.'})
+    @ApiResponse({ status: 500, description: 'Retorna que o cadastro de saúde não foi encontrado ou ocorreu um erro interno durante a exclusão.'})
   @Delete(':id')
   async removeSaude(@Param('id') id: string) {
     const saudeRemovido = await this.clssaudeArmazenados.removeSaude(id);
@@ -45,6 +50,8 @@ export class SaudeController {
     }
   }
 
+  @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro de saúde.'})
+  @ApiResponse({ status: 500, description: 'Retorna que o cadastro de saúde não foi encontrado ou ocorreu um erro interno.'})
   @Put('/:id')
   async atualizaSaude(
     @Param('id') id: string,
@@ -60,6 +67,7 @@ export class SaudeController {
     };
   }
 
+  @ApiCreatedResponse({ description: 'Retorna que houve sucesso ao cadastrar informações de saúde e inclui o ID criado.'})
   @Post()
   async criaSaude(@Body() dadosSaude: criaSaudeDTO) {
     var saude = new SaudeEntity(

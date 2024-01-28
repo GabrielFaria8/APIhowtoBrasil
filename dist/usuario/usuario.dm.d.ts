@@ -1,4 +1,4 @@
-import { UsuarioEntity } from "./usuario.entity";
+import { UsuarioEntity } from './usuario.entity';
 export declare class UsuariosArmazenados {
     #private;
     AdicionarUsuario(usuario: UsuarioEntity): void;

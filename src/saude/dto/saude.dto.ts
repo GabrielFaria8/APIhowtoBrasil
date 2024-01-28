@@ -15,7 +15,7 @@ export class criaSaudeDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'farmácia',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    description: `A informação sobre saúde é utilizada para identificar a área específica da saúde à qual o estabelecimento pertence.`,
   })
   saude: string;
 
@@ -23,17 +23,17 @@ export class criaSaudeDTO{
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'farmácia casca grossa',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    example: 'Farmácia Nissei',
+    description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
   })
   nome: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'endereco Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Endereco Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Rua dom pedro 5-40',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    description: `O endereço é utilizado para identificar a localização do estabelecimento.`,
   })
   endereco: string;
 
@@ -41,8 +41,8 @@ export class criaSaudeDTO{
   @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: "14 9968-6852",
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    example: "(00)00000-0000",
+    description: `O número de telefone é usado para contato com o estabelecimento.`,
   })
   Numero: string;
 
@@ -51,7 +51,7 @@ export class criaSaudeDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Dás 14:00 até 22:0',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
 

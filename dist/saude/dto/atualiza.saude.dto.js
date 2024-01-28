@@ -20,8 +20,8 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'saude Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'farmácia',
-        description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+        example: 'Posto de saude',
+        description: `A informação sobre saúde é utilizada para identificar a área específica da saúde à qual o estabelecimento pertence.`,
     }),
     __metadata("design:type", String)
 ], AleteraSaudeDTO.prototype, "saude", void 0);
@@ -30,39 +30,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'farmácia casca grossa',
-        description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+        example: 'Posto de saude Bela Vista',
+        description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
 ], AleteraSaudeDTO.prototype, "nome", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'endereco Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Rua dom pedro 5-40',
-        description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
-    }),
-    __metadata("design:type", String)
-], AleteraSaudeDTO.prototype, "endereco", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: "14 9968-6852",
-        description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
-    }),
-    __metadata("design:type", String)
-], AleteraSaudeDTO.prototype, "Numero", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
-        description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
-    }),
-    __metadata("design:type", String)
-], AleteraSaudeDTO.prototype, "Horario", void 0);
 //# sourceMappingURL=atualiza.saude.dto.js.map

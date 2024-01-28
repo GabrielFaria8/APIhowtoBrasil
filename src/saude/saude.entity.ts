@@ -19,7 +19,7 @@ export class SaudeEntity{
   validarUsuario(){
     var retorno = [];
     if (this.nome == ""){
-        retorno.push("N");
+        retorno.push("endereco inválido ou vazio");
     }
     if (this.endereco == ""){
         retorno.push("endereco inválido ou vazio");

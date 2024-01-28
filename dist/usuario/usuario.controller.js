@@ -70,7 +70,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "RetornoUsuarios", null);
 __decorate([
-    (0, common_1.Get)('/login'),
+    (0, common_1.Post)('/login'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [loginUsuario_dto_1.LoginUsuarioDTO]),

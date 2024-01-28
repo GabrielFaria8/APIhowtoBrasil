@@ -26,7 +26,7 @@ __decorate([
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
     (0, swagger_1.ApiProperty)({
-        example: 'Asd@1234444',
+        example: 'Asd@444555666',
         description: `Senha utilizada no cadastro.`,
     }),
     __metadata("design:type", String)

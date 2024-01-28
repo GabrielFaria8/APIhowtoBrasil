@@ -12,7 +12,7 @@ export class LoginUsuarioDTO{
 
     @MinLength(6,{message: "Senha precisa de pelo menos 6 digitos"})
     @ApiProperty({
-        example: 'Asd@1234444',
+        example: 'Asd@444555666',
         description: `Senha utilizada no cadastro.`,
     })
     senha: string; 

@@ -42,7 +42,7 @@ let UsuariosArmazenados = class UsuariosArmazenados {
         return usuario;
     }
     buscaPorID(id) {
-        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find(usuarioSalvo => usuarioSalvo.id === id);
+        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find((usuarioSalvo) => usuarioSalvo.id === id);
         if (!possivelUsuario) {
             throw new Error('Usuario nao encontrado');
         }
@@ -50,15 +50,15 @@ let UsuariosArmazenados = class UsuariosArmazenados {
     }
     async removeUsuario(id) {
         const usuario = this.buscaPorID(id);
-        __classPrivateFieldSet(this, _UsuariosArmazenados_usuarios, __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").filter(usuarioSalvo => usuarioSalvo.id !== id), "f");
+        __classPrivateFieldSet(this, _UsuariosArmazenados_usuarios, __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").filter((usuarioSalvo) => usuarioSalvo.id !== id), "f");
         return usuario;
     }
     validaEmail(email) {
-        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find(usuario => usuario.email === email);
-        return (possivelUsuario !== undefined);
+        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find((usuario) => usuario.email === email);
+        return possivelUsuario !== undefined;
     }
     buscaPorEmail(email) {
-        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find(usuario => usuario.email === email);
+        const possivelUsuario = __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f").find((usuario) => usuario.email === email);
         return possivelUsuario;
     }
     validarLogin(email, senha) {

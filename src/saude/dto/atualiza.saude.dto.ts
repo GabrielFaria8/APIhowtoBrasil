@@ -14,8 +14,8 @@ export class AleteraSaudeDTO{
   @IsNotEmpty({ message: 'saude Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'farmácia',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    example: 'Posto de saude',
+    description: `A informação sobre saúde é utilizada para identificar a área específica da saúde à qual o estabelecimento pertence.`,
   })
   saude: string;
 
@@ -23,36 +23,11 @@ export class AleteraSaudeDTO{
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'farmácia casca grossa',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    example: 'Posto de saude Bela Vista',
+    description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
   })
   nome: string;
 
-  @IsString()
-  @IsNotEmpty({ message: 'endereco Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Rua dom pedro 5-40',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
-  })
-  endereco: string;
-
-  @IsString()
-  @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: "14 9968-6852",
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
-  })
-  Numero: string;
-
-  @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O nome é usado para identificar o usuário, em telas, cadastros e outros.`,
-  })
-  Horario: string;
+ 
 
 }

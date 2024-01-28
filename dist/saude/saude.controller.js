@@ -20,6 +20,7 @@ const saude_entity_1 = require("./saude.entity");
 const uuid_1 = require("uuid");
 const saude_dto_1 = require("./dto/saude.dto");
 const atualiza_saude_dto_1 = require("./dto/atualiza.saude.dto");
+const swagger_1 = require("@nestjs/swagger");
 let SaudeController = class SaudeController {
     constructor(clssaudeArmazenados) {
         this.clssaudeArmazenados = clssaudeArmazenados;
@@ -55,12 +56,15 @@ let SaudeController = class SaudeController {
 };
 exports.SaudeController = SaudeController;
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna a lista de cadastros de saúde existentes.' }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], SaudeController.prototype, "Retornosaude", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de saúde.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro de saúde não foi encontrado ou ocorreu um erro interno durante a exclusão.' }),
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -68,6 +72,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], SaudeController.prototype, "removeSaude", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro de saúde.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro de saúde não foi encontrado ou ocorreu um erro interno.' }),
     (0, common_1.Put)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -76,6 +82,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], SaudeController.prototype, "atualizaSaude", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ description: 'Retorna que houve sucesso ao cadastrar informações de saúde e inclui o ID criado.' }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),

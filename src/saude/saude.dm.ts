@@ -33,12 +33,10 @@ export class SaudeArmazenados {
     }
   }
 
-  async removeSaude(id:string) {
+  async removeSaude(id: string) {
     const saude = this.buscaporID(id);
 
-    this.#saude = this.#saude.filter(
-      saudeSalvo => saudeSalvo.id !== id
-    )
+    this.#saude = this.#saude.filter((saudeSalvo) => saudeSalvo.id !== id);
     return saude;
   }
 

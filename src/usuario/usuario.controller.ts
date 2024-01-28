@@ -38,7 +38,7 @@ import {
         return listaRetorno;
     }
   
-    @Get('/login')
+    @Post('/login')
     async Login(@Body() dadosUsuario: LoginUsuarioDTO) {
       var login = this.clsUsuariosArmazenados.validarLogin(
         dadosUsuario.email,

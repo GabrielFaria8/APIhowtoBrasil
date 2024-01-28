@@ -24,7 +24,7 @@ export class criaUsuarioDTO {
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Visto de Trabalho',
-    description: `O ultimo nome é usado para identificar o usuário, em telas, cadastros e outros.`,
+    description: `O último nome é utilizado para identificar o usuário em telas, cadastros e outros contextos.`,
   })
   ultimoNome: string;
 
@@ -32,14 +32,14 @@ export class criaUsuarioDTO {
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Edurado',
-    description: `O status migratório é utilizada para saber o motivo da imigração do usuário ao brasil.`,
+    description: `O status migratório é utilizado para compreender o motivo da imigração do usuário para o Brasil.`,
   })
   statusMigratório: string;
 
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Trabalho',
-    description: `O interesse é utilizada para saber o que o usuario está precisando no brasil.`,
+    description: `Os interesses são utilizados para compreender as necessidades do usuário no Brasil.`,
   })
   @IsString()
   interesses: string;
