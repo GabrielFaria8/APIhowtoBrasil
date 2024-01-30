@@ -91,6 +91,7 @@ __decorate([
 ], SaudeController.prototype, "criaSaude", null);
 exports.SaudeController = SaudeController = __decorate([
     (0, common_1.Controller)('/saude'),
+    (0, swagger_1.ApiTags)('saude'),
     __metadata("design:paramtypes", [saude_dm_1.SaudeArmazenados])
 ], SaudeController);
 //# sourceMappingURL=saude.controller.js.map

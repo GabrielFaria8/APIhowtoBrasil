@@ -39,7 +39,7 @@ let SaudeArmazenados = class SaudeArmazenados {
     }
     buscaporID(id) {
         const possivelSaude = __classPrivateFieldGet(this, _SaudeArmazenados_saude, "f").find((saudeSalva) => saudeSalva.id === id);
-        if (!possivelSaude) {
+        if (possivelSaude) {
             return possivelSaude;
         }
     }

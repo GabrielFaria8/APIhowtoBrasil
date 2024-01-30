@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsuarioController = void 0;
 const common_1 = require("@nestjs/common");
 const usuario_dto_1 = require("./dto/usuario.dto");
+const swagger_1 = require("@nestjs/swagger");
 const usuario_entity_1 = require("./usuario.entity");
 const usuario_dm_1 = require("./usuario.dm");
 const uuid_1 = require("uuid");
@@ -64,6 +65,7 @@ let UsuarioController = class UsuarioController {
 };
 exports.UsuarioController = UsuarioController;
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna a lista de cadastros do usuario existentes.' }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -77,6 +79,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Login", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de usuario.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro do usuario não foi encontrado ou ocorreu um erro interno durante a exclusão.' }),
     (0, common_1.Delete)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -84,6 +88,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "removeUsuario", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro do usuario.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro do usuario não foi encontrado ou ocorreu um erro interno.' }),
     (0, common_1.Put)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -92,6 +98,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "atualizaUsuario", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ description: 'Retorna que houve sucesso ao cadastrar usuario e inclui o ID criado.' }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -100,6 +107,7 @@ __decorate([
 ], UsuarioController.prototype, "criaUsuario", null);
 exports.UsuarioController = UsuarioController = __decorate([
     (0, common_1.Controller)('/usuarios'),
+    (0, swagger_1.ApiTags)('usuarios'),
     __metadata("design:paramtypes", [usuario_dm_1.UsuariosArmazenados])
 ], UsuarioController);
 //# sourceMappingURL=usuario.controller.js.map

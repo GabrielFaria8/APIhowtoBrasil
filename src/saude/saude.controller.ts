@@ -16,6 +16,7 @@ import { AleteraSaudeDTO } from './dto/atualiza.saude.dto';
 import { ApiCreatedResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
 
 @Controller('/saude')
+@ApiTags('saude')
 export class SaudeController {
   constructor(private clssaudeArmazenados: SaudeArmazenados) {}
 

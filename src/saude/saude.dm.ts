@@ -28,7 +28,7 @@ export class SaudeArmazenados {
       (saudeSalva) => saudeSalva.id === id,
     );
 
-    if (!possivelSaude) {
+    if (possivelSaude) {
       return possivelSaude;
     }
   }
