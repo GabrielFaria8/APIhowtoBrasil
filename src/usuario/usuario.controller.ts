@@ -20,6 +20,8 @@ import {
   @Controller('/usuarios')
   export class UsuarioController {
     constructor(private clsUsuariosArmazenados: UsuariosArmazenados) {}
+
+    @ApiResponse({ status: 200, description: 'Retorna a lista de cadastros do usuario existentes.'})
     @Get()
     async RetornoUsuarios(){
         const usuariosListados = await this.clsUsuariosArmazenados.Usuarios;
@@ -50,7 +52,9 @@ import {
         message: login[1] ? 'Login Efetuado' : 'Usuario ou senha inválidos',
       };
     }
-  
+
+    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de usuario.'})
+    @ApiResponse({ status: 500, description: 'Retorna que o cadastro do usuario não foi encontrado ou ocorreu um erro interno durante a exclusão.'})
     @Delete('/:id')
     async removeUsuario(@Param('id') id: string) {
       const usuarioRemovido = await this.clsUsuariosArmazenados.removeUsuario(id);
@@ -60,7 +64,10 @@ import {
         message: 'Usuário removido',
       };
     }
-  
+
+
+    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro do usuario.'})
+    @ApiResponse({ status: 500, description: 'Retorna que o cadastro do usuario não foi encontrado ou ocorreu um erro interno.'})
     @Put('/:id')
     async atualizaUsuario(
       @Param('id') id: string,
@@ -76,7 +83,7 @@ import {
         message: 'Usuário atualizado',
       };
     }
-    
+    @ApiCreatedResponse({ description: 'Retorna que houve sucesso ao cadastrar usuario e inclui o ID criado.'})
     @Post()
     async criaUsuario(@Body() dadosUsuario: criaUsuarioDTO) {
       var usuario = new UsuarioEntity(
