@@ -6,19 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.TrabalhoModule = void 0;
 const common_1 = require("@nestjs/common");
-const usuario_module_1 = require("./usuario/usuario.module");
-const saude_module_1 = require("./saude/saude.module");
-const trabalho_module_1 = require("./trabalho/trabalho.module");
-let AppModule = class AppModule {
+const trabalho_controller_1 = require("./trabalho.controller");
+const trabalho_dm_1 = require("./trabalho.dm");
+let TrabalhoModule = class TrabalhoModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.TrabalhoModule = TrabalhoModule;
+exports.TrabalhoModule = TrabalhoModule = __decorate([
     (0, common_1.Module)({
-        imports: [usuario_module_1.UsuarioModule, saude_module_1.SaudeModule, trabalho_module_1.TrabalhoModule],
-        controllers: [],
-        providers: [],
+        controllers: [trabalho_controller_1.TrabalhoController,],
+        providers: [trabalho_dm_1.TrabalhoArmazenados,]
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], TrabalhoModule);
+//# sourceMappingURL=trabalho.module.js.map
