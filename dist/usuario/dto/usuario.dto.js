@@ -74,4 +74,12 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], criaUsuarioDTO.prototype, "senha", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiProperty)({
+        example: 'nomearquivo-idarquivo.png',
+        description: `Esse campo é responsável pela foto do usuário, para ser enviado o dado correto é necessário que seja feito o upload pelo modulo FILES.`,
+    }),
+    __metadata("design:type", String)
+], criaUsuarioDTO.prototype, "foto", void 0);
 //# sourceMappingURL=usuario.dto.js.map

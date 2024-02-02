@@ -1,4 +1,4 @@
-import { ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import {
   IsEmail,
   IsInt,
@@ -60,5 +60,12 @@ export class criaUsuarioDTO {
         example: 'Asd@444555666',
         description: `A senha deve conter pelo menos 6 caracteres, contar com letras minusculas e maiusculas, numeros e caracteres especiais.`,
     })
-    senha: string; 
+    senha: string;
+    
+    @IsOptional()
+    @ApiProperty({
+        example: 'nomearquivo-idarquivo.png',
+        description: `Esse campo é responsável pela foto do usuário, para ser enviado o dado correto é necessário que seja feito o upload pelo modulo FILES.`,
+    })
+    foto: string; 
 }

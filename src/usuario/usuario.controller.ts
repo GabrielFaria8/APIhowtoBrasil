@@ -35,6 +35,7 @@ import {
                 usuario.interesses,
                 usuario.email,
                 usuario.senha,
+                usuario.foto
             )
         );
         
@@ -84,6 +85,17 @@ import {
         message: 'Usuário atualizado',
       };
     }
+
+    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao trocar a foto.'})
+    @ApiResponse({ status: 500, description: 'Retorna que o usuário não foi encontrado.'})
+    @Post('/foto/:id')
+    async atualizaFoto(@Param('id') id: string,@Body() AlteraFotoUsuarioDTO){
+        const usuario = await this.clsUsuariosArmazenados.atualizaUSuario(id,AlteraFotoUsuarioDTO)
+
+        return{
+            usuario: usuario            
+        }
+    }
     @ApiCreatedResponse({ description: 'Retorna que houve sucesso ao cadastrar usuario e inclui o ID criado.'})
     @Post()
     async criaUsuario(@Body() dadosUsuario: criaUsuarioDTO) {
@@ -95,6 +107,7 @@ import {
         dadosUsuario.interesses,
         dadosUsuario.email,
         dadosUsuario.senha,
+        dadosUsuario.foto
       );
   
       this.clsUsuariosArmazenados.AdicionarUsuario(usuario);

@@ -6,6 +6,7 @@ export class ListaUsuarioDTO{
         readonly statusMigratório: string,
         readonly interesses: string,
         readonly email: string,
-        readonly senha: string
+        readonly senha: string,
+        readonly foto: string
         ){}
 }

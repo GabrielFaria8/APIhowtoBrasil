@@ -21,6 +21,9 @@ export declare class UsuarioController {
         usuario: UsuarioEntity;
         message: string;
     }>;
+    atualizaFoto(id: string, AlteraFotoUsuarioDTO: any): Promise<{
+        usuario: UsuarioEntity;
+    }>;
     criaUsuario(dadosUsuario: criaUsuarioDTO): Promise<{
         id: string;
         message: string;

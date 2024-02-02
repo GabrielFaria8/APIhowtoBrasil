@@ -28,7 +28,7 @@ let UsuarioController = class UsuarioController {
     }
     async RetornoUsuarios() {
         const usuariosListados = await this.clsUsuariosArmazenados.Usuarios;
-        const listaRetorno = usuariosListados.map(usuario => new listaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratório, usuario.interesses, usuario.email, usuario.senha));
+        const listaRetorno = usuariosListados.map(usuario => new listaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratório, usuario.interesses, usuario.email, usuario.senha, usuario.foto));
         return listaRetorno;
     }
     async Login(dadosUsuario) {
@@ -53,8 +53,14 @@ let UsuarioController = class UsuarioController {
             message: 'Usuário atualizado',
         };
     }
+    async atualizaFoto(id, AlteraFotoUsuarioDTO) {
+        const usuario = await this.clsUsuariosArmazenados.atualizaUSuario(id, AlteraFotoUsuarioDTO);
+        return {
+            usuario: usuario
+        };
+    }
     async criaUsuario(dadosUsuario) {
-        var usuario = new usuario_entity_1.UsuarioEntity((0, uuid_1.v4)(), dadosUsuario.nome, dadosUsuario.ultimoNome, dadosUsuario.statusMigratório, dadosUsuario.interesses, dadosUsuario.email, dadosUsuario.senha);
+        var usuario = new usuario_entity_1.UsuarioEntity((0, uuid_1.v4)(), dadosUsuario.nome, dadosUsuario.ultimoNome, dadosUsuario.statusMigratório, dadosUsuario.interesses, dadosUsuario.email, dadosUsuario.senha, dadosUsuario.foto);
         this.clsUsuariosArmazenados.AdicionarUsuario(usuario);
         var retorno = {
             id: usuario.id,
@@ -97,6 +103,16 @@ __decorate([
     __metadata("design:paramtypes", [String, atualizaUsuario_dto_1.AlteraUsuarioDTO]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "atualizaUsuario", null);
+__decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao trocar a foto.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o usuário não foi encontrado.' }),
+    (0, common_1.Post)('/foto/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "atualizaFoto", null);
 __decorate([
     (0, swagger_1.ApiCreatedResponse)({ description: 'Retorna que houve sucesso ao cadastrar usuario e inclui o ID criado.' }),
     (0, common_1.Post)(),

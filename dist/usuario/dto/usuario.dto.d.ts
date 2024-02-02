@@ -5,4 +5,5 @@ export declare class criaUsuarioDTO {
     interesses: string;
     email: string;
     senha: string;
+    foto: string;
 }
