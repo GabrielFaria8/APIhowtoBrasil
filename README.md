@@ -52,13 +52,13 @@ $ npm run start:dev
 
 ### Usuario
 ```bash
-# consultar
+# consultar/logar
 POST http://localhost:3001/usuarios/login
 Selecione Body, raw, json
 
 {
-  "email": "GABRIEL_12345@gmail.com",
-  "senha": "GABRIEL@1234"
+  "email": "teste@teste.com",
+  "senha": "Asd@444555666"
 }
 ```
 ```bash
@@ -97,31 +97,8 @@ Selecione Params
   "foto": "asdasdaslo-4d06e95a-4ee7-4195-b48e-6cc05a264de8.png"
 }
 ```
-```bash
-# consultar
-GET http://localhost:3001/usuarios
-Selecione Params
-```
-### Formulário
 
-
-
-```bash
-# inclusão Foto Usuario
-POST http://localhost:3001/usuarios/foto/{"url da foto"}
-Selecione Body, raw, json
-
-{
-  "nome": "Carlos",
-  "ultimoNome": "Visto de Trabalho",
-  "statusMigratório": "Edurado",
-  "interesses": "Trabalho",
-  "email": "teste@teste.com",
-  "senha": "Asd@444555666",
-  "foto": "asdasdaslo-4d06e95a-4ee7-4195-b48e-6cc05a264de8.png"
-}
-```
-### 👾 Linguagens e Ferramentas
+###  Linguagens e Ferramentas
 <img align="left" alt="TypeScript" width="30px" src="https://github.com/andrecomegno/andrecomegno/blob/main/icon/typescript.png" />
 <img align="left" alt="JavaScript" width="30px" src="https://github.com/andrecomegno/andrecomegno/blob/main/icon/javascript.png" />
 <img align="left" alt="Nest.js" width="30px" src="https://github.com/andrecomegno/andrecomegno/blob/main/icon/nestjs.png" />
