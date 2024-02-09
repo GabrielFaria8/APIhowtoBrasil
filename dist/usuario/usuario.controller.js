@@ -123,7 +123,7 @@ __decorate([
 ], UsuarioController.prototype, "criaUsuario", null);
 exports.UsuarioController = UsuarioController = __decorate([
     (0, common_1.Controller)('/usuarios'),
-    (0, swagger_1.ApiTags)('usuarios'),
+    (0, swagger_1.ApiTags)('usuario'),
     __metadata("design:paramtypes", [usuario_dm_1.UsuariosArmazenados])
 ], UsuarioController);
 //# sourceMappingURL=usuario.controller.js.map

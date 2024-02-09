@@ -18,7 +18,7 @@ import {
   import { LoginUsuarioDTO } from './dto/loginUsuario.dto';
   
   @Controller('/usuarios')
-  @ApiTags('usuarios')
+  @ApiTags('usuario')
   export class UsuarioController {
     constructor(private clsUsuariosArmazenados: UsuariosArmazenados) {}
 
