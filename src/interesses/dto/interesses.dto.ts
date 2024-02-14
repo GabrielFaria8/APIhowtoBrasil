@@ -17,7 +17,7 @@ export class criaInteressesDTO{
     example: 'Educação',
     description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
   })
-  tipo: string;
+  tipos: string;
 
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
