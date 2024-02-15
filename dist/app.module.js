@@ -10,14 +10,16 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const usuario_module_1 = require("./usuario/usuario.module");
 const files_modulo_1 = require("./files/files.modulo");
-const educacao_module_1 = require("./educacao/educacao.module");
 const interesses_module_1 = require("./interesses/interesses.module");
+const documentacao_module_1 = require("./documentacao/documentacao.module");
+const moradia_module_1 = require("./moradia/moradia.module");
+const trabalho_module_1 = require("./trabalho/trabalho.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [usuario_module_1.UsuarioModule, files_modulo_1.FilesModule, educacao_module_1.EducacaoModule, interesses_module_1.InteressesModule],
+        imports: [usuario_module_1.UsuarioModule, files_modulo_1.FilesModule, interesses_module_1.InteressesModule, documentacao_module_1.DocumentacaoModule, moradia_module_1.MoradiaModule, trabalho_module_1.TrabalhoModule],
         controllers: [],
         providers: [],
     })

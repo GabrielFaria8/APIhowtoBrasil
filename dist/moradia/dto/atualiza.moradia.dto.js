@@ -9,32 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.criaTrabalhoDTO = void 0;
+exports.AlteraMoradiaDTO = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
-class criaTrabalhoDTO {
+class AlteraMoradiaDTO {
 }
-exports.criaTrabalhoDTO = criaTrabalhoDTO;
+exports.AlteraMoradiaDTO = AlteraMoradiaDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'trabalho Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'educação Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Telemarketing',
-        description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
+        example: 'Senac',
+        description: `A informação sobre educação é utilizada para identificar a área específica da saúde à qual o estabelecimento pertence.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "trabalho", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'trabalho Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Telemarketing',
-        description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
-    }),
-    __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "tipos", void 0);
+], AlteraMoradiaDTO.prototype, "moradia", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
@@ -44,7 +34,7 @@ __decorate([
         description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "nome", void 0);
+], AlteraMoradiaDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
@@ -54,7 +44,7 @@ __decorate([
         description: `O número de telefone é usado para contato com o estabelecimento.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "Numero", void 0);
+], AlteraMoradiaDTO.prototype, "Numero", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
@@ -64,7 +54,7 @@ __decorate([
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "Horario", void 0);
+], AlteraMoradiaDTO.prototype, "Horario", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Link do endereço Não pode ser vazio' }),
@@ -74,7 +64,7 @@ __decorate([
         description: `O link do endereço é usado identificar o endereço do estabelecimento no maps.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "LinkMaps", void 0);
+], AlteraMoradiaDTO.prototype, "LinkMaps", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),
@@ -84,7 +74,7 @@ __decorate([
         description: `Os pré requisitos são usados para identificar o que é necessário para entrar em uma vaga de emprego.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "PreRequisitos", void 0);
+], AlteraMoradiaDTO.prototype, "PreRequisitos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Site da empresa Não pode ser vazio' }),
@@ -94,5 +84,5 @@ __decorate([
         description: `O link do site é usado identificar o site da empresa.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "SiteEmpresa", void 0);
-//# sourceMappingURL=trabalho.dto.js.map
+], AlteraMoradiaDTO.prototype, "SiteEmpresa", void 0);
+//# sourceMappingURL=atualiza.moradia.dto.js.map

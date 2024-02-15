@@ -6,17 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EducacaoModule = void 0;
+exports.MoradiaModule = void 0;
 const common_1 = require("@nestjs/common");
-const educacao_controller_1 = require("./educacao.controller");
-const educacao_dm_1 = require("./educacao.dm");
-let EducacaoModule = class EducacaoModule {
+const moradia_controller_1 = require("./moradia.controller");
+const moradia_dm_1 = require("./moradia.dm");
+let MoradiaModule = class MoradiaModule {
 };
-exports.EducacaoModule = EducacaoModule;
-exports.EducacaoModule = EducacaoModule = __decorate([
+exports.MoradiaModule = MoradiaModule;
+exports.MoradiaModule = MoradiaModule = __decorate([
     (0, common_1.Module)({
-        controllers: [educacao_controller_1.EducacaoController,],
-        providers: [educacao_dm_1.EducacaoArmazenados,]
+        controllers: [moradia_controller_1.MoradiaController,],
+        providers: [moradia_dm_1.MoradiaArmazenados,]
     })
-], EducacaoModule);
-//# sourceMappingURL=educacao.module.js.map
+], MoradiaModule);
+//# sourceMappingURL=moradia.module.js.map

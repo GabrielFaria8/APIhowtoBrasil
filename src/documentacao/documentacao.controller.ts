@@ -71,8 +71,13 @@ export class DocumentacaoController {
   async criaDocumentacao(@Body() dadosDocumentacao: criaDocumentacaoDTO) {
     var documentacao = new DocumentacaoEntity(
       uuid(),
-      dadosDocumentacao.documentacao,
-      dadosDocumentacao.linkGoverno,
+      dadosDocumentacao.tipos, 
+        dadosDocumentacao.nome,
+        dadosDocumentacao.Numero,
+        dadosDocumentacao.Horario,
+        dadosDocumentacao.LinkMaps,
+        dadosDocumentacao.documentacao,
+        dadosDocumentacao.linkGoverno,
 
       
     );

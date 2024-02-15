@@ -1,13 +1,13 @@
 import { Module } from "@nestjs/common";
-import { EducacaoController } from "./moradia.controller";
-import { EducacaoArmazenados } from "./moradia.dm";
+import { MoradiaController } from "./moradia.controller";
+import { MoradiaArmazenados } from "./moradia.dm";
 
 
 @Module({
-    controllers:[EducacaoController,],
-    providers: [EducacaoArmazenados,]
+    controllers:[MoradiaController,],
+    providers: [MoradiaArmazenados,]
 })
 
-export class EducacaoModule{
+export class MoradiaModule{
     
 }

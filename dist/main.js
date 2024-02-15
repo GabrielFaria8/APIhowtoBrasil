@@ -7,14 +7,19 @@ const swagger_1 = require("@nestjs/swagger");
 const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors({
+        origin: 'http://localhost:3000',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+        credentials: true,
+    });
     app.useGlobalPipes(new common_1.ValidationPipe({
         transform: true,
         whitelist: true,
         forbidNonWhitelisted: true,
     }));
     const config = new swagger_1.DocumentBuilder()
-        .setTitle('API Filmes e series - StreamingAPI')
-        .setDescription('A presente API tem como objetivo simular cadastros possiveis para uma API de Stream de filmes e series')
+        .setTitle('API Filmes e séries - StreamingAPI')
+        .setDescription('A presente API tem como objetivo simular cadastros possíveis para uma API de Stream de filmes e séries')
         .setVersion('1.0')
         .addTag('usuario')
         .addTag('trabalho')

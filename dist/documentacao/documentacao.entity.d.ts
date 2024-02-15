@@ -1,8 +1,6 @@
 import { InteressesEntity } from "src/interesses/interesses.entity";
 export declare class DocumentacaoEntity extends InteressesEntity {
-    id: string;
     documentacao: string;
     linkGoverno: string;
-    constructor(id: string, documentacao: string, linkGoverno: string);
-    validarUsuario(): any[];
+    constructor(id: string, tipos: string, nome: string, Numero: string, Horario: string, LinkMaps: string, documentacao: string, linkGoverno: string);
 }

@@ -1,3 +1,4 @@
+/// <reference types="multer" />
 import { FilesArmazenados } from './files.dm';
 import { Request } from 'express';
 export declare class FilesController {

@@ -45,7 +45,7 @@ let DocumentacaoController = class DocumentacaoController {
         };
     }
     async criaDocumentacao(dadosDocumentacao) {
-        var documentacao = new documentacao_entity_1.DocumentacaoEntity((0, uuid_1.v4)(), dadosDocumentacao.documentacao, dadosDocumentacao.linkGoverno);
+        var documentacao = new documentacao_entity_1.DocumentacaoEntity((0, uuid_1.v4)(), dadosDocumentacao.tipos, dadosDocumentacao.nome, dadosDocumentacao.Numero, dadosDocumentacao.Horario, dadosDocumentacao.LinkMaps, dadosDocumentacao.documentacao, dadosDocumentacao.linkGoverno);
         this.clsdocumentacaoArmazenados.AdicionarDocumentacao(documentacao);
         var retorno = {
             id: documentacao.id,

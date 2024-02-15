@@ -1,40 +1,18 @@
-export class EducacaoEntity{
-    id: string;
-    educacao: string;
-    nome: string;
-    endereco: string;
-    Numero: string;
-    Horario: string;
-    constructor(id: string,educacao: string,nome:string,endereco: string,Numero: string,Horario: string){
-        
+import { InteressesEntity } from "src/interesses/interesses.entity";
+import { Injectable } from "@nestjs/common";
+
+@Injectable()
+export class MoradiaEntity extends InteressesEntity{
+    moradia: string;
+    linkGoverno: string;
+    linkCorrelatos: string;
+    constructor(id: string, tipos: string, nome: string, Numero: string, Horario: string, LinkMaps: string, moradia: string, linkGoverno: string, linkCorrelatos:string){
+        super(id, tipos, nome, Numero, Horario, LinkMaps);
   
-        this.id = id;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.Numero = Numero;
-        this.Horario = Horario;
-        this.educacao = educacao;
+        this.moradia = moradia;
+        this.linkGoverno = linkGoverno;
+        this.linkCorrelatos = linkCorrelatos;
     }
     
-    validarUsuario(){
-      var retorno = [];
-      if (this.nome == ""){
-          retorno.push("nome inválido ou vazio");
-      }
-      if (this.endereco == ""){
-          retorno.push("endereco inválido ou vazio");
-      }
-      if (this.Numero  == ""){
-          retorno.push("Numero inválida ou vazia");
-      }
-      if (this.Horario == ""){
-          retorno.push("Horario inválido ou vazio");
-      }
-      if (this.educacao  == ""){
-          retorno.push("educacao inválido ou vazio");
-      }
-      
-      
-      return retorno;
-  }
+    
   }

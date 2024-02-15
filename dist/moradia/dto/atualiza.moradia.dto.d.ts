@@ -1,6 +1,5 @@
-export declare class criaTrabalhoDTO {
-    trabalho: string;
-    tipos: string;
+export declare class AlteraMoradiaDTO {
+    moradia: string;
     nome: string;
     Numero: string;
     Horario: string;

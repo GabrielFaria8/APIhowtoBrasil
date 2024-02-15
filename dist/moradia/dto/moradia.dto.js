@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.criaEducacaoDTO = void 0;
+exports.criaMoradiaDTO = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
-class criaEducacaoDTO {
+class criaMoradiaDTO {
 }
-exports.criaEducacaoDTO = criaEducacaoDTO;
+exports.criaMoradiaDTO = criaMoradiaDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'educação Não pode ser vazio' }),
@@ -24,7 +24,7 @@ __decorate([
         description: `A informação sobre educação é utilizada para identificar a área específica da educação à qual o estabelecimento pertence.`,
     }),
     __metadata("design:type", String)
-], criaEducacaoDTO.prototype, "educacao", void 0);
+], criaMoradiaDTO.prototype, "moradia", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
@@ -34,7 +34,7 @@ __decorate([
         description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
-], criaEducacaoDTO.prototype, "nome", void 0);
+], criaMoradiaDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Endereco Não pode ser vazio' }),
@@ -44,7 +44,7 @@ __decorate([
         description: `O endereço é utilizado para identificar a localização do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], criaEducacaoDTO.prototype, "endereco", void 0);
+], criaMoradiaDTO.prototype, "endereco", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
@@ -54,7 +54,7 @@ __decorate([
         description: `O número de telefone é usado para contato com o estabelecimento.`,
     }),
     __metadata("design:type", String)
-], criaEducacaoDTO.prototype, "Numero", void 0);
+], criaMoradiaDTO.prototype, "Numero", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
@@ -64,5 +64,45 @@ __decorate([
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], criaEducacaoDTO.prototype, "Horario", void 0);
-//# sourceMappingURL=educacao.dto.js.map
+], criaMoradiaDTO.prototype, "Horario", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Dás 14:00 até 22:0',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], criaMoradiaDTO.prototype, "tipos", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Dás 14:00 até 22:0',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], criaMoradiaDTO.prototype, "LinkMaps", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Dás 14:00 até 22:0',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], criaMoradiaDTO.prototype, "linkGoverno", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Dás 14:00 até 22:0',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], criaMoradiaDTO.prototype, "linkCorrelatos", void 0);
+//# sourceMappingURL=moradia.dto.js.map

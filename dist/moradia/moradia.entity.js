@@ -9,19 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DocumentacaoEntity = void 0;
-const common_1 = require("@nestjs/common");
+exports.MoradiaEntity = void 0;
 const interesses_entity_1 = require("../interesses/interesses.entity");
-let DocumentacaoEntity = class DocumentacaoEntity extends interesses_entity_1.InteressesEntity {
-    constructor(id, tipos, nome, Numero, Horario, LinkMaps, documentacao, linkGoverno) {
+const common_1 = require("@nestjs/common");
+let MoradiaEntity = class MoradiaEntity extends interesses_entity_1.InteressesEntity {
+    constructor(id, tipos, nome, Numero, Horario, LinkMaps, moradia, linkGoverno, linkCorrelatos) {
         super(id, tipos, nome, Numero, Horario, LinkMaps);
-        this.documentacao = documentacao;
+        this.moradia = moradia;
         this.linkGoverno = linkGoverno;
+        this.linkCorrelatos = linkCorrelatos;
     }
 };
-exports.DocumentacaoEntity = DocumentacaoEntity;
-exports.DocumentacaoEntity = DocumentacaoEntity = __decorate([
+exports.MoradiaEntity = MoradiaEntity;
+exports.MoradiaEntity = MoradiaEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, String, String, String, String, String, String, String])
-], DocumentacaoEntity);
-//# sourceMappingURL=documentacao.entity.js.map
+    __metadata("design:paramtypes", [String, String, String, String, String, String, String, String, String])
+], MoradiaEntity);
+//# sourceMappingURL=moradia.entity.js.map

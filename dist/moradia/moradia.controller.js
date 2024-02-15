@@ -12,56 +12,55 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EducacaoController = void 0;
+exports.MoradiaController = void 0;
 const common_1 = require("@nestjs/common");
-const educacao_dm_1 = require("./educacao.dm");
-const lista_educacao_dto_1 = require("./dto/lista.educacao.dto");
-const educacao_entity_1 = require("./educacao.entity");
+const moradia_dm_1 = require("./moradia.dm");
+const lista_moradia_dto_1 = require("./dto/lista.moradia.dto");
+const moradia_entity_1 = require("./moradia.entity");
 const uuid_1 = require("uuid");
-const educacao_dto_1 = require("./dto/educacao.dto");
-const atualiza_educacao_dto_1 = require("./dto/atualiza.educacao.dto");
+const moradia_dto_1 = require("./dto/moradia.dto");
 const swagger_1 = require("@nestjs/swagger");
-let EducacaoController = class EducacaoController {
-    constructor(clseducacaoArmazenados) {
-        this.clseducacaoArmazenados = clseducacaoArmazenados;
+let MoradiaController = class MoradiaController {
+    constructor(clsmoradiaArmazenados) {
+        this.clsmoradiaArmazenados = clsmoradiaArmazenados;
     }
-    async Retornoeducacao() {
-        const educacaoListados = await this.clseducacaoArmazenados.Educacao;
-        const listaRetorno = educacaoListados.map((educacao) => new lista_educacao_dto_1.ListaEducacaoDTO(educacao.id, educacao.educacao, educacao.nome, educacao.endereco, educacao.Numero, educacao.Horario));
+    async Retornomoradia() {
+        const moradiaListados = await this.clsmoradiaArmazenados.Moradia;
+        const listaRetorno = moradiaListados.map((moradia) => new lista_moradia_dto_1.ListaMoradiaDTO(moradia.id, moradia.moradia, moradia.linkGoverno, moradia.linkCorrelatos));
         return listaRetorno;
     }
-    async removeEducacao(id) {
-        const educacaoRemovido = await this.clseducacaoArmazenados.removeEducacao(id);
+    async removemoradia(id) {
+        const moradiaRemovido = await this.clsmoradiaArmazenados.removeMoradia(id);
         return {
-            usuario: educacaoRemovido,
+            usuario: moradiaRemovido,
             message: 'Usuário removido',
         };
     }
-    async atualizaEducacao(id, novosDadados) {
-        const educacaoAtualizado = await this.clseducacaoArmazenados.atualizaEducacao(id, novosDadados);
+    async atualizamoradia(id, novosDadados) {
+        const moradiaAtualizado = await this.clsmoradiaArmazenados.atualizaMoradia(id, novosDadados);
         return {
-            Educacao: educacaoAtualizado,
+            moradia: moradiaAtualizado,
             message: 'Usuário atualizado',
         };
     }
-    async criaEducacao(dadosEducacao) {
-        var educacao = new educacao_entity_1.EducacaoEntity((0, uuid_1.v4)(), dadosEducacao.educacao, dadosEducacao.nome, dadosEducacao.endereco, dadosEducacao.Numero, dadosEducacao.Horario);
-        this.clseducacaoArmazenados.AdicionarEducacao(educacao);
+    async criamoradia(dadosmoradia) {
+        var moradia = new moradia_entity_1.MoradiaEntity((0, uuid_1.v4)(), dadosmoradia.tipos, dadosmoradia.nome, dadosmoradia.Numero, dadosmoradia.Horario, dadosmoradia.LinkMaps, dadosmoradia.moradia, dadosmoradia.linkGoverno, dadosmoradia.linkCorrelatos);
+        this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
         var retorno = {
-            id: educacao.id,
+            id: moradia.id,
             message: 'Usuário Criado',
         };
         return retorno;
     }
 };
-exports.EducacaoController = EducacaoController;
+exports.MoradiaController = MoradiaController;
 __decorate([
-    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna a lista de cadastros de educação existentes.' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna a lista de cadastros de moradia existentes.' }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], EducacaoController.prototype, "Retornoeducacao", null);
+], MoradiaController.prototype, "Retornomoradia", null);
 __decorate([
     (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de educação.' }),
     (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro de educação não foi encontrado ou ocorreu um erro interno durante a exclusão.' }),
@@ -70,7 +69,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], EducacaoController.prototype, "removeEducacao", null);
+], MoradiaController.prototype, "removemoradia", null);
 __decorate([
     (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro de educação.' }),
     (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro de educação não foi encontrado ou ocorreu um erro interno.' }),
@@ -78,20 +77,20 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, atualiza_educacao_dto_1.AlteraEducacaoDTO]),
+    __metadata("design:paramtypes", [String, lista_moradia_dto_1.ListaMoradiaDTO]),
     __metadata("design:returntype", Promise)
-], EducacaoController.prototype, "atualizaEducacao", null);
+], MoradiaController.prototype, "atualizamoradia", null);
 __decorate([
     (0, swagger_1.ApiCreatedResponse)({ description: 'Retorna que houve sucesso ao cadastrar informações de educação e inclui o ID criado.' }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [educacao_dto_1.criaEducacaoDTO]),
+    __metadata("design:paramtypes", [moradia_dto_1.criaMoradiaDTO]),
     __metadata("design:returntype", Promise)
-], EducacaoController.prototype, "criaEducacao", null);
-exports.EducacaoController = EducacaoController = __decorate([
-    (0, common_1.Controller)('/educacao'),
-    (0, swagger_1.ApiTags)('educacao'),
-    __metadata("design:paramtypes", [educacao_dm_1.EducacaoArmazenados])
-], EducacaoController);
-//# sourceMappingURL=educacao.controller.js.map
+], MoradiaController.prototype, "criamoradia", null);
+exports.MoradiaController = MoradiaController = __decorate([
+    (0, common_1.Controller)('/moradia'),
+    (0, swagger_1.ApiTags)('moradia'),
+    __metadata("design:paramtypes", [moradia_dm_1.MoradiaArmazenados])
+], MoradiaController);
+//# sourceMappingURL=moradia.controller.js.map

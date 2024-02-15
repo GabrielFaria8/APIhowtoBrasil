@@ -21,6 +21,16 @@ export class criaDocumentacaoDTO{
   documentacao: string;
 
   @IsString()
+  @IsNotEmpty({ message: 'Documentação não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Passaporte',
+    description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
+    e onde cada uma deve ser entregue para a autoridade competente.`,
+  })
+  tipos: string;
+
+  @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({

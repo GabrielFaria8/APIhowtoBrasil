@@ -1,46 +1,46 @@
 import { Injectable } from '@nestjs/common';
-import { EducacaoEntity } from './moradia.entity';
+import { MoradiaEntity } from './moradia.entity';
 
 @Injectable()
-export class EducacaoArmazenados {
-  #educacao: EducacaoEntity[] = [];
+export class MoradiaArmazenados {
+  #Moradia: MoradiaEntity[] = [];
 
-  AdicionarEducacao(educacao: EducacaoEntity) {
-    this.#educacao.push(educacao);
+  AdicionarMoradia(Moradia: MoradiaEntity) {
+    this.#Moradia.push(Moradia);
   }
 
-  atualizaEducacao(id: string, dadosAtualizacao: Partial<EducacaoEntity>) {
-    const educacao = this.buscaporID(id);
+  atualizaMoradia(id: string, dadosAtualizacao: Partial<MoradiaEntity>) {
+    const Moradia = this.buscaporID(id);
 
     Object.entries(dadosAtualizacao).forEach(([chave, valor]) => {
       if (chave === 'id') {
         return;
       }
 
-      educacao[chave] = valor;
+      Moradia[chave] = valor;
     });
 
-    return educacao;
+    return Moradia;
   }
 
   private buscaporID(id: string) {
-    const possivelEducacao = this.#educacao.find(
-      (educacaoSalva) => educacaoSalva.id === id,
+    const possivelMoradia = this.#Moradia.find(
+      (MoradiaSalva) => MoradiaSalva.id === id,
     );
 
-    if (possivelEducacao) {
-      return possivelEducacao;
+    if (possivelMoradia) {
+      return possivelMoradia;
     }
   }
 
-  async removeEducacao(id: string) {
-    const educacao = this.buscaporID(id);
+  async removeMoradia(id: string) {
+    const Moradia = this.buscaporID(id);
 
-    this.#educacao = this.#educacao.filter((educacaoSalvo) => educacaoSalvo.id !== id);
-    return educacao;
+    this.#Moradia = this.#Moradia.filter((MoradiaSalvo) => MoradiaSalvo.id !== id);
+    return Moradia;
   }
 
-  get Educacao() {
-    return this.#educacao;
+  get Moradia() {
+    return this.#Moradia;
   }
 }

@@ -16,45 +16,45 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
-var _EducacaoArmazenados_educacao;
+var _MoradiaArmazenados_Moradia;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EducacaoArmazenados = void 0;
+exports.MoradiaArmazenados = void 0;
 const common_1 = require("@nestjs/common");
-let EducacaoArmazenados = class EducacaoArmazenados {
+let MoradiaArmazenados = class MoradiaArmazenados {
     constructor() {
-        _EducacaoArmazenados_educacao.set(this, []);
+        _MoradiaArmazenados_Moradia.set(this, []);
     }
-    AdicionarEducacao(educacao) {
-        __classPrivateFieldGet(this, _EducacaoArmazenados_educacao, "f").push(educacao);
+    AdicionarMoradia(Moradia) {
+        __classPrivateFieldGet(this, _MoradiaArmazenados_Moradia, "f").push(Moradia);
     }
-    atualizaEducacao(id, dadosAtualizacao) {
-        const educacao = this.buscaporID(id);
+    atualizaMoradia(id, dadosAtualizacao) {
+        const Moradia = this.buscaporID(id);
         Object.entries(dadosAtualizacao).forEach(([chave, valor]) => {
             if (chave === 'id') {
                 return;
             }
-            educacao[chave] = valor;
+            Moradia[chave] = valor;
         });
-        return educacao;
+        return Moradia;
     }
     buscaporID(id) {
-        const possivelEducacao = __classPrivateFieldGet(this, _EducacaoArmazenados_educacao, "f").find((educacaoSalva) => educacaoSalva.id === id);
-        if (possivelEducacao) {
-            return possivelEducacao;
+        const possivelMoradia = __classPrivateFieldGet(this, _MoradiaArmazenados_Moradia, "f").find((MoradiaSalva) => MoradiaSalva.id === id);
+        if (possivelMoradia) {
+            return possivelMoradia;
         }
     }
-    async removeEducacao(id) {
-        const educacao = this.buscaporID(id);
-        __classPrivateFieldSet(this, _EducacaoArmazenados_educacao, __classPrivateFieldGet(this, _EducacaoArmazenados_educacao, "f").filter((educacaoSalvo) => educacaoSalvo.id !== id), "f");
-        return educacao;
+    async removeMoradia(id) {
+        const Moradia = this.buscaporID(id);
+        __classPrivateFieldSet(this, _MoradiaArmazenados_Moradia, __classPrivateFieldGet(this, _MoradiaArmazenados_Moradia, "f").filter((MoradiaSalvo) => MoradiaSalvo.id !== id), "f");
+        return Moradia;
     }
-    get Educacao() {
-        return __classPrivateFieldGet(this, _EducacaoArmazenados_educacao, "f");
+    get Moradia() {
+        return __classPrivateFieldGet(this, _MoradiaArmazenados_Moradia, "f");
     }
 };
-exports.EducacaoArmazenados = EducacaoArmazenados;
-_EducacaoArmazenados_educacao = new WeakMap();
-exports.EducacaoArmazenados = EducacaoArmazenados = __decorate([
+exports.MoradiaArmazenados = MoradiaArmazenados;
+_MoradiaArmazenados_Moradia = new WeakMap();
+exports.MoradiaArmazenados = MoradiaArmazenados = __decorate([
     (0, common_1.Injectable)()
-], EducacaoArmazenados);
-//# sourceMappingURL=educacao.dm.js.map
+], MoradiaArmazenados);
+//# sourceMappingURL=moradia.dm.js.map

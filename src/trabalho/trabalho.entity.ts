@@ -6,45 +6,17 @@ import { InteressesEntity } from "src/interesses/interesses.entity";
 
 
 export class TrabalhoEntity extends InteressesEntity{
-    id: string;
     trabalho: string;
     PreRequisitos: string;
     SiteEmpresa: string;
-    constructor(id: string,trabalho: string,PreRequisitos: string,SiteEmpresa: string){
+    constructor(id: string, tipos: string, nome: string, Numero: string, Horario: string, LinkMaps: string, trabalho: string, PreRequisitos: string, SiteEmpresa:string){
+      super(id, tipos, nome, Numero, Horario, LinkMaps);
         
-      id= id
-      trabalho= trabalho
-      PreRequisitos= PreRequisitos
-      SiteEmpresa= SiteEmpresa;
-
-      super("","trabalhos","","","","trabalho")
+      this.trabalho = trabalho;
+        this.PreRequisitos = PreRequisitos;
+        this.SiteEmpresa = SiteEmpresa;
 
     }
     
-    validarUsuario(){
-      var retorno = [];
-      if (this.nome == ""){
-          retorno.push("endereco inválido ou vazio");
-      }
-      if (this.Numero  == ""){
-          retorno.push("Numero inválida ou vazia");
-      }
-      if (this.Horario == ""){
-          retorno.push("Horario inválido ou vazio");
-      }
-      if (this.trabalho  == ""){
-          retorno.push("trabalho inválido ou vazio");
-      }
-      if (this.LinkMaps  == ""){
-        retorno.push("Link de endereço inválido ou vazio");
-      }
-      if (this.PreRequisitos  == ""){
-        retorno.push("Pré requisitos inválido ou vazio");
-      }
-      if (this.SiteEmpresa  == ""){
-        retorno.push("Site da empresa inválido ou vazio");
-      }
-      
-      return retorno;
-  }
+    
   }

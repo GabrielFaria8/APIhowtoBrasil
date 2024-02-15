@@ -13,42 +13,16 @@ exports.TrabalhoEntity = void 0;
 const common_1 = require("@nestjs/common");
 const interesses_entity_1 = require("../interesses/interesses.entity");
 let TrabalhoEntity = class TrabalhoEntity extends interesses_entity_1.InteressesEntity {
-    constructor(id, trabalho, PreRequisitos, SiteEmpresa) {
-        id = id;
-        trabalho = trabalho;
-        PreRequisitos = PreRequisitos;
-        SiteEmpresa = SiteEmpresa;
-        super("", "trabalhos", "", "", "", "trabalho");
-    }
-    validarUsuario() {
-        var retorno = [];
-        if (this.nome == "") {
-            retorno.push("endereco inválido ou vazio");
-        }
-        if (this.Numero == "") {
-            retorno.push("Numero inválida ou vazia");
-        }
-        if (this.Horario == "") {
-            retorno.push("Horario inválido ou vazio");
-        }
-        if (this.trabalho == "") {
-            retorno.push("trabalho inválido ou vazio");
-        }
-        if (this.LinkMaps == "") {
-            retorno.push("Link de endereço inválido ou vazio");
-        }
-        if (this.PreRequisitos == "") {
-            retorno.push("Pré requisitos inválido ou vazio");
-        }
-        if (this.SiteEmpresa == "") {
-            retorno.push("Site da empresa inválido ou vazio");
-        }
-        return retorno;
+    constructor(id, tipos, nome, Numero, Horario, LinkMaps, trabalho, PreRequisitos, SiteEmpresa) {
+        super(id, tipos, nome, Numero, Horario, LinkMaps);
+        this.trabalho = trabalho;
+        this.PreRequisitos = PreRequisitos;
+        this.SiteEmpresa = SiteEmpresa;
     }
 };
 exports.TrabalhoEntity = TrabalhoEntity;
 exports.TrabalhoEntity = TrabalhoEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, String, String, String])
+    __metadata("design:paramtypes", [String, String, String, String, String, String, String, String, String])
 ], TrabalhoEntity);
 //# sourceMappingURL=trabalho.entity.js.map

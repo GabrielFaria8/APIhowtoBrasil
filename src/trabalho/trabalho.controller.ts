@@ -72,6 +72,11 @@ import {
     async criaTrabalho(@Body() dadosTrabalho: criaTrabalhoDTO) {
       var trabalho = new TrabalhoEntity(
         uuid(),
+        dadosTrabalho.tipos, 
+        dadosTrabalho.nome,
+        dadosTrabalho.Numero,
+        dadosTrabalho.Horario,
+        dadosTrabalho.LinkMaps,
         dadosTrabalho.trabalho,
         dadosTrabalho.PreRequisitos,
         dadosTrabalho.SiteEmpresa,

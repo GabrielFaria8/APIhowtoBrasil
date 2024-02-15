@@ -1,9 +1,7 @@
 import { InteressesEntity } from "src/interesses/interesses.entity";
 export declare class TrabalhoEntity extends InteressesEntity {
-    id: string;
     trabalho: string;
     PreRequisitos: string;
     SiteEmpresa: string;
-    constructor(id: string, trabalho: string, PreRequisitos: string, SiteEmpresa: string);
-    validarUsuario(): any[];
+    constructor(id: string, tipos: string, nome: string, Numero: string, Horario: string, LinkMaps: string, trabalho: string, PreRequisitos: string, SiteEmpresa: string);
 }

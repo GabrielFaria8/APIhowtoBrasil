@@ -17,7 +17,7 @@ export class criaMoradiaDTO{
     example: 'Senac',
     description: `A informação sobre educação é utilizada para identificar a área específica da educação à qual o estabelecimento pertence.`,
   })
-  educacao: string;
+  moradia: string;
 
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
@@ -54,5 +54,40 @@ export class criaMoradiaDTO{
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
+  @IsString()
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Dás 14:00 até 22:0',
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+  })
+  tipos: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Dás 14:00 até 22:0',
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+  })
+  LinkMaps: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Dás 14:00 até 22:0',
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+  })
+  linkGoverno: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Dás 14:00 até 22:0',
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+  })
+  linkCorrelatos: string;
 
 }

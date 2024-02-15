@@ -45,7 +45,7 @@ let TrabalhoController = class TrabalhoController {
         };
     }
     async criaTrabalho(dadosTrabalho) {
-        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.trabalho, dadosTrabalho.PreRequisitos, dadosTrabalho.SiteEmpresa);
+        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.tipos, dadosTrabalho.nome, dadosTrabalho.Numero, dadosTrabalho.Horario, dadosTrabalho.LinkMaps, dadosTrabalho.trabalho, dadosTrabalho.PreRequisitos, dadosTrabalho.SiteEmpresa);
         this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
         var retorno = {
             id: trabalho.id,

@@ -26,10 +26,11 @@ import {
       const moradiaListados = await this.clsmoradiaArmazenados.Moradia;
       const listaRetorno = moradiaListados.map(
         (moradia) =>
-          new ListaEducacaoDTO(
-            educacao.id,
-            educacao.linkGoverno,
-            educacao.linkGoverno,
+          new ListaMoradiaDTO(
+            moradia.id,
+            moradia.moradia,
+            moradia.linkGoverno,
+            moradia.linkCorrelatos,
            
           ),
       );
@@ -40,11 +41,11 @@ import {
     @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de educação.'})
       @ApiResponse({ status: 500, description: 'Retorna que o cadastro de educação não foi encontrado ou ocorreu um erro interno durante a exclusão.'})
     @Delete(':id')
-    async removeEducacao(@Param('id') id: string) {
-      const educacaoRemovido = await this.clseducacaoArmazenados.removeEducacao(id);
+    async removemoradia(@Param('id') id: string) {
+      const moradiaRemovido = await this.clsmoradiaArmazenados.removeMoradia(id);
   
       return {
-        usuario : educacaoRemovido,
+        usuario : moradiaRemovido,
         message: 'Usuário removido',
       }
     }
@@ -52,34 +53,37 @@ import {
     @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro de educação.'})
     @ApiResponse({ status: 500, description: 'Retorna que o cadastro de educação não foi encontrado ou ocorreu um erro interno.'})
     @Put('/:id')
-    async atualizaEducacao(
+    async atualizamoradia(
       @Param('id') id: string,
-      @Body()  novosDadados: AlteraEducacaoDTO,
+      @Body()  novosDadados: ListaMoradiaDTO,
     ){
-      const educacaoAtualizado = await this.clseducacaoArmazenados.atualizaEducacao(
+      const moradiaAtualizado = await this.clsmoradiaArmazenados.atualizaMoradia(
         id,
         novosDadados,
       );
       return{
-        Educacao: educacaoAtualizado,
+        moradia: moradiaAtualizado,
         message: 'Usuário atualizado',
       };
     }
   
     @ApiCreatedResponse({ description: 'Retorna que houve sucesso ao cadastrar informações de educação e inclui o ID criado.'})
     @Post()
-    async criaEducacao(@Body() dadosEducacao: criaEducacaoDTO) {
-      var educacao = new EducacaoEntity(
+    async criamoradia(@Body() dadosmoradia: criaMoradiaDTO) {
+      var moradia = new MoradiaEntity(
         uuid(),
-        dadosEducacao.educacao,
-        dadosEducacao.nome,
-        dadosEducacao.endereco,
-        dadosEducacao.Numero,
-        dadosEducacao.Horario,
+        dadosmoradia.tipos, 
+        dadosmoradia.nome,
+        dadosmoradia.Numero,
+        dadosmoradia.Horario,
+        dadosmoradia.LinkMaps,
+        dadosmoradia.moradia,
+        dadosmoradia.linkGoverno,
+        dadosmoradia.linkCorrelatos,
       );
-      this.clseducacaoArmazenados.AdicionarEducacao(educacao);
+      this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
       var retorno = {
-        id: educacao.id,
+        id: moradia.id,
         message: 'Usuário Criado',
       };
       return retorno;
