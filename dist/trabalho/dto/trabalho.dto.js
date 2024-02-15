@@ -20,7 +20,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'trabalho Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'telemarketing',
+        example: 'Telemarketing',
         description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
     }),
     __metadata("design:type", String)
@@ -30,21 +30,11 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Paschoalotto',
+        example: 'Paschoalotto ',
         description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
 ], criaTrabalhoDTO.prototype, "nome", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Endereco Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Rua dom pedro 5-40',
-        description: `O endereço é utilizado para identificar a localização do estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "endereco", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
@@ -65,4 +55,34 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], criaTrabalhoDTO.prototype, "Horario", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link do endereço Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Bauru Empregos',
+        description: `O link do endereço é usado identificar o endereço do estabelecimento no maps.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "LinkMaps", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Ingles',
+        description: `Os pré requisitos são usados para identificar o que é necessário para entrar em uma vaga de emprego.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "PreRequisitos", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Site da empresa Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Paschoalotto',
+        description: `O link do site é usado identificar o site da empresa.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "SiteEmpresa", void 0);
 //# sourceMappingURL=trabalho.dto.js.map

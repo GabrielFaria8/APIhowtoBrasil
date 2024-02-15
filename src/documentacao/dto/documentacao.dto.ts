@@ -30,15 +30,6 @@ export class criaDocumentacaoDTO{
   nome: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Endereco Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Rua dom pedro 5-40',
-    description: `O endereço é utilizado para identificar a localização do Orgão Governamental.`,
-  })
-  endereco: string;
-
-  @IsString()
   @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
@@ -55,5 +46,23 @@ export class criaDocumentacaoDTO{
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Link do endereço Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Gov.br',
+    description: `O link do endereço é usado identificar o endereçodo Orgão Governamental no maps.`,
+  })
+  LinkMaps: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Link do site Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Gov.br',
+    description: `O link do site é usado identificar o site do Orgão Governamental.`,
+  })
+  linkGoverno: string;
 
 }

@@ -28,11 +28,10 @@ import {
         (trabalho) =>
           new ListaTrabalhoDTO(
             trabalho.id,
-            trabalho.trabalho,
-            trabalho.nome,
-            trabalho.endereco,
-            trabalho.Numero,
-            trabalho.Horario,
+            trabalho.PreRequisitos,
+            trabalho.PreRequisitos,
+            trabalho.SiteEmpresa,
+            
           ),
       );
   
@@ -74,10 +73,10 @@ import {
       var trabalho = new TrabalhoEntity(
         uuid(),
         dadosTrabalho.trabalho,
-        dadosTrabalho.nome,
-        dadosTrabalho.endereco,
-        dadosTrabalho.Numero,
-        dadosTrabalho.Horario,
+        dadosTrabalho.PreRequisitos,
+        dadosTrabalho.SiteEmpresa,
+
+
       );
       this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
       var retorno = {

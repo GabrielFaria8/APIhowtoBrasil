@@ -30,9 +30,9 @@ import {
             interesses.id,
             interesses.tipos,
             interesses.nome,
-            interesses.endereco,
             interesses.Numero,
             interesses.Horario,
+            interesses.LinkMaps,
           ),
       );
   
@@ -75,9 +75,9 @@ import {
         uuid(),
         dadosInteresses.tipos,
         dadosInteresses.nome,
-        dadosInteresses.endereco,
         dadosInteresses.Numero,
         dadosInteresses.Horario,
+        dadosInteresses.LinkMaps,
       );
       this.clsinteressesArmazenados.AdicionarInteresses(interesses);
       var retorno = {

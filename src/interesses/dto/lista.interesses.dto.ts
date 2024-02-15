@@ -3,8 +3,9 @@ export class ListaInteressesDTO{
         readonly id: string,
         readonly interesses: string,
         readonly nome: string,
-        readonly endereco: string,
         readonly Numero: string,
-        readonly Horario: string
+        readonly Horario: string,
+        readonly LinkMaps: string
+
         ){}
   }

@@ -21,7 +21,6 @@ async function bootstrap() {
   )
   .setVersion('1.0')
   .addTag('usuario')
-  .addTag('saude')
   .addTag('trabalho')
   .addTag('educacao')
   .addTag('interesses')

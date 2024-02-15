@@ -1,5 +1,4 @@
-/// <reference types="multer" />
 declare const multerConfig: {
-    storage: import("multer").StorageEngine;
+    storage: any;
 };
 export default multerConfig;

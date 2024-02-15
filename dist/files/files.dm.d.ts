@@ -1,4 +1,3 @@
-/// <reference types="multer" />
 import { Request } from 'express';
 export declare class FilesArmazenados {
     arquivos: any[];

@@ -29,15 +29,6 @@ export class criaInteressesDTO{
   nome: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Endereco Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Rua dom pedro 5-40',
-    description: `O endereço é utilizado para identificar a localização do estabelecimento.`,
-  })
-  endereco: string;
-
-  @IsString()
   @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
@@ -54,5 +45,14 @@ export class criaInteressesDTO{
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Link Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Rua xxx, bairro xxx',
+    description: `O Link é usado para especificar o endereço do estabelecimento.`,
+  })
+  LinkMaps: string;
 
 }
