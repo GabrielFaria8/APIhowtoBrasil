@@ -28,7 +28,7 @@ import {
         (trabalho) =>
           new ListaTrabalhoDTO(
             trabalho.id,
-            trabalho.PreRequisitos,
+            trabalho.trabalho,
             trabalho.PreRequisitos,
             trabalho.SiteEmpresa,
             
@@ -72,7 +72,7 @@ import {
     async criaTrabalho(@Body() dadosTrabalho: criaTrabalhoDTO) {
       var trabalho = new TrabalhoEntity(
         uuid(),
-        dadosTrabalho.tipos, 
+        dadosTrabalho.trabalho, 
         dadosTrabalho.nome,
         dadosTrabalho.Numero,
         dadosTrabalho.Horario,

@@ -11,11 +11,11 @@ import {
 export class AlteraMoradiaDTO{
 
   @IsString()
-  @IsNotEmpty({ message: 'educação Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Moradia Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Senac',
-    description: `A informação sobre educação é utilizada para identificar a área específica da saúde à qual o estabelecimento pertence.`,
+    example: 'Casa',
+    description: `A informação sobre moradia é utilizada para identificar a localização do terreno.`,
   })
   moradia: string;
 
@@ -24,7 +24,7 @@ export class AlteraMoradiaDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Paschoalotto ',
-    description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
+    description: `O nome é utilizado para identificar o estabelecimento em tela, cadastro e outros contextos.`,
   })
   nome: string;
 
@@ -42,7 +42,7 @@ export class AlteraMoradiaDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    description: `O horário é usado para especificar o horário de funcionamento do estabelecimento.`,
   })
   Horario: string;
 
@@ -60,7 +60,7 @@ export class AlteraMoradiaDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Ingles',
-    description: `Os pré requisitos são usados para identificar o que é necessário para entrar em uma vaga de emprego.`,
+    description: `Os pré requisitos são usados para identificar o que é necessário para candidatar-se a uma vaga de emprego.`,
   })
   PreRequisitos: string;
 
@@ -69,7 +69,7 @@ export class AlteraMoradiaDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Paschoalotto',
-    description: `O link do site é usado identificar o site da empresa.`,
+    description: `O link do site é usado identificar o endereço web da empresa.`,
   })
   SiteEmpresa: string;
  
