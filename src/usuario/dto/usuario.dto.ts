@@ -34,7 +34,7 @@ export class criaUsuarioDTO {
     example: 'Edurado',
     description: `O status migratório é utilizado para compreender o motivo da imigração do usuário para o Brasil.`,
   })
-  statusMigratório: string;
+  statusMigratorio: string;
 
   @IsOptional()
   @ApiPropertyOptional({

@@ -44,7 +44,7 @@ __decorate([
         description: `O status migratório é utilizado para compreender o motivo da imigração do usuário para o Brasil.`,
     }),
     __metadata("design:type", String)
-], criaUsuarioDTO.prototype, "statusMigrat\u00F3rio", void 0);
+], criaUsuarioDTO.prototype, "statusMigratorio", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({

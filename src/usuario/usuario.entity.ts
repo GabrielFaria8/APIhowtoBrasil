@@ -7,18 +7,18 @@ export class UsuarioEntity{
     id: string;
     nome: string;
     ultimoNome: string;
-    statusMigratório: string;
+    statusMigratorio: string;
     interesses: string;
     email: string;
     senha: string; 
     foto: string;
-    constructor(id: string,nome: string,ultimoNome: string,statusMigratório: string,interesses: string,email: string,senha: string, foto: string){
+    constructor(id: string,nome: string,ultimoNome: string,statusMigratorio: string,interesses: string,email: string,senha: string, foto: string){
         const saltOrRounds = 10;
 
         this.id = id;
         this.nome = nome;
         this.ultimoNome = ultimoNome;
-        this.statusMigratório = statusMigratório;
+        this.statusMigratorio = statusMigratorio;
         this.interesses = interesses;
         this.email = email;
         this.senha = bcrypt.hashSync(senha, saltOrRounds);

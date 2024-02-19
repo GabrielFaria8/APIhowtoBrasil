@@ -28,7 +28,7 @@ let UsuarioController = class UsuarioController {
     }
     async RetornoUsuarios() {
         const usuariosListados = await this.clsUsuariosArmazenados.Usuarios;
-        const listaRetorno = usuariosListados.map(usuario => new listaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratório, usuario.interesses, usuario.email, usuario.senha, usuario.foto));
+        const listaRetorno = usuariosListados.map(usuario => new listaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratorio, usuario.interesses, usuario.email, usuario.senha, usuario.foto));
         return listaRetorno;
     }
     async Login(dadosUsuario) {
@@ -60,7 +60,7 @@ let UsuarioController = class UsuarioController {
         };
     }
     async criaUsuario(dadosUsuario) {
-        var usuario = new usuario_entity_1.UsuarioEntity((0, uuid_1.v4)(), dadosUsuario.nome, dadosUsuario.ultimoNome, dadosUsuario.statusMigratório, dadosUsuario.interesses, dadosUsuario.email, dadosUsuario.senha, dadosUsuario.foto);
+        var usuario = new usuario_entity_1.UsuarioEntity((0, uuid_1.v4)(), dadosUsuario.nome, dadosUsuario.ultimoNome, dadosUsuario.statusMigratorio, dadosUsuario.interesses, dadosUsuario.email, dadosUsuario.senha, dadosUsuario.foto);
         this.clsUsuariosArmazenados.AdicionarUsuario(usuario);
         var retorno = {
             id: usuario.id,
