@@ -30,8 +30,9 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('usuario')
     .addTag('trabalho')
-    .addTag('educacao')
+    .addTag('moradia')
     .addTag('interesses')
+    .addTag('documentacao')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

@@ -56,23 +56,21 @@ export class AlteraMoradiaDTO{
   LinkMaps: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Pré requisitos Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Ingles',
-    description: `Os pré requisitos são usados para identificar o que é necessário para candidatar-se a uma vaga de emprego.`,
+    example: 'Dás 14:00 até 22:0',
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
-  PreRequisitos: string;
+  linkGoverno: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Site da empresa Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Paschoalotto',
-    description: `O link do site é usado identificar o endereço web da empresa.`,
+    example: 'Dás 14:00 até 22:0',
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
-  SiteEmpresa: string;
- 
- 
+  linkCorrelatos: string;
 
 }
