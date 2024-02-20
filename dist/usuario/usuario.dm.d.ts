@@ -8,5 +8,6 @@ export declare class UsuariosArmazenados {
     validaEmail(email: string): boolean;
     buscaPorEmail(email: string): UsuarioEntity;
     validarLogin(email: string, senha: string): any[];
+    trocaSenha(email: string, senha: string): boolean;
     get Usuarios(): UsuarioEntity[];
 }

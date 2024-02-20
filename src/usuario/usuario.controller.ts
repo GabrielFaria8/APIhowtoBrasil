@@ -55,6 +55,26 @@ import {
       };
     }
 
+    @Post('/troca-senha')
+    async trocaSenha(@Body() dadosUsuario: { email: string, senha: string }) {
+      const { email, senha } = dadosUsuario;
+  
+      const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(email, senha);
+  
+      if (senhaTrocadaComSucesso) {
+        return {
+          message: 'Senha atualizada com sucesso!'
+        };
+      } else {
+        return {
+          message: 'O email fornecido não foi encontrado.'
+        };
+      }
+    }
+
+
+
+
     @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de usuario.'})
     @ApiResponse({ status: 500, description: 'Retorna que o cadastro do usuario não foi encontrado ou ocorreu um erro interno durante a exclusão.'})
     @Delete('/:id')

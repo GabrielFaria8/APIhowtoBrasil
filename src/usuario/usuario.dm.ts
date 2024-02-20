@@ -67,6 +67,18 @@ export class UsuariosArmazenados {
     else return [null, false];
   }
 
+  trocaSenha(email: string, senha: string) {
+    const usuario = this.buscaPorEmail(email);
+    if (usuario) {
+        usuario.trocasenha(senha); 
+        return true; 
+    } else {
+        return false; 
+    }
+}
+
+  
+
   get Usuarios() {
     return this.#usuarios;
   }

@@ -68,6 +68,16 @@ let UsuariosArmazenados = class UsuariosArmazenados {
         else
             return [null, false];
     }
+    trocaSenha(email, senha) {
+        const usuario = this.buscaPorEmail(email);
+        if (usuario) {
+            usuario.trocasenha(senha);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     get Usuarios() {
         return __classPrivateFieldGet(this, _UsuariosArmazenados_usuarios, "f");
     }
