@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -10,14 +11,14 @@ import {
 
 export class criaInteressesDTO{
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty({ message: 'Interesses não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Educação',
     description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })

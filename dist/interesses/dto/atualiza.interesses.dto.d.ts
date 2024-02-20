@@ -1,4 +1,4 @@
 export declare class AlteraInteressesDTO {
-    tipos: string;
+    tipos: number;
     nome: string;
 }

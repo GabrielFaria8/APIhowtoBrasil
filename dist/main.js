@@ -23,8 +23,9 @@ async function bootstrap() {
         .setVersion('1.0')
         .addTag('usuario')
         .addTag('trabalho')
-        .addTag('educacao')
+        .addTag('moradia')
         .addTag('interesses')
+        .addTag('documentacao')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);

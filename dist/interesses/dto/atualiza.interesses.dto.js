@@ -23,7 +23,7 @@ __decorate([
         example: 'Educação',
         description: `A informação sobre interesses é utilizada para identificar a área específica de interesses à qual o tipo pertence.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], AlteraInteressesDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

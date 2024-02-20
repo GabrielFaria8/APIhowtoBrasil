@@ -67,22 +67,22 @@ __decorate([
 ], AlteraMoradiaDTO.prototype, "LinkMaps", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Ingles',
-        description: `Os pré requisitos são usados para identificar o que é necessário para candidatar-se a uma vaga de emprego.`,
+        example: 'Dás 14:00 até 22:0',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], AlteraMoradiaDTO.prototype, "PreRequisitos", void 0);
+], AlteraMoradiaDTO.prototype, "linkGoverno", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Site da empresa Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Paschoalotto',
-        description: `O link do site é usado identificar o endereço web da empresa.`,
+        example: 'Dás 14:00 até 22:0',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], AlteraMoradiaDTO.prototype, "SiteEmpresa", void 0);
+], AlteraMoradiaDTO.prototype, "linkCorrelatos", void 0);
 //# sourceMappingURL=atualiza.moradia.dto.js.map

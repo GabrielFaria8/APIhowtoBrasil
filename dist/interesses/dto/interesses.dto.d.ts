@@ -1,5 +1,5 @@
 export declare class criaInteressesDTO {
-    tipos: string;
+    tipos: number;
     nome: string;
     Numero: string;
     Horario: string;

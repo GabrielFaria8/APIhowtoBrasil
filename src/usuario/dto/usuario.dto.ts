@@ -21,6 +21,7 @@ export class criaUsuarioDTO {
   nome: string;
 
   @IsString()
+  @IsNotEmpty({ message: 'Ultimo nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Visto de Trabalho',
@@ -29,6 +30,7 @@ export class criaUsuarioDTO {
   ultimoNome: string;
 
   @IsString()
+  @IsNotEmpty({ message: 'Status Migratorio nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Edurado',
@@ -37,6 +39,7 @@ export class criaUsuarioDTO {
   statusMigratorio: string;
 
   @IsOptional()
+  @IsNotEmpty({ message: 'Interesses nome Não pode ser vazio' })
   @ApiPropertyOptional({
     example: 'Trabalho',
     description: `Os interesses são utilizados para compreender as necessidades do usuário no Brasil.`,

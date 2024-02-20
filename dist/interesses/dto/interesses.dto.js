@@ -16,14 +16,14 @@ class criaInteressesDTO {
 }
 exports.criaInteressesDTO = criaInteressesDTO;
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Interesses não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Educação',
         description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], criaInteressesDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

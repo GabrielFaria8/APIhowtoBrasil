@@ -1,6 +1,6 @@
 export declare class criaDocumentacaoDTO {
     documentacao: string;
-    tipos: string;
+    tipos: number;
     nome: string;
     Numero: string;
     Horario: string;

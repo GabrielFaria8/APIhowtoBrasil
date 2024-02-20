@@ -66,14 +66,14 @@ __decorate([
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "Horario", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Dás 14:00 até 22:0',
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], criaMoradiaDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -20,7 +21,7 @@ export class criaDocumentacaoDTO{
   })
   documentacao: string;
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty({ message: 'Documentação não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
@@ -28,7 +29,7 @@ export class criaDocumentacaoDTO{
     description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
     e onde cada uma deve ser entregue para a autoridade competente.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })

@@ -29,6 +29,7 @@ __decorate([
 ], criaUsuarioDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Ultimo nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Visto de Trabalho',
@@ -38,6 +39,7 @@ __decorate([
 ], criaUsuarioDTO.prototype, "ultimoNome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Status Migratorio nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Edurado',
@@ -47,6 +49,7 @@ __decorate([
 ], criaUsuarioDTO.prototype, "statusMigratorio", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Interesses nome Não pode ser vazio' }),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Trabalho',
         description: `Os interesses são utilizados para compreender as necessidades do usuário no Brasil.`,

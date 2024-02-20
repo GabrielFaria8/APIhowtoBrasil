@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -54,14 +55,14 @@ export class criaMoradiaDTO{
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
-  @IsString()
+  @IsNumber()
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Dás 14:00 até 22:0',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })

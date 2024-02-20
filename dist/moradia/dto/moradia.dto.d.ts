@@ -4,7 +4,7 @@ export declare class criaMoradiaDTO {
     endereco: string;
     Numero: string;
     Horario: string;
-    tipos: string;
+    tipos: number;
     LinkMaps: string;
     linkGoverno: string;
     linkCorrelatos: string;
