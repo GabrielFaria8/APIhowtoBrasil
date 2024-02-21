@@ -27,7 +27,7 @@ __decorate([
 ], criaTrabalhoDTO.prototype, "trabalho", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'trabalho Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'tipo Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Telemarketing',

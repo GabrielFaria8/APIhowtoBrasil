@@ -21,7 +21,7 @@ export class criaTrabalhoDTO{
   trabalho: string;
   
   @IsNumber()
-  @IsNotEmpty({ message: 'trabalho Não pode ser vazio' })
+  @IsNotEmpty({ message: 'tipo Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Telemarketing',

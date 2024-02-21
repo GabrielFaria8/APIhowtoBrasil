@@ -46,7 +46,7 @@ import {
   
       return {
         usuario : trabalhoRemovido,
-        message: 'Usuário removido',
+        message: 'Trabalho removido',
       }
     }
   
@@ -63,7 +63,7 @@ import {
       );
       return{
         Trabalho: trabalhoAtualizado,
-        message: 'Usuário atualizado',
+        message: 'Trabalho atualizado',
       };
     }
   
@@ -84,7 +84,7 @@ import {
       this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
       var retorno = {
         id: trabalho.id,
-        message: 'Usuário Criado',
+        message: 'Trabalho Criado',
       };
       return retorno;
     }

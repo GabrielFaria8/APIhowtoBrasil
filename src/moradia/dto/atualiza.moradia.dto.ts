@@ -20,7 +20,7 @@ export class AlteraMoradiaDTO{
   moradia: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Paschoalotto ',
@@ -56,7 +56,7 @@ export class AlteraMoradiaDTO{
   LinkMaps: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link governo não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Dás 14:00 até 22:0',

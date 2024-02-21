@@ -12,7 +12,7 @@ import { SenhaForte } from '../validacao/strongpass.validator';
 
 export class criaUsuarioDTO {
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Carlos',
@@ -30,7 +30,7 @@ export class criaUsuarioDTO {
   ultimoNome: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Status Migratorio nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Status migratorio nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Edurado',
@@ -47,7 +47,7 @@ export class criaUsuarioDTO {
   @IsString()
   interesses: string;
 
-  @IsEmail(undefined, { message: 'email é inválido' })
+  @IsEmail(undefined, { message: 'Email é inválido' })
   @EmailUnico({ message: 'O email informado já existe' })
   @IsOptional()
   @ApiPropertyOptional({

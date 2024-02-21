@@ -51,15 +51,15 @@ export class criaMoradiaDTO{
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Dás 14:00 até 22:00',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
   @IsNumber()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Tipos Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Educação',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   tipos: number;
