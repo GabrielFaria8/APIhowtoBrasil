@@ -16,18 +16,18 @@ class AlteraInteressesDTO {
 }
 exports.AlteraInteressesDTO = AlteraInteressesDTO;
 __decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'interesses Não pode ser vazio' }),
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Tipo não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Educação',
-        description: `A informação sobre interesses é utilizada para identificar a área específica de interesses à qual o tipo pertence.`,
+        description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], AlteraInteressesDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Trabalho',
@@ -35,4 +35,34 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], AlteraInteressesDTO.prototype, "nome", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: "(00)00000-0000",
+        description: `O número de telefone é usado para contato com o estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], AlteraInteressesDTO.prototype, "Numero", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Dás 14:00 até 22:00',
+        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], AlteraInteressesDTO.prototype, "Horario", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Rua xxx, bairro xxx',
+        description: `O Link é usado para especificar o endereço do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], AlteraInteressesDTO.prototype, "LinkMaps", void 0);
 //# sourceMappingURL=atualiza.interesses.dto.js.map

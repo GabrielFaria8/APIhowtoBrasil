@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -20,18 +21,18 @@ export class criaDocumentacaoDTO{
   })
   documentacao: string;
 
-  @IsString()
-  @IsNotEmpty({ message: 'Documentação não pode ser vazio' })
+  @IsNumber()
+  @IsNotEmpty({ message: 'Tipos não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Passaporte',
     description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
     e onde cada uma deve ser entregue para a autoridade competente.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Fórum da comarca',
@@ -52,7 +53,7 @@ export class criaDocumentacaoDTO{
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Dás 14:00 até 22:00',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;

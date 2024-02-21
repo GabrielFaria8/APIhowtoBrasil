@@ -39,6 +39,20 @@ let UsuarioController = class UsuarioController {
             message: login[1] ? 'Login Efetuado' : 'Usuario ou senha inválidos',
         };
     }
+    async trocaSenha(dadosUsuario) {
+        const { email, senha } = dadosUsuario;
+        const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(email, senha);
+        if (senhaTrocadaComSucesso) {
+            return {
+                message: 'Senha atualizada com sucesso!'
+            };
+        }
+        else {
+            return {
+                message: 'O email fornecido não foi encontrado.'
+            };
+        }
+    }
     async removeUsuario(id) {
         const usuarioRemovido = await this.clsUsuariosArmazenados.removeUsuario(id);
         return {
@@ -84,6 +98,13 @@ __decorate([
     __metadata("design:paramtypes", [loginUsuario_dto_1.LoginUsuarioDTO]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Login", null);
+__decorate([
+    (0, common_1.Post)('/troca-senha'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "trocaSenha", null);
 __decorate([
     (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de usuario.' }),
     (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro do usuario não foi encontrado ou ocorreu um erro interno durante a exclusão.' }),

@@ -28,7 +28,7 @@ __decorate([
 ], AlteraDocumentacaoDTO.prototype, "documentacao", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Fórum da comarca',

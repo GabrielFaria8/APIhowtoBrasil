@@ -20,7 +20,7 @@ export class AlteraMoradiaDTO{
   moradia: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Paschoalotto ',
@@ -41,35 +41,35 @@ export class AlteraMoradiaDTO{
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Dás 14:00 até 22:00',
     description: `O horário é usado para especificar o horário de funcionamento do estabelecimento.`,
   })
   Horario: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Link do endereço Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link do maps não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Bauru Empregos',
-    description: `O link do endereço é usado identificar o endereço do estabelecimento no maps.`,
+    example: 'https://www.google.com.br/maps/preview',
+    description: `O link maps é utilizado para maior precisão da localização de estabelecimentos.`,
   })
   LinkMaps: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link governo não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: 'https://www.gov.br/pt-br',
+    description: `O link governamental é utilizado para identificar local de hospedagem de sites governamentais.`,
   })
   linkGoverno: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link correlato não pode ser vazio'})
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: 'https://www.moradiabrasil.com.br/',
+    description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
   })
   linkCorrelatos: string;
 

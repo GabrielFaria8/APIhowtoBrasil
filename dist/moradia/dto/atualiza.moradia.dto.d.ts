@@ -4,6 +4,6 @@ export declare class AlteraMoradiaDTO {
     Numero: string;
     Horario: string;
     LinkMaps: string;
-    PreRequisitos: string;
-    SiteEmpresa: string;
+    linkGoverno: string;
+    linkCorrelatos: string;
 }

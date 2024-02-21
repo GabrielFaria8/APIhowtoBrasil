@@ -33,14 +33,14 @@ let MoradiaController = class MoradiaController {
         const moradiaRemovido = await this.clsmoradiaArmazenados.removeMoradia(id);
         return {
             usuario: moradiaRemovido,
-            message: 'Usuário removido',
+            message: 'Moradia removido',
         };
     }
     async atualizamoradia(id, novosDadados) {
         const moradiaAtualizado = await this.clsmoradiaArmazenados.atualizaMoradia(id, novosDadados);
         return {
             moradia: moradiaAtualizado,
-            message: 'Usuário atualizado',
+            message: 'Moradia atualizado',
         };
     }
     async criamoradia(dadosmoradia) {
@@ -48,7 +48,7 @@ let MoradiaController = class MoradiaController {
         this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
         var retorno = {
             id: moradia.id,
-            message: 'Usuário Criado',
+            message: 'Moradia Criado',
         };
         return retorno;
     }

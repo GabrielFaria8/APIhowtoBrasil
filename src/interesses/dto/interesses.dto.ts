@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -10,17 +11,17 @@ import {
 
 export class criaInteressesDTO{
 
-  @IsString()
-  @IsNotEmpty({ message: 'Interesses não pode ser vazio' })
+  @IsNumber()
+  @IsNotEmpty({ message: 'Tipo não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Educação',
     description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Trabalho',
@@ -41,7 +42,7 @@ export class criaInteressesDTO{
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Dás 14:00 até 22:00',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;

@@ -12,7 +12,6 @@ import {
   import { MoradiaEntity } from './moradia.entity';
   import { v4 as uuid } from 'uuid';
   import { criaMoradiaDTO } from './dto/moradia.dto';
-  import { AlteraMoradiaDTO } from './dto/atualiza.moradia.dto';
   import { ApiCreatedResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
   
   @Controller('/moradia')
@@ -46,7 +45,7 @@ import {
   
       return {
         usuario : moradiaRemovido,
-        message: 'Usuário removido',
+        message: 'Moradia removido',
       }
     }
   
@@ -63,7 +62,7 @@ import {
       );
       return{
         moradia: moradiaAtualizado,
-        message: 'Usuário atualizado',
+        message: 'Moradia atualizado',
       };
     }
   
@@ -84,7 +83,7 @@ import {
       this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
       var retorno = {
         id: moradia.id,
-        message: 'Usuário Criado',
+        message: 'Moradia Criado',
       };
       return retorno;
     }

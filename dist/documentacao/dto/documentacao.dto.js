@@ -27,19 +27,19 @@ __decorate([
     __metadata("design:type", String)
 ], criaDocumentacaoDTO.prototype, "documentacao", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Documentação não pode ser vazio' }),
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Tipos não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Passaporte',
         description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
     e onde cada uma deve ser entregue para a autoridade competente.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], criaDocumentacaoDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Fórum da comarca',
@@ -62,7 +62,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
+        example: 'Dás 14:00 até 22:00',
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)

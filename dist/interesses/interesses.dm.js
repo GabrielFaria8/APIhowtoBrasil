@@ -51,6 +51,10 @@ let InteressesArmazenados = class InteressesArmazenados {
     get Interesses() {
         return __classPrivateFieldGet(this, _InteressesArmazenados_interesses, "f");
     }
+    tiposInteresses(tipo) {
+        const tiposEspecificos = __classPrivateFieldGet(this, _InteressesArmazenados_interesses, "f").filter(item => item.tipos === tipo);
+        return tiposEspecificos;
+    }
 };
 exports.InteressesArmazenados = InteressesArmazenados;
 _InteressesArmazenados_interesses = new WeakMap();

@@ -7,14 +7,16 @@ import { InteressesEntity } from "src/interesses/interesses.entity";
 
 export class TrabalhoEntity extends InteressesEntity{
     trabalho: string;
-    PreRequisitos: string;
-    SiteEmpresa: string;
-    constructor(id: string, tipos: string, nome: string, Numero: string, Horario: string, LinkMaps: string, trabalho: string, PreRequisitos: string, SiteEmpresa:string){
+    preRequisitos: string;
+    siteEmpresa: string;
+    constructor(id: string, tipos: number, nome: string, Numero: string, Horario: string, LinkMaps: string, trabalho: string,
+    preRequisitos: string, siteEmpresa: string){
+
       super(id, tipos, nome, Numero, Horario, LinkMaps);
         
-      this.trabalho = trabalho;
-        this.PreRequisitos = PreRequisitos;
-        this.SiteEmpresa = SiteEmpresa;
+        this.trabalho = trabalho;
+        this.preRequisitos = preRequisitos;
+        this.siteEmpresa = siteEmpresa;
 
     }
     

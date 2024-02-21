@@ -29,8 +29,8 @@ import {
           new ListaTrabalhoDTO(
             trabalho.id,
             trabalho.trabalho,
-            trabalho.PreRequisitos,
-            trabalho.SiteEmpresa,
+            trabalho.preRequisitos,
+            trabalho.siteEmpresa,
             
           ),
       );
@@ -46,7 +46,7 @@ import {
   
       return {
         usuario : trabalhoRemovido,
-        message: 'Usuário removido',
+        message: 'Trabalho removido',
       }
     }
   
@@ -63,7 +63,7 @@ import {
       );
       return{
         Trabalho: trabalhoAtualizado,
-        message: 'Usuário atualizado',
+        message: 'Trabalho atualizado',
       };
     }
   
@@ -72,21 +72,19 @@ import {
     async criaTrabalho(@Body() dadosTrabalho: criaTrabalhoDTO) {
       var trabalho = new TrabalhoEntity(
         uuid(),
-        dadosTrabalho.trabalho, 
+        dadosTrabalho.tipos,
         dadosTrabalho.nome,
         dadosTrabalho.Numero,
         dadosTrabalho.Horario,
         dadosTrabalho.LinkMaps,
         dadosTrabalho.trabalho,
-        dadosTrabalho.PreRequisitos,
-        dadosTrabalho.SiteEmpresa,
-
-
+        dadosTrabalho.preRequisitos,
+        dadosTrabalho.siteEmpresa
       );
       this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
       var retorno = {
         id: trabalho.id,
-        message: 'Usuário Criado',
+        message: 'Trabalho Criado',
       };
       return retorno;
     }

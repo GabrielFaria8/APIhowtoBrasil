@@ -30,18 +30,24 @@ let InteressesController = class InteressesController {
         const listaRetorno = interessesListados.map((interesses) => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.Numero, interesses.Horario, interesses.LinkMaps));
         return listaRetorno;
     }
+    async tiposInteresses(tipo) {
+        const interessesListados = await this.clsinteressesArmazenados.tiposInteresses(tipo);
+        const interessesFiltrados = interessesListados.filter(interesse => interesse.tipos === tipo);
+        const listaRetorno = interessesFiltrados.map((interesse) => new lista_interesses_dto_1.ListaInteressesDTO(interesse.id, interesse.tipos, interesse.nome, interesse.Numero, interesse.Horario, interesse.LinkMaps));
+        return listaRetorno;
+    }
     async removeInteresses(id) {
         const interessesRemovido = await this.clsinteressesArmazenados.removeInteresses(id);
         return {
             usuario: interessesRemovido,
-            message: 'Usuário removido',
+            message: 'Interesses removido',
         };
     }
     async atualizaInteresses(id, novosDadados) {
         const interessesAtualizado = await this.clsinteressesArmazenados.atualizaInteresses(id, novosDadados);
         return {
             Interesses: interessesAtualizado,
-            message: 'Usuário atualizado',
+            message: 'Interesses atualizado',
         };
     }
     async criaInteresses(dadosInteresses) {
@@ -49,7 +55,7 @@ let InteressesController = class InteressesController {
         this.clsinteressesArmazenados.AdicionarInteresses(interesses);
         var retorno = {
             id: interesses.id,
-            message: 'Usuário Criado',
+            message: 'Interesses Criado',
         };
         return retorno;
     }
@@ -62,6 +68,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], InteressesController.prototype, "Retornointeresses", null);
+__decorate([
+    (0, common_1.Get)(':tipo'),
+    __param(0, (0, common_1.Param)('tipo')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], InteressesController.prototype, "tiposInteresses", null);
 __decorate([
     (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de interesses.' }),
     (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o cadastro de interesses não foi encontrado ou ocorreu um erro interno durante a exclusão.' }),

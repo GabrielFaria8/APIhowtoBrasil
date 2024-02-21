@@ -38,6 +38,26 @@ import {
   
       return listaRetorno;
     }
+
+    @Get(':tipo')
+  async tiposInteresses(@Param('tipo') tipo: number) {
+    const interessesListados = await this.clsinteressesArmazenados.tiposInteresses(tipo);
+    const interessesFiltrados = interessesListados.filter(interesse => interesse.tipos === tipo);
+    
+    const listaRetorno = interessesFiltrados.map(
+      (interesse) =>
+        new ListaInteressesDTO(
+          interesse.id,
+          interesse.tipos,
+          interesse.nome,
+          interesse.Numero,
+          interesse.Horario,
+          interesse.LinkMaps,
+        ),
+    );
+  
+    return listaRetorno;
+  }
     
     @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de interesses.'})
       @ApiResponse({ status: 500, description: 'Retorna que o cadastro de interesses não foi encontrado ou ocorreu um erro interno durante a exclusão.'})
@@ -47,7 +67,7 @@ import {
   
       return {
         usuario : interessesRemovido,
-        message: 'Usuário removido',
+        message: 'Interesses removido',
       }
     }
   
@@ -64,7 +84,7 @@ import {
       );
       return{
         Interesses: interessesAtualizado,
-        message: 'Usuário atualizado',
+        message: 'Interesses atualizado',
       };
     }
   
@@ -82,7 +102,7 @@ import {
       this.clsinteressesArmazenados.AdicionarInteresses(interesses);
       var retorno = {
         id: interesses.id,
-        message: 'Usuário Criado',
+        message: 'Interesses Criado',
       };
       return retorno;
     }

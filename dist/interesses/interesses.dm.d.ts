@@ -6,4 +6,5 @@ export declare class InteressesArmazenados {
     private buscaporID;
     removeInteresses(id: string): Promise<InteressesEntity>;
     get Interesses(): InteressesEntity[];
+    tiposInteresses(tipo: any): InteressesEntity[];
 }

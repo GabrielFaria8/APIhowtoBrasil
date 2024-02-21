@@ -27,29 +27,29 @@ let TrabalhoController = class TrabalhoController {
     }
     async Retornotrabalho() {
         const trabalhoListados = await this.clstrabalhoArmazenados.Trabalho;
-        const listaRetorno = trabalhoListados.map((trabalho) => new lista_trabalho_dto_1.ListaTrabalhoDTO(trabalho.id, trabalho.trabalho, trabalho.PreRequisitos, trabalho.SiteEmpresa));
+        const listaRetorno = trabalhoListados.map((trabalho) => new lista_trabalho_dto_1.ListaTrabalhoDTO(trabalho.id, trabalho.trabalho, trabalho.preRequisitos, trabalho.siteEmpresa));
         return listaRetorno;
     }
     async removeTrabalho(id) {
         const trabalhoRemovido = await this.clstrabalhoArmazenados.removeTrabalho(id);
         return {
             usuario: trabalhoRemovido,
-            message: 'Usuário removido',
+            message: 'Trabalho removido',
         };
     }
     async atualizaTrabalho(id, novosDados) {
         const trabalhoAtualizado = await this.clstrabalhoArmazenados.atualizaTrabalho(id, novosDados);
         return {
             Trabalho: trabalhoAtualizado,
-            message: 'Usuário atualizado',
+            message: 'Trabalho atualizado',
         };
     }
     async criaTrabalho(dadosTrabalho) {
-        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.trabalho, dadosTrabalho.nome, dadosTrabalho.Numero, dadosTrabalho.Horario, dadosTrabalho.LinkMaps, dadosTrabalho.trabalho, dadosTrabalho.PreRequisitos, dadosTrabalho.SiteEmpresa);
+        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.tipos, dadosTrabalho.nome, dadosTrabalho.Numero, dadosTrabalho.Horario, dadosTrabalho.LinkMaps, dadosTrabalho.trabalho, dadosTrabalho.preRequisitos, dadosTrabalho.siteEmpresa);
         this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
         var retorno = {
             id: trabalho.id,
-            message: 'Usuário Criado',
+            message: 'Trabalho Criado',
         };
         return retorno;
     }

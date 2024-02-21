@@ -13,6 +13,12 @@ export declare class UsuarioController {
         status: any;
         message: string;
     }>;
+    trocaSenha(dadosUsuario: {
+        email: string;
+        senha: string;
+    }): Promise<{
+        message: string;
+    }>;
     removeUsuario(id: string): Promise<{
         usuario: UsuarioEntity;
         message: string;

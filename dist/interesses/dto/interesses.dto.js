@@ -16,18 +16,18 @@ class criaInteressesDTO {
 }
 exports.criaInteressesDTO = criaInteressesDTO;
 __decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Interesses não pode ser vazio' }),
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Tipo não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Educação',
         description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], criaInteressesDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Trabalho',
@@ -50,7 +50,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
+        example: 'Dás 14:00 até 22:00',
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)

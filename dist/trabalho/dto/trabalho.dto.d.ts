@@ -1,10 +1,10 @@
 export declare class criaTrabalhoDTO {
     trabalho: string;
-    tipos: string;
+    tipos: number;
     nome: string;
     Numero: string;
     Horario: string;
     LinkMaps: string;
-    PreRequisitos: string;
-    SiteEmpresa: string;
+    preRequisitos: string;
+    siteEmpresa: string;
 }

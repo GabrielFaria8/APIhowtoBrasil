@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -18,14 +19,15 @@ export class criaTrabalhoDTO{
     description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
   })
   trabalho: string;
-  @IsString()
-  @IsNotEmpty({ message: 'trabalho Não pode ser vazio' })
+  
+  @IsNumber()
+  @IsNotEmpty({ message: 'tipo Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Telemarketing',
     description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })
@@ -70,7 +72,7 @@ export class criaTrabalhoDTO{
     example: 'Ingles',
     description: `Os pré requisitos são usados para identificar o que é necessário para entrar em uma vaga de emprego.`,
   })
-  PreRequisitos: string;
+  preRequisitos: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Site da empresa Não pode ser vazio' })
@@ -79,6 +81,6 @@ export class criaTrabalhoDTO{
     example: 'Paschoalotto',
     description: `O link do site é usado identificar o site da empresa.`,
   })
-  SiteEmpresa: string;
+  siteEmpresa: string;
 
 }

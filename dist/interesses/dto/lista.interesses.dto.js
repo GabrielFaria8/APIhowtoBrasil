@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListaInteressesDTO = void 0;
 class ListaInteressesDTO {
-    constructor(id, interesses, nome, Numero, Horario, LinkMaps) {
+    constructor(id, tipos, nome, Numero, Horario, LinkMaps) {
         this.id = id;
-        this.interesses = interesses;
+        this.tipos = tipos;
         this.nome = nome;
         this.Numero = Numero;
         this.Horario = Horario;

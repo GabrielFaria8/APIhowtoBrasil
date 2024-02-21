@@ -43,4 +43,9 @@ export class InteressesArmazenados {
   get Interesses() {
     return this.#interesses;
   }
+
+  tiposInteresses(tipo) {
+    const tiposEspecificos = this.#interesses.filter(item => item.tipos === tipo);
+    return tiposEspecificos;
+  }
 }

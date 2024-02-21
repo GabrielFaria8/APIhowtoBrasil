@@ -22,6 +22,6 @@ let DocumentacaoEntity = class DocumentacaoEntity extends interesses_entity_1.In
 exports.DocumentacaoEntity = DocumentacaoEntity;
 exports.DocumentacaoEntity = DocumentacaoEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, String, String, String, String, String, String, String])
+    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String])
 ], DocumentacaoEntity);
 //# sourceMappingURL=documentacao.entity.js.map

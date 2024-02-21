@@ -7,6 +7,7 @@ export declare class InteressesController {
     private clsinteressesArmazenados;
     constructor(clsinteressesArmazenados: InteressesArmazenados);
     Retornointeresses(): Promise<ListaInteressesDTO[]>;
+    tiposInteresses(tipo: number): Promise<ListaInteressesDTO[]>;
     removeInteresses(id: string): Promise<{
         usuario: InteressesEntity;
         message: string;

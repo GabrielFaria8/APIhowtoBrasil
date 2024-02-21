@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -11,16 +12,16 @@ import {
 export class criaMoradiaDTO{
 
   @IsString()
-  @IsNotEmpty({ message: 'educação Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Moradia não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Senac',
-    description: `A informação sobre educação é utilizada para identificar a área específica da educação à qual o estabelecimento pertence.`,
+    description: `A informação sobre moradia é utilizada para identificar possíveis localizações de locais para habitação`,
   })
   moradia: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Ensino básico, Técnico e Superior',
@@ -50,43 +51,43 @@ export class criaMoradiaDTO{
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Dás 14:00 até 22:00',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
-  @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNumber()
+  @IsNotEmpty({ message: 'Tipos' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: 'Educação',
+    description: `Os tipos são usados para identificar a área atuante do componente.`,
   })
-  tipos: string;
+  tipos: number;
 
   @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link do maps não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: 'https://www.google.com.br/maps/preview',
+    description: `O link maps é utilizado para maior precisão da localização de estabelecimentos.`,
   })
   LinkMaps: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link governo não pode ser vazio'})
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: 'https://www.gov.br/pt-br',
+    description: `O link governamental é utilizado para identificar local de hospedagem de sites governamentais.`,
   })
   linkGoverno: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link correlato não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: 'https://www.moradiabrasil.com.br/',
+    description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
   })
   linkCorrelatos: string;
 
