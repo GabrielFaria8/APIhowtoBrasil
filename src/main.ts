@@ -23,9 +23,9 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('API Filmes e séries - StreamingAPI')
+    .setTitle('API How to Brasil - ProjetoAPI')
     .setDescription(
-      'A presente API tem como objetivo simular cadastros possíveis para uma API de Stream de filmes e séries',
+      'API do Projeto Integrador How to Brasil.',
     )
     .setVersion('1.0')
     .addTag('usuario')
