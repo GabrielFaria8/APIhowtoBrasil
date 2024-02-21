@@ -2,6 +2,7 @@ import { MoradiaArmazenados } from './moradia.dm';
 import { ListaMoradiaDTO } from './dto/lista.moradia.dto';
 import { MoradiaEntity } from './moradia.entity';
 import { criaMoradiaDTO } from './dto/moradia.dto';
+import { AlteraMoradiaDTO } from './dto/atualiza.moradia.dto';
 export declare class MoradiaController {
     private clsmoradiaArmazenados;
     constructor(clsmoradiaArmazenados: MoradiaArmazenados);
@@ -10,7 +11,7 @@ export declare class MoradiaController {
         usuario: MoradiaEntity;
         message: string;
     }>;
-    atualizamoradia(id: string, novosDadados: ListaMoradiaDTO): Promise<{
+    atualizamoradia(id: string, novosDadados: AlteraMoradiaDTO): Promise<{
         moradia: MoradiaEntity;
         message: string;
     }>;

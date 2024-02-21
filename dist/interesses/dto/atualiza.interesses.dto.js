@@ -20,7 +20,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Tipo não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Educação',
+        example: 2,
         description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
     }),
     __metadata("design:type", Number)
@@ -30,7 +30,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Trabalho',
+        example: 'moradia',
         description: `O nome é utilizado para identificar o tipo em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)

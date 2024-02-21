@@ -15,7 +15,7 @@ export class AlteraInteressesDTO{
   @IsNotEmpty({ message: 'Tipo não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Educação',
+    example: 2,
     description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
   })
   tipos: number;
@@ -24,7 +24,7 @@ export class AlteraInteressesDTO{
   @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Trabalho',
+    example: 'moradia',
     description: `O nome é utilizado para identificar o tipo em telas, cadastros e outros contextos.`,
   })
   nome: string;

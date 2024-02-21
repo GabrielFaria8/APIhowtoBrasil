@@ -18,8 +18,8 @@ async function bootstrap() {
         forbidNonWhitelisted: true,
     }));
     const config = new swagger_1.DocumentBuilder()
-        .setTitle('API Filmes e séries - StreamingAPI')
-        .setDescription('A presente API tem como objetivo simular cadastros possíveis para uma API de Stream de filmes e séries')
+        .setTitle('API How to Brasil - ProjetoAPI')
+        .setDescription('API do Projeto Integrador How to Brasil.')
         .setVersion('1.0')
         .addTag('usuario')
         .addTag('trabalho')

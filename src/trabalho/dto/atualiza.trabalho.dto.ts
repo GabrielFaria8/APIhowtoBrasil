@@ -14,7 +14,7 @@ export class AlteraTrabalhoDTO{
   @IsNotEmpty({ message: 'trabalho Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Telemarketing',
+    example: 'ESTÁGIO JURIDICO - BAURU',
     description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
   })
   trabalho: string;

@@ -15,7 +15,7 @@ export class criaInteressesDTO{
   @IsNotEmpty({ message: 'Tipo não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Educação',
+    example: 1,
     description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
   })
   tipos: number;

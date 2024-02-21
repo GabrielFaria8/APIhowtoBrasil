@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   IsString,
   MinLength,
@@ -11,11 +12,11 @@ import {
 export class AlteraMoradiaDTO{
 
   @IsString()
-  @IsNotEmpty({ message: 'Moradia Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Moradia não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Casa',
-    description: `A informação sobre moradia é utilizada para identificar a localização do terreno.`,
+    description: `A informação sobre moradia é utilizada para identificar possíveis localizações de locais para habitação`,
   })
   moradia: string;
 
@@ -23,10 +24,12 @@ export class AlteraMoradiaDTO{
   @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Paschoalotto ',
-    description: `O nome é utilizado para identificar o estabelecimento em tela, cadastro e outros contextos.`,
+    example: 'Casa à venda com 3 quartos no CENTRO, Araraquara',
+    description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
   })
   nome: string;
+
+  
 
   @IsString()
   @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
@@ -42,9 +45,18 @@ export class AlteraMoradiaDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Dás 14:00 até 22:00',
-    description: `O horário é usado para especificar o horário de funcionamento do estabelecimento.`,
+    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Tipos' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 1,
+    description: `Os tipos são usados para identificar a área atuante do componente.`,
+  })
+  tipos: number;
 
   @IsString()
   @IsNotEmpty({ message: 'Link do maps não pode ser vazio' })
@@ -56,7 +68,7 @@ export class AlteraMoradiaDTO{
   LinkMaps: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Link governo não pode ser vazio' })
+  @IsNotEmpty({ message: 'Link governo não pode ser vazio'})
   @IsOptional()
   @ApiPropertyOptional({
     example: 'https://www.gov.br/pt-br',
@@ -65,7 +77,7 @@ export class AlteraMoradiaDTO{
   linkGoverno: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Link correlato não pode ser vazio'})
+  @IsNotEmpty({ message: 'Link correlato não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'https://www.moradiabrasil.com.br/',

@@ -31,7 +31,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Tipos não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Passaporte',
+        example: 4,
         description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
     e onde cada uma deve ser entregue para a autoridade competente.`,
     }),

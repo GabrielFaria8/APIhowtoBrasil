@@ -3,6 +3,7 @@ export declare class AlteraMoradiaDTO {
     nome: string;
     Numero: string;
     Horario: string;
+    tipos: number;
     LinkMaps: string;
     linkGoverno: string;
     linkCorrelatos: string;

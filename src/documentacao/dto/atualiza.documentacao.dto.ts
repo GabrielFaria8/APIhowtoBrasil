@@ -14,7 +14,7 @@ export class AlteraDocumentacaoDTO{
   @IsNotEmpty({ message: 'Documentação não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Passaporte',
+    example: 'CPF',
     description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
     e onde cada uma deve ser entregue para a autoridade competente.`,
   })

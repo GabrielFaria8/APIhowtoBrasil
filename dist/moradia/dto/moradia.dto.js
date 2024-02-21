@@ -17,34 +17,24 @@ class criaMoradiaDTO {
 exports.criaMoradiaDTO = criaMoradiaDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'educação Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Moradia não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Senac',
-        description: `A informação sobre educação é utilizada para identificar a área específica da educação à qual o estabelecimento pertence.`,
+        example: 'apartamento',
+        description: `A informação sobre moradia é utilizada para identificar possíveis localizações de locais para habitação`,
     }),
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "moradia", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Ensino básico, Técnico e Superior',
+        example: 'Apartamento para venda e locação com 1 quarto no Edificio Personnalite, Araraquara',
         description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "nome", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Endereco Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Rua dom pedro 5-40',
-        description: `O endereço é utilizado para identificar a localização do estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaMoradiaDTO.prototype, "endereco", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
@@ -67,41 +57,41 @@ __decorate([
 ], criaMoradiaDTO.prototype, "Horario", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Tipos Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Tipos' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Educação',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+        example: 1,
+        description: `Os tipos são usados para identificar a área atuante do componente.`,
     }),
     __metadata("design:type", Number)
 ], criaMoradiaDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link do maps não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+        example: 'https://www.google.com.br/maps/preview',
+        description: `O link maps é utilizado para maior precisão da localização de estabelecimentos.`,
     }),
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "LinkMaps", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link governo não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+        example: 'https://www.gov.br/pt-br',
+        description: `O link governamental é utilizado para identificar local de hospedagem de sites governamentais.`,
     }),
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "linkGoverno", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link correlato não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+        example: 'https://www.moradiabrasil.com.br/',
+        description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
     }),
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "linkCorrelatos", void 0);

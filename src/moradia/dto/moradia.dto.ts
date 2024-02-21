@@ -15,7 +15,7 @@ export class criaMoradiaDTO{
   @IsNotEmpty({ message: 'Moradia não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Senac',
+    example: 'apartamento',
     description: `A informação sobre moradia é utilizada para identificar possíveis localizações de locais para habitação`,
   })
   moradia: string;
@@ -24,19 +24,12 @@ export class criaMoradiaDTO{
   @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Ensino básico, Técnico e Superior',
+    example: 'Apartamento para venda e locação com 1 quarto no Edificio Personnalite, Araraquara',
     description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
   })
   nome: string;
 
-  @IsString()
-  @IsNotEmpty({ message: 'Endereco Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Rua dom pedro 5-40',
-    description: `O endereço é utilizado para identificar a localização do estabelecimento.`,
-  })
-  endereco: string;
+  
 
   @IsString()
   @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
@@ -59,7 +52,7 @@ export class criaMoradiaDTO{
   @IsNotEmpty({ message: 'Tipos' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Educação',
+    example: 1,
     description: `Os tipos são usados para identificar a área atuante do componente.`,
   })
   tipos: number;
