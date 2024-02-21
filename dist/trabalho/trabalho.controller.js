@@ -34,14 +34,14 @@ let TrabalhoController = class TrabalhoController {
         const trabalhoRemovido = await this.clstrabalhoArmazenados.removeTrabalho(id);
         return {
             usuario: trabalhoRemovido,
-            message: 'Usuário removido',
+            message: 'Trabalho removido',
         };
     }
     async atualizaTrabalho(id, novosDados) {
         const trabalhoAtualizado = await this.clstrabalhoArmazenados.atualizaTrabalho(id, novosDados);
         return {
             Trabalho: trabalhoAtualizado,
-            message: 'Usuário atualizado',
+            message: 'Trabalho atualizado',
         };
     }
     async criaTrabalho(dadosTrabalho) {
@@ -49,7 +49,7 @@ let TrabalhoController = class TrabalhoController {
         this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
         var retorno = {
             id: trabalho.id,
-            message: 'Usuário Criado',
+            message: 'Trabalho Criado',
         };
         return retorno;
     }

@@ -40,14 +40,14 @@ let InteressesController = class InteressesController {
         const interessesRemovido = await this.clsinteressesArmazenados.removeInteresses(id);
         return {
             usuario: interessesRemovido,
-            message: 'Usuário removido',
+            message: 'Interesses removido',
         };
     }
     async atualizaInteresses(id, novosDadados) {
         const interessesAtualizado = await this.clsinteressesArmazenados.atualizaInteresses(id, novosDadados);
         return {
             Interesses: interessesAtualizado,
-            message: 'Usuário atualizado',
+            message: 'Interesses atualizado',
         };
     }
     async criaInteresses(dadosInteresses) {
@@ -55,7 +55,7 @@ let InteressesController = class InteressesController {
         this.clsinteressesArmazenados.AdicionarInteresses(interesses);
         var retorno = {
             id: interesses.id,
-            message: 'Usuário Criado',
+            message: 'Interesses Criado',
         };
         return retorno;
     }

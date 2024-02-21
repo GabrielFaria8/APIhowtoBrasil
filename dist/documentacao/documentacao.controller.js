@@ -34,14 +34,14 @@ let DocumentacaoController = class DocumentacaoController {
         const documentacaoRemovido = await this.clsdocumentacaoArmazenados.removeDocumentacao(id);
         return {
             usuario: documentacaoRemovido,
-            message: 'Usuário removido',
+            message: 'Documento removido',
         };
     }
     async atualizaDocumentacao(id, novosDadados) {
         const documentacaoAtualizado = await this.clsdocumentacaoArmazenados.atualizaDocumentacao(id, novosDadados);
         return {
             Documentacao: documentacaoAtualizado,
-            message: 'Usuário atualizado',
+            message: 'Documento atualizado',
         };
     }
     async criaDocumentacao(dadosDocumentacao) {
@@ -49,7 +49,7 @@ let DocumentacaoController = class DocumentacaoController {
         this.clsdocumentacaoArmazenados.AdicionarDocumentacao(documentacao);
         var retorno = {
             id: documentacao.id,
-            message: 'Usuário Criado',
+            message: 'Documento Criado',
         };
         return retorno;
     }

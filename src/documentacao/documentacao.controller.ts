@@ -45,7 +45,7 @@ export class DocumentacaoController {
 
     return {
       usuario : documentacaoRemovido,
-      message: 'Usuário removido',
+      message: 'Documento removido',
     }
   }
 
@@ -62,7 +62,7 @@ export class DocumentacaoController {
     );
     return{
       Documentacao: documentacaoAtualizado,
-      message: 'Usuário atualizado',
+      message: 'Documento atualizado',
     };
   }
 
@@ -84,7 +84,7 @@ export class DocumentacaoController {
     this.clsdocumentacaoArmazenados.AdicionarDocumentacao(documentacao);
     var retorno = {
       id: documentacao.id,
-      message: 'Usuário Criado',
+      message: 'Documento Criado',
     };
     return retorno;
   }

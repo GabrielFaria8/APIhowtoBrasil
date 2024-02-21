@@ -20,7 +20,7 @@ export class AlteraMoradiaDTO{
   moradia: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Paschoalotto ',

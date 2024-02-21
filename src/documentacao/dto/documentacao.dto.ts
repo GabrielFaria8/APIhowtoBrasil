@@ -22,7 +22,7 @@ export class criaDocumentacaoDTO{
   documentacao: string;
 
   @IsNumber()
-  @IsNotEmpty({ message: 'Documentação não pode ser vazio' })
+  @IsNotEmpty({ message: 'Tipos não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Passaporte',
@@ -32,7 +32,7 @@ export class criaDocumentacaoDTO{
   tipos: number;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Fórum da comarca',
@@ -53,7 +53,7 @@ export class criaDocumentacaoDTO{
   @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:0',
+    example: 'Dás 14:00 até 22:00',
     description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
   })
   Horario: string;

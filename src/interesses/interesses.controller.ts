@@ -67,7 +67,7 @@ import {
   
       return {
         usuario : interessesRemovido,
-        message: 'Usuário removido',
+        message: 'Interesses removido',
       }
     }
   
@@ -84,7 +84,7 @@ import {
       );
       return{
         Interesses: interessesAtualizado,
-        message: 'Usuário atualizado',
+        message: 'Interesses atualizado',
       };
     }
   
@@ -102,7 +102,7 @@ import {
       this.clsinteressesArmazenados.AdicionarInteresses(interesses);
       var retorno = {
         id: interesses.id,
-        message: 'Usuário Criado',
+        message: 'Interesses Criado',
       };
       return retorno;
     }

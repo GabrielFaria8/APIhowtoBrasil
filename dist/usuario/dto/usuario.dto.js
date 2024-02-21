@@ -19,7 +19,7 @@ class criaUsuarioDTO {
 exports.criaUsuarioDTO = criaUsuarioDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Carlos',
@@ -39,7 +39,7 @@ __decorate([
 ], criaUsuarioDTO.prototype, "ultimoNome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Status Migratorio nome Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Status migratorio nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'Edurado',
@@ -58,7 +58,7 @@ __decorate([
     __metadata("design:type", String)
 ], criaUsuarioDTO.prototype, "interesses", void 0);
 __decorate([
-    (0, class_validator_1.IsEmail)(undefined, { message: 'email é inválido' }),
+    (0, class_validator_1.IsEmail)(undefined, { message: 'Email é inválido' }),
     (0, email_unico_validator_1.EmailUnico)({ message: 'O email informado já existe' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({

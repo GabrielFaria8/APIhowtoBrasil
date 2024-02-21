@@ -21,7 +21,7 @@ export class AlteraDocumentacaoDTO{
   documentacao: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'nome Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'Fórum da comarca',
