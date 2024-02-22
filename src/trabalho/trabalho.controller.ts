@@ -31,6 +31,8 @@ import {
             trabalho.trabalho,
             trabalho.preRequisitos,
             trabalho.siteEmpresa,
+            trabalho.cidadeEstado,
+            trabalho.nome,
             
           ),
       );
@@ -74,12 +76,10 @@ import {
         uuid(),
         dadosTrabalho.tipos,
         dadosTrabalho.nome,
-        dadosTrabalho.Numero,
-        dadosTrabalho.Horario,
-        dadosTrabalho.LinkMaps,
         dadosTrabalho.trabalho,
         dadosTrabalho.preRequisitos,
-        dadosTrabalho.siteEmpresa
+        dadosTrabalho.siteEmpresa,
+        dadosTrabalho.cidadeEstado
       );
       this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
       var retorno = {
