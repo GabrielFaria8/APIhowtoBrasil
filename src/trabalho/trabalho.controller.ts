@@ -31,7 +31,9 @@ import {
             trabalho.trabalho,
             trabalho.preRequisitos,
             trabalho.siteEmpresa,
-            trabalho.cidadeEstado,
+            trabalho.salario,
+            trabalho.descricao,
+            trabalho.foto,
             trabalho.nome,
             
           ),
@@ -79,7 +81,9 @@ import {
         dadosTrabalho.trabalho,
         dadosTrabalho.preRequisitos,
         dadosTrabalho.siteEmpresa,
-        dadosTrabalho.cidadeEstado
+        dadosTrabalho.salario,
+        dadosTrabalho.descricao,
+        dadosTrabalho.foto
       );
       this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
       var retorno = {

@@ -4,7 +4,9 @@ export class ListaTrabalhoDTO{
         readonly trabalho: string,
         readonly PreRequisitos: string,
         readonly SiteEmpresa: string,
-        readonly cidadeEstado: string,
+        readonly salario: string,
+        readonly descricao: string,
+        readonly foto: string,
         readonly nome: string,
         
     ){}

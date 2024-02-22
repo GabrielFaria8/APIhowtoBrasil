@@ -31,7 +31,7 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 3,
-        description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
+        description: ``,
     }),
     __metadata("design:type", Number)
 ], criaTrabalhoDTO.prototype, "tipos", void 0);
@@ -47,14 +47,14 @@ __decorate([
 ], criaTrabalhoDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'cidade Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Salario Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'bauru-SP',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+        example: '1500,00',
+        description: `Salario refere-se ao valor da remuneração da vaga.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "cidadeEstado", void 0);
+], criaTrabalhoDTO.prototype, "salario", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),
@@ -75,4 +75,24 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], criaTrabalhoDTO.prototype, "siteEmpresa", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Foto não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
+        description: `Específica a quantidade de vagas na residência.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "foto", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Descrição não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'empresa trabalha na area de marketing digital, vaga para atendente',
+        description: `Específica a quantidade de vagas na residência.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "descricao", void 0);
 //# sourceMappingURL=trabalho.dto.js.map

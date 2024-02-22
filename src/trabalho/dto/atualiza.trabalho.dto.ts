@@ -15,7 +15,7 @@ export class AlteraTrabalhoDTO{
   @IsNotEmpty({ message: 'trabalho Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Assistente de T.I',
+    example: 'Tecnologia',
     description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
   })
   trabalho: string;
@@ -25,7 +25,7 @@ export class AlteraTrabalhoDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 3,
-    description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
+    description: ``,
   })
   tipos: number;
 
@@ -44,12 +44,19 @@ export class AlteraTrabalhoDTO{
   @IsNotEmpty({ message: 'cidade Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'bauru-SP',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: '1500,00',
+    description: `Define a remuneração da vaga`,
   })
-  cidadeEstado: string;
+  salario: string;
 
-  
+  @IsString()
+  @IsNotEmpty({ message: 'Foto não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
+    description: `Define a foto de faixada da empresa`,
+  })
+  foto: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Pré requisitos Não pode ser vazio' })
@@ -68,6 +75,15 @@ export class AlteraTrabalhoDTO{
     description: `O link do site é usado identificar o site da empresa.`,
   })
   siteEmpresa: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Descrição não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'vaga para atendente',
+    description: `Descrição versa sobre a designação da vaga`,
+  })
+  descricao: string;
  
 
 }

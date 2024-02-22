@@ -2,7 +2,9 @@ export declare class criaTrabalhoDTO {
     trabalho: string;
     tipos: number;
     nome: string;
-    cidadeEstado: string;
+    salario: string;
     preRequisitos: string;
     siteEmpresa: string;
+    foto: string;
+    descricao: string;
 }

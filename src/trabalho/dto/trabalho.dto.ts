@@ -2,9 +2,11 @@ import { ApiPropertyOptional } from '@nestjs/swagger';
 import {
   IsEmail,
   IsInt,
+  isNotEmpty,
   IsNotEmpty,
   IsNumber,
   IsOptional,
+  isString,
   IsString,
   MinLength,
 } from 'class-validator';
@@ -25,7 +27,7 @@ export class criaTrabalhoDTO{
   @IsOptional()
   @ApiPropertyOptional({
     example: 3,
-    description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
+    description: ``,
   })
   tipos: number;
 
@@ -41,13 +43,13 @@ export class criaTrabalhoDTO{
 
 
   @IsString()
-  @IsNotEmpty({ message: 'cidade Não pode ser vazio' })
+  @IsNotEmpty({ message: 'Salario Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'bauru-SP',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+    example: '1500,00',
+    description: `Salario refere-se ao valor da remuneração da vaga.`,
   })
-  cidadeEstado: string;
+  salario: string;
 
   
 
@@ -68,5 +70,23 @@ export class criaTrabalhoDTO{
     description: `O link do site é usado identificar o site da empresa.`,
   })
   siteEmpresa: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Foto não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  foto: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Descrição não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'empresa trabalha na area de marketing digital, vaga para atendente',
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  descricao: string;
 
 }

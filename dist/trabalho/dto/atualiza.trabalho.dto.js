@@ -20,7 +20,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'trabalho Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Assistente de T.I',
+        example: 'Tecnologia',
         description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
     }),
     __metadata("design:type", String)
@@ -31,7 +31,7 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 3,
-        description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
+        description: ``,
     }),
     __metadata("design:type", Number)
 ], AlteraTrabalhoDTO.prototype, "tipos", void 0);
@@ -50,11 +50,21 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'cidade Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'bauru-SP',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
+        example: '1500,00',
+        description: `Define a remuneração da vaga`,
     }),
     __metadata("design:type", String)
-], AlteraTrabalhoDTO.prototype, "cidadeEstado", void 0);
+], AlteraTrabalhoDTO.prototype, "salario", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Foto não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
+        description: `Define a foto de faixada da empresa`,
+    }),
+    __metadata("design:type", String)
+], AlteraTrabalhoDTO.prototype, "foto", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),
@@ -75,4 +85,14 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], AlteraTrabalhoDTO.prototype, "siteEmpresa", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Descrição não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'vaga para atendente',
+        description: `Descrição versa sobre a designação da vaga`,
+    }),
+    __metadata("design:type", String)
+], AlteraTrabalhoDTO.prototype, "descricao", void 0);
 //# sourceMappingURL=atualiza.trabalho.dto.js.map
