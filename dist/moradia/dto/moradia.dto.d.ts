@@ -5,6 +5,11 @@ export declare class criaMoradiaDTO {
     Horario: string;
     tipos: number;
     LinkMaps: string;
-    linkGoverno: string;
     linkCorrelatos: string;
+    area: number;
+    quartos: number;
+    valor: number;
+    banheiro: number;
+    vagas: number;
+    foto: string;
 }

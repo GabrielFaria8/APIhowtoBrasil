@@ -32,8 +32,13 @@ export class MoradiaController {
         new ListaMoradiaDTO(
           moradia.id,
           moradia.moradia,
-          moradia.linkGoverno,
           moradia.linkCorrelatos,
+          moradia.area,
+          moradia.quartos,
+          moradia.valor,
+          moradia.banheiro,
+          moradia.vagas,
+          moradia.foto,
         ),
     );
 
@@ -97,8 +102,13 @@ export class MoradiaController {
       dadosmoradia.Horario,
       dadosmoradia.LinkMaps,
       dadosmoradia.moradia,
-      dadosmoradia.linkGoverno,
       dadosmoradia.linkCorrelatos,
+      dadosmoradia.area,
+      dadosmoradia.quartos,
+      dadosmoradia.valor,
+      dadosmoradia.banheiro,
+      dadosmoradia.vagas,
+      dadosmoradia.foto,
     );
     this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
     var retorno = {

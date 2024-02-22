@@ -13,16 +13,21 @@ exports.MoradiaEntity = void 0;
 const interesses_entity_1 = require("../interesses/interesses.entity");
 const common_1 = require("@nestjs/common");
 let MoradiaEntity = class MoradiaEntity extends interesses_entity_1.InteressesEntity {
-    constructor(id, tipos, nome, Numero, Horario, LinkMaps, moradia, linkGoverno, linkCorrelatos) {
+    constructor(id, tipos, nome, Numero, Horario, LinkMaps, moradia, linkCorrelatos, area, quartos, valor, banheiro, vagas, foto) {
         super(id, tipos, nome, Numero, Horario, LinkMaps);
         this.moradia = moradia;
-        this.linkGoverno = linkGoverno;
         this.linkCorrelatos = linkCorrelatos;
+        this.area = area;
+        this.quartos = quartos;
+        this.valor = valor;
+        this.banheiro = banheiro;
+        this.vagas = vagas;
+        this.foto = foto;
     }
 };
 exports.MoradiaEntity = MoradiaEntity;
 exports.MoradiaEntity = MoradiaEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String, String])
+    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String, Number, Number, Number, Number, Number, String])
 ], MoradiaEntity);
 //# sourceMappingURL=moradia.entity.js.map

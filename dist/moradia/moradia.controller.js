@@ -27,7 +27,7 @@ let MoradiaController = class MoradiaController {
     }
     async Retornomoradia() {
         const moradiaListados = await this.clsmoradiaArmazenados.Moradia;
-        const listaRetorno = moradiaListados.map((moradia) => new lista_moradia_dto_1.ListaMoradiaDTO(moradia.id, moradia.moradia, moradia.linkGoverno, moradia.linkCorrelatos));
+        const listaRetorno = moradiaListados.map((moradia) => new lista_moradia_dto_1.ListaMoradiaDTO(moradia.id, moradia.moradia, moradia.linkCorrelatos, moradia.area, moradia.quartos, moradia.valor, moradia.banheiro, moradia.vagas, moradia.foto));
         return listaRetorno;
     }
     async removemoradia(id) {
@@ -45,7 +45,7 @@ let MoradiaController = class MoradiaController {
         };
     }
     async criamoradia(dadosmoradia) {
-        var moradia = new moradia_entity_1.MoradiaEntity((0, uuid_1.v4)(), dadosmoradia.tipos, dadosmoradia.nome, dadosmoradia.Numero, dadosmoradia.Horario, dadosmoradia.LinkMaps, dadosmoradia.moradia, dadosmoradia.linkGoverno, dadosmoradia.linkCorrelatos);
+        var moradia = new moradia_entity_1.MoradiaEntity((0, uuid_1.v4)(), dadosmoradia.tipos, dadosmoradia.nome, dadosmoradia.Numero, dadosmoradia.Horario, dadosmoradia.LinkMaps, dadosmoradia.moradia, dadosmoradia.linkCorrelatos, dadosmoradia.area, dadosmoradia.quartos, dadosmoradia.valor, dadosmoradia.banheiro, dadosmoradia.vagas, dadosmoradia.foto);
         this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
         var retorno = {
             id: moradia.id,

@@ -67,15 +67,6 @@ export class criaMoradiaDTO{
   LinkMaps: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Link governo não pode ser vazio'})
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'https://www.gov.br/pt-br',
-    description: `O link governamental é utilizado para identificar local de hospedagem de sites governamentais.`,
-  })
-  linkGoverno: string;
-
-  @IsString()
   @IsNotEmpty({ message: 'Link correlato não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
@@ -83,5 +74,59 @@ export class criaMoradiaDTO{
     description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
   })
   linkCorrelatos: string;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Área  não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: '47m²',
+    description: `A área é utilizada para se dar uma base do tamanho da residência.`,
+  })
+  area: number;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Quartos não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 2,
+    description: `Específica quantidade de quartos na residência.`,
+  })
+  quartos: number;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Valor não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'R$ 600,00',
+    description: `Específica o valor da residência.`,
+  })
+  valor: number;
+  
+  @IsNumber()
+  @IsNotEmpty({ message: 'Banheiro não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  1,
+    description: `Específica a quantidade de banheiros na residência.`,
+  })
+  banheiro: number;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Vagas não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  1,
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  vagas: number;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Foto não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  foto: string;
 
 }
