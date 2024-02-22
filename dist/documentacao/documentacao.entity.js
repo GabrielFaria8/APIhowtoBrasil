@@ -13,8 +13,8 @@ exports.DocumentacaoEntity = void 0;
 const common_1 = require("@nestjs/common");
 const interesses_entity_1 = require("../interesses/interesses.entity");
 let DocumentacaoEntity = class DocumentacaoEntity extends interesses_entity_1.InteressesEntity {
-    constructor(id, tipos, nome, Numero, Horario, LinkMaps, documentacao, linkGoverno) {
-        super(id, tipos, nome, Numero, Horario, LinkMaps);
+    constructor(id, tipos, nome, documentacao, linkGoverno) {
+        super(id, tipos, nome, null, null, null);
         this.documentacao = documentacao;
         this.linkGoverno = linkGoverno;
     }
@@ -22,6 +22,6 @@ let DocumentacaoEntity = class DocumentacaoEntity extends interesses_entity_1.In
 exports.DocumentacaoEntity = DocumentacaoEntity;
 exports.DocumentacaoEntity = DocumentacaoEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String])
+    __metadata("design:paramtypes", [String, Number, String, String, String])
 ], DocumentacaoEntity);
 //# sourceMappingURL=documentacao.entity.js.map

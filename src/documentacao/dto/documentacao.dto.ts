@@ -40,32 +40,7 @@ export class criaDocumentacaoDTO{
   })
   nome: string;
 
-  @IsString()
-  @IsNotEmpty({ message: 'Numero Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: "(00)00000-0000",
-    description: `O número de telefone é usado para contato com o estabelecimento.`,
-  })
-  Numero: string;
 
-  @IsString()
-  @IsNotEmpty({ message: 'Horario Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Dás 14:00 até 22:00',
-    description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
-  })
-  Horario: string;
-
-  @IsString()
-  @IsNotEmpty({ message: 'Link do endereço Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 'Gov.br',
-    description: `O link do endereço é usado identificar o endereçodo Orgão Governamental no maps.`,
-  })
-  LinkMaps: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Link do site Não pode ser vazio' })

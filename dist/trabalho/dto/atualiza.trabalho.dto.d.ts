@@ -1,9 +1,8 @@
 export declare class AlteraTrabalhoDTO {
     trabalho: string;
+    tipos: number;
     nome: string;
-    Numero: string;
-    Horario: string;
-    LinkMaps: string;
-    PreRequisitos: string;
-    SiteEmpresa: string;
+    cidadeEstado: string;
+    preRequisitos: string;
+    siteEmpresa: string;
 }

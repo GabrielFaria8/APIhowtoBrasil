@@ -47,34 +47,14 @@ __decorate([
 ], criaTrabalhoDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'cidade Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: "(00)00000-0000",
-        description: `O número de telefone é usado para contato com o estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "Numero", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:0',
+        example: 'bauru-SP',
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "Horario", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Link do endereço Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Bauru Empregos',
-        description: `O link do endereço é usado identificar o endereço do estabelecimento no maps.`,
-    }),
-    __metadata("design:type", String)
-], criaTrabalhoDTO.prototype, "LinkMaps", void 0);
+], criaTrabalhoDTO.prototype, "cidadeEstado", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),

@@ -49,36 +49,6 @@ __decorate([
 ], criaDocumentacaoDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: "(00)00000-0000",
-        description: `O número de telefone é usado para contato com o estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaDocumentacaoDTO.prototype, "Numero", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:00',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaDocumentacaoDTO.prototype, "Horario", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Link do endereço Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Gov.br',
-        description: `O link do endereço é usado identificar o endereçodo Orgão Governamental no maps.`,
-    }),
-    __metadata("design:type", String)
-], criaDocumentacaoDTO.prototype, "LinkMaps", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Link do site Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({

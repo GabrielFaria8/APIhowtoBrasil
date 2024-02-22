@@ -28,6 +28,7 @@ export class DocumentacaoController {
       (documentacao) =>
         new ListaDocumentacaoDTO(
           documentacao.id,
+          documentacao.nome,
           documentacao.linkGoverno,
           documentacao.linkGoverno,
           
@@ -73,9 +74,6 @@ export class DocumentacaoController {
       uuid(),
       dadosDocumentacao.tipos, 
         dadosDocumentacao.nome,
-        dadosDocumentacao.Numero,
-        dadosDocumentacao.Horario,
-        dadosDocumentacao.LinkMaps,
         dadosDocumentacao.documentacao,
         dadosDocumentacao.linkGoverno,
 

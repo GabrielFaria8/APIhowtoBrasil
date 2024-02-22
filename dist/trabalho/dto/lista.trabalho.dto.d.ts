@@ -3,5 +3,7 @@ export declare class ListaTrabalhoDTO {
     readonly trabalho: string;
     readonly PreRequisitos: string;
     readonly SiteEmpresa: string;
-    constructor(id: string, trabalho: string, PreRequisitos: string, SiteEmpresa: string);
+    readonly cidadeEstado: string;
+    readonly nome: string;
+    constructor(id: string, trabalho: string, PreRequisitos: string, SiteEmpresa: string, cidadeEstado: string, nome: string);
 }

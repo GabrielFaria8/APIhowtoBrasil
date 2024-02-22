@@ -6,8 +6,9 @@ export class DocumentacaoEntity extends InteressesEntity {
     documentacao: string;
     linkGoverno: string;
 
-    constructor(id: string, tipos: number, nome: string, Numero: string, Horario: string, LinkMaps: string, documentacao: string, linkGoverno: string) {
-        super(id, tipos, nome, Numero, Horario, LinkMaps);
+    constructor(id: string, tipos: number, nome: string, documentacao: string, linkGoverno: string) {
+        super(id, tipos, nome, null, null, null);
+
         this.documentacao = documentacao;
         this.linkGoverno = linkGoverno;
     }
