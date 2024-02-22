@@ -3,30 +3,32 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class MoradiaEntity extends InteressesEntity{
-    moradia: string;
+    endereco:string;
     linkCorrelatos: string;
-    area: number;
+    area: string;
     quartos: number;
-    valor: number;
+    valor: string;
     banheiro: number;
     vagas: number;
     foto: string;
 
-    constructor(id: string, tipos: number, nome: string, Numero: string, Horario: string, LinkMaps: string, moradia: string, linkCorrelatos:string,
-        area:number, quartos: number, valor: number, banheiro: number, vagas: number, foto: string){
+    constructor(id: string, tipos: number, nome: string, endereco: string, linkCorrelatos:string,
+        area:string, quartos: number, valor: string, banheiro: number, vagas: number, foto: string
+        ){
         
         
-        super(id, tipos, nome, Numero, Horario, LinkMaps);
+        super(id, tipos, nome,null,null,null);
 
-  
-        this.moradia = moradia;
-        this.linkCorrelatos = linkCorrelatos;
+        this.tipos=tipos;
+        this.nome = nome;
         this.area = area;
         this.quartos = quartos;
         this.valor = valor;
+        this.endereco = endereco;
         this.banheiro = banheiro;
         this.vagas = vagas;
         this.foto = foto;
+        this.linkCorrelatos = linkCorrelatos;
     }
     
     

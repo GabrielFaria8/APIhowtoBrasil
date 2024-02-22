@@ -17,34 +17,24 @@ class AlteraMoradiaDTO {
 exports.AlteraMoradiaDTO = AlteraMoradiaDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Moradia não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'endereco não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Casa',
+        example: 'avenia da luz',
         description: `A informação sobre moradia é utilizada para identificar possíveis localizações de locais para habitação`,
     }),
     __metadata("design:type", String)
-], AlteraMoradiaDTO.prototype, "moradia", void 0);
+], AlteraMoradiaDTO.prototype, "endereco", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Casa à venda com 3 quartos no CENTRO, Araraquara',
+        example: 'Apartamento para venda e locação com 1 quarto no Edificio Personnalite, Araraquara',
         description: `O nome é utilizado para identificar o estabelecimento em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
 ], AlteraMoradiaDTO.prototype, "nome", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: "(00)00000-0000",
-        description: `O número de telefone é usado para contato com o estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], AlteraMoradiaDTO.prototype, "Numero", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
@@ -67,16 +57,6 @@ __decorate([
 ], AlteraMoradiaDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Link do maps não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'https://www.google.com.br/maps/preview',
-        description: `O link maps é utilizado para maior precisão da localização de estabelecimentos.`,
-    }),
-    __metadata("design:type", String)
-], AlteraMoradiaDTO.prototype, "LinkMaps", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Link correlato não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
@@ -86,14 +66,14 @@ __decorate([
     __metadata("design:type", String)
 ], AlteraMoradiaDTO.prototype, "linkCorrelatos", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Área  não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 47 + 'm²',
+        example: '47m²',
         description: `A área é utilizada para se dar uma base do tamanho da residência.`,
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], AlteraMoradiaDTO.prototype, "area", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
@@ -106,14 +86,14 @@ __decorate([
     __metadata("design:type", Number)
 ], AlteraMoradiaDTO.prototype, "quartos", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Valor não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'R$' + 600.00,
+        example: 'R$ 600,00',
         description: `Específica o valor da residência.`,
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], AlteraMoradiaDTO.prototype, "valor", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
@@ -141,7 +121,7 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
-        description: `Função de foto define uma imagem representativa.`,
+        description: `Específica a quantidade de vagas na residência.`,
     }),
     __metadata("design:type", String)
 ], AlteraMoradiaDTO.prototype, "foto", void 0);

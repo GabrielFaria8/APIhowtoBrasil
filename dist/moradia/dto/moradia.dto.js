@@ -17,14 +17,14 @@ class criaMoradiaDTO {
 exports.criaMoradiaDTO = criaMoradiaDTO;
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Moradia não pode ser vazio' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'endereco não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'apartamento',
+        example: 'avenia da luz',
         description: `A informação sobre moradia é utilizada para identificar possíveis localizações de locais para habitação`,
     }),
     __metadata("design:type", String)
-], criaMoradiaDTO.prototype, "moradia", void 0);
+], criaMoradiaDTO.prototype, "endereco", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
@@ -35,26 +35,6 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "nome", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: "(00)00000-0000",
-        description: `O número de telefone é usado para contato com o estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaMoradiaDTO.prototype, "Numero", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Dás 14:00 até 22:00',
-        description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
-    }),
-    __metadata("design:type", String)
-], criaMoradiaDTO.prototype, "Horario", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Tipos' }),
@@ -67,16 +47,6 @@ __decorate([
 ], criaMoradiaDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Link do maps não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'https://www.google.com.br/maps/preview',
-        description: `O link maps é utilizado para maior precisão da localização de estabelecimentos.`,
-    }),
-    __metadata("design:type", String)
-], criaMoradiaDTO.prototype, "LinkMaps", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Link correlato não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
@@ -86,14 +56,14 @@ __decorate([
     __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "linkCorrelatos", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Área  não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: '47m²',
         description: `A área é utilizada para se dar uma base do tamanho da residência.`,
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "area", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
@@ -106,14 +76,14 @@ __decorate([
     __metadata("design:type", Number)
 ], criaMoradiaDTO.prototype, "quartos", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Valor não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'R$ 600,00',
         description: `Específica o valor da residência.`,
     }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], criaMoradiaDTO.prototype, "valor", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),

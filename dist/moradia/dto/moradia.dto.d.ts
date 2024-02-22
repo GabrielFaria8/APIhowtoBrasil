@@ -1,14 +1,11 @@
 export declare class criaMoradiaDTO {
-    moradia: string;
+    endereco: string;
     nome: string;
-    Numero: string;
-    Horario: string;
     tipos: number;
-    LinkMaps: string;
     linkCorrelatos: string;
-    area: number;
+    area: string;
     quartos: number;
-    valor: number;
+    valor: string;
     banheiro: number;
     vagas: number;
     foto: string;

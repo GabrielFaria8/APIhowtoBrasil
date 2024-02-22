@@ -31,11 +31,12 @@ export class MoradiaController {
       (moradia) =>
         new ListaMoradiaDTO(
           moradia.id,
-          moradia.moradia,
+          moradia.nome,
+          moradia.endereco,
           moradia.linkCorrelatos,
           moradia.area,
-          moradia.quartos,
-          moradia.valor,
+          moradia.quartos,          
+          moradia.valor,          
           moradia.banheiro,
           moradia.vagas,
           moradia.foto,
@@ -95,17 +96,14 @@ export class MoradiaController {
   @Post()
   async criamoradia(@Body() dadosmoradia: criaMoradiaDTO) {
     var moradia = new MoradiaEntity(
-      uuid(),
+      uuid(),      
       dadosmoradia.tipos,
       dadosmoradia.nome,
-      dadosmoradia.Numero,
-      dadosmoradia.Horario,
-      dadosmoradia.LinkMaps,
-      dadosmoradia.moradia,
+      dadosmoradia.endereco,
       dadosmoradia.linkCorrelatos,
       dadosmoradia.area,
       dadosmoradia.quartos,
-      dadosmoradia.valor,
+      dadosmoradia.valor,      
       dadosmoradia.banheiro,
       dadosmoradia.vagas,
       dadosmoradia.foto,
