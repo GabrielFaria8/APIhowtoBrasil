@@ -66,7 +66,7 @@ export class criaTrabalhoDTO{
   @IsNotEmpty({ message: 'Site da empresa Não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'Paschoalotto',
+    example: 'Paschoalotto.com',
     description: `O link do site é usado identificar o site da empresa.`,
   })
   siteEmpresa: string;
@@ -84,7 +84,7 @@ export class criaTrabalhoDTO{
   @IsNotEmpty({ message: 'Descrição não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example:  'empresa trabalha na area de marketing digital, vaga para atendente',
+    example:  'vaga para atendente',
     description: `Específica a quantidade de vagas na residência.`,
   })
   descricao: string;
