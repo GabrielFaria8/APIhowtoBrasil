@@ -70,7 +70,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Site da empresa Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'Paschoalotto',
+        example: 'Paschoalotto.com',
         description: `O link do site é usado identificar o site da empresa.`,
     }),
     __metadata("design:type", String)
@@ -90,7 +90,7 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'Descrição não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'empresa trabalha na area de marketing digital, vaga para atendente',
+        example: 'vaga para atendente',
         description: `Específica a quantidade de vagas na residência.`,
     }),
     __metadata("design:type", String)
