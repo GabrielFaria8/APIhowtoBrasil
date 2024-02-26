@@ -29,7 +29,7 @@ export class DocumentacaoController {
         new ListaDocumentacaoDTO(
           documentacao.id,
           documentacao.nome,
-          documentacao.linkGoverno,
+          documentacao.documentacao,
           documentacao.linkGoverno,
           
         ),

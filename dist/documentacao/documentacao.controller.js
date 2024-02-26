@@ -27,7 +27,7 @@ let DocumentacaoController = class DocumentacaoController {
     }
     async Retornodocumentacao() {
         const documentacaoListados = await this.clsdocumentacaoArmazenados.Documentacao;
-        const listaRetorno = documentacaoListados.map((documentacao) => new lista_documentacao_dto_1.ListaDocumentacaoDTO(documentacao.id, documentacao.nome, documentacao.linkGoverno, documentacao.linkGoverno));
+        const listaRetorno = documentacaoListados.map((documentacao) => new lista_documentacao_dto_1.ListaDocumentacaoDTO(documentacao.id, documentacao.nome, documentacao.documentacao, documentacao.linkGoverno));
         return listaRetorno;
     }
     async removeDocumentacao(id) {
