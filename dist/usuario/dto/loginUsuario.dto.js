@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginUsuarioDTO = void 0;
 const class_validator_1 = require("class-validator");
 const swagger_1 = require("@nestjs/swagger");
+const strongpass_validator_1 = require("../validacao/strongpass.validator");
 class LoginUsuarioDTO {
 }
 exports.LoginUsuarioDTO = LoginUsuarioDTO;
@@ -25,6 +26,7 @@ __decorate([
 ], LoginUsuarioDTO.prototype, "email", void 0);
 __decorate([
     (0, class_validator_1.MinLength)(6, { message: "Senha precisa de pelo menos 6 digitos" }),
+    (0, strongpass_validator_1.SenhaForte)({ message: "Senha muito fraca" }),
     (0, swagger_1.ApiProperty)({
         example: 'Asd@444555666',
         description: `Senha utilizada no cadastro.`,

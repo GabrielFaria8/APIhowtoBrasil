@@ -55,11 +55,13 @@ import {
       };
     }
 
-    @Post('/troca-senha')
+    @Post('/trocaSenha')
     async trocaSenha(@Body() dadosUsuario: { email: string, senha: string }) {
       const { email, senha } = dadosUsuario;
   
       const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(email, senha);
+
+      
   
       if (senhaTrocadaComSucesso) {
         return {

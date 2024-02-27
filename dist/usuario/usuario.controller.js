@@ -99,7 +99,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Login", null);
 __decorate([
-    (0, common_1.Post)('/troca-senha'),
+    (0, common_1.Post)('/trocaSenha'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
