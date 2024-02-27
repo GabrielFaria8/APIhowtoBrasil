@@ -4,6 +4,7 @@ import { UsuariosArmazenados } from './usuario.dm';
 import { ListaUsuarioDTO } from './dto/listaUsuario.dto';
 import { AlteraUsuarioDTO } from './dto/atualizaUsuario.dto';
 import { LoginUsuarioDTO } from './dto/loginUsuario.dto';
+import { atualizaSenhaDTO } from './dto/atualizasenha.dto';
 export declare class UsuarioController {
     private clsUsuariosArmazenados;
     constructor(clsUsuariosArmazenados: UsuariosArmazenados);
@@ -13,10 +14,7 @@ export declare class UsuarioController {
         status: any;
         message: string;
     }>;
-    trocaSenha(dadosUsuario: {
-        email: string;
-        senha: string;
-    }): Promise<{
+    trocaSenha(dadosTrocaSenha: atualizaSenhaDTO): Promise<{
         message: string;
     }>;
     removeUsuario(id: string): Promise<{

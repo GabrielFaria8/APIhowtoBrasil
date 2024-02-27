@@ -16,6 +16,7 @@ import {
   import { AlteraUsuarioDTO } from './dto/atualizaUsuario.dto';
   import { Injectable } from '@nestjs/common';
   import { LoginUsuarioDTO } from './dto/loginUsuario.dto';
+import { atualizaSenhaDTO } from './dto/atualizasenha.dto';
   
   @Controller('/usuarios')
   @ApiTags('usuario')
@@ -55,24 +56,25 @@ import {
       };
     }
 
-    @Post('/trocaSenha')
-    async trocaSenha(@Body() dadosUsuario: { email: string, senha: string }) {
-      const { email, senha } = dadosUsuario;
-  
-      const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(email, senha);
+    @Post('/troca-senha')
+async trocaSenha(@Body() dadosTrocaSenha: atualizaSenhaDTO) {
 
-      
+  const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(
+    dadosTrocaSenha.email,
+    dadosTrocaSenha.senha,
+  );
   
-      if (senhaTrocadaComSucesso) {
-        return {
-          message: 'Senha atualizada com sucesso!'
-        };
-      } else {
-        return {
-          message: 'O email fornecido não foi encontrado.'
-        };
-      }
-    }
+
+  if (senhaTrocadaComSucesso) {
+    return {
+      message: 'Senha atualizada com sucesso!'
+    };
+  } else {
+    return {
+      message: 'O email fornecido não foi encontrado.'
+    };
+  }
+}
 
 
 

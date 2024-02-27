@@ -22,6 +22,7 @@ const uuid_1 = require("uuid");
 const listaUsuario_dto_1 = require("./dto/listaUsuario.dto");
 const atualizaUsuario_dto_1 = require("./dto/atualizaUsuario.dto");
 const loginUsuario_dto_1 = require("./dto/loginUsuario.dto");
+const atualizasenha_dto_1 = require("./dto/atualizasenha.dto");
 let UsuarioController = class UsuarioController {
     constructor(clsUsuariosArmazenados) {
         this.clsUsuariosArmazenados = clsUsuariosArmazenados;
@@ -39,9 +40,8 @@ let UsuarioController = class UsuarioController {
             message: login[1] ? 'Login Efetuado' : 'Usuario ou senha inválidos',
         };
     }
-    async trocaSenha(dadosUsuario) {
-        const { email, senha } = dadosUsuario;
-        const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(email, senha);
+    async trocaSenha(dadosTrocaSenha) {
+        const senhaTrocadaComSucesso = await this.clsUsuariosArmazenados.trocaSenha(dadosTrocaSenha.email, dadosTrocaSenha.senha);
         if (senhaTrocadaComSucesso) {
             return {
                 message: 'Senha atualizada com sucesso!'
@@ -99,10 +99,10 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Login", null);
 __decorate([
-    (0, common_1.Post)('/trocaSenha'),
+    (0, common_1.Post)('/troca-senha'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [atualizasenha_dto_1.atualizaSenhaDTO]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "trocaSenha", null);
 __decorate([
