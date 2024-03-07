@@ -9,5 +9,7 @@ export declare class ListaMoradiaDTO {
     readonly banheiro: number;
     readonly vagas: number;
     readonly foto: string;
-    constructor(id: string, nome: string, endereco: string, linkCorrelatos: string, area: string, quartos: number, valor: string, banheiro: number, vagas: number, foto: string);
+    readonly interacao: string;
+    readonly subInteracao: string;
+    constructor(id: string, nome: string, endereco: string, linkCorrelatos: string, area: string, quartos: number, valor: string, banheiro: number, vagas: number, foto: string, interacao: string, subInteracao: string);
 }

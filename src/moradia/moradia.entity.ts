@@ -12,8 +12,7 @@ export class MoradiaEntity extends InteressesEntity{
     vagas: number;
     foto: string;
 
-    constructor(id: string, tipos: number, nome: string,interacao:string,subInteracao:string, endereco: string, linkCorrelatos:string,
-        area:string, quartos: number, valor: string, banheiro: number, vagas: number, foto: string
+    constructor(id: string, tipos: number, nome: string,interacao:string,subInteracao:string, endereco: string, linkCorrelatos:string,area:string, quartos: number, valor: string, banheiro: number, vagas: number, foto: string,
         ){
         
         

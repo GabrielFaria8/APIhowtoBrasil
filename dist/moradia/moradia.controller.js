@@ -27,7 +27,7 @@ let MoradiaController = class MoradiaController {
     }
     async Retornomoradia() {
         const moradiaListados = await this.clsmoradiaArmazenados.Moradia;
-        const listaRetorno = moradiaListados.map((moradia) => new lista_moradia_dto_1.ListaMoradiaDTO(moradia.id, moradia.nome, moradia.endereco, moradia.linkCorrelatos, moradia.area, moradia.quartos, moradia.valor, moradia.banheiro, moradia.vagas, moradia.foto));
+        const listaRetorno = moradiaListados.map((moradia) => new lista_moradia_dto_1.ListaMoradiaDTO(moradia.id, moradia.nome, moradia.endereco, moradia.linkCorrelatos, moradia.area, moradia.quartos, moradia.valor, moradia.banheiro, moradia.vagas, moradia.foto, moradia.interacao, moradia.subInteracao));
         return listaRetorno;
     }
     async removemoradia(id) {

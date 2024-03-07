@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListaMoradiaDTO = void 0;
 class ListaMoradiaDTO {
-    constructor(id, nome, endereco, linkCorrelatos, area, quartos, valor, banheiro, vagas, foto) {
+    constructor(id, nome, endereco, linkCorrelatos, area, quartos, valor, banheiro, vagas, foto, interacao, subInteracao) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
@@ -13,6 +13,8 @@ class ListaMoradiaDTO {
         this.banheiro = banheiro;
         this.vagas = vagas;
         this.foto = foto;
+        this.interacao = interacao;
+        this.subInteracao = subInteracao;
     }
 }
 exports.ListaMoradiaDTO = ListaMoradiaDTO;

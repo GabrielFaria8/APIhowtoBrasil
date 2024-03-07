@@ -10,6 +10,8 @@ export class ListaMoradiaDTO{
         readonly banheiro: number,
         readonly vagas: number,
         readonly foto: string,
+        readonly interacao: string,
+        readonly subInteracao: string,
     
         ){}
   }

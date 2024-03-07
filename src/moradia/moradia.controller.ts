@@ -40,6 +40,8 @@ export class MoradiaController {
           moradia.banheiro,
           moradia.vagas,
           moradia.foto,
+          moradia.interacao,
+          moradia.subInteracao,
         ),
     );
 
