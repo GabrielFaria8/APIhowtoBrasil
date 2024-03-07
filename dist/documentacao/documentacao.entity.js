@@ -14,7 +14,7 @@ const common_1 = require("@nestjs/common");
 const interesses_entity_1 = require("../interesses/interesses.entity");
 let DocumentacaoEntity = class DocumentacaoEntity extends interesses_entity_1.InteressesEntity {
     constructor(id, tipos, nome, documentacao, linkGoverno) {
-        super(id, tipos, nome, null, null, null);
+        super(id, tipos, nome, null, null, null, null, null);
         this.documentacao = documentacao;
         this.linkGoverno = linkGoverno;
     }

@@ -9,4 +9,6 @@ export declare class criaMoradiaDTO {
     banheiro: number;
     vagas: number;
     foto: string;
+    interacao: string;
+    subInteracao: string;
 }

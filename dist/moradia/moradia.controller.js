@@ -45,7 +45,7 @@ let MoradiaController = class MoradiaController {
         };
     }
     async criamoradia(dadosmoradia) {
-        var moradia = new moradia_entity_1.MoradiaEntity((0, uuid_1.v4)(), dadosmoradia.tipos, dadosmoradia.nome, dadosmoradia.endereco, dadosmoradia.linkCorrelatos, dadosmoradia.area, dadosmoradia.quartos, dadosmoradia.valor, dadosmoradia.banheiro, dadosmoradia.vagas, dadosmoradia.foto);
+        var moradia = new moradia_entity_1.MoradiaEntity((0, uuid_1.v4)(), dadosmoradia.tipos, dadosmoradia.nome, dadosmoradia.interacao, dadosmoradia.subInteracao, dadosmoradia.endereco, dadosmoradia.linkCorrelatos, dadosmoradia.area, dadosmoradia.quartos, dadosmoradia.valor, dadosmoradia.banheiro, dadosmoradia.vagas, dadosmoradia.foto);
         this.clsmoradiaArmazenados.AdicionarMoradia(moradia);
         var retorno = {
             id: moradia.id,

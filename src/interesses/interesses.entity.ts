@@ -7,7 +7,9 @@ export class InteressesEntity{
     Numero: string;
     Horario: string;
     LinkMaps: string;
-    constructor(id: string,tipos:number,nome:string,Numero: string,Horario: string,LinkMaps: string){
+    interacao: string;
+    subInteracao: string;
+    constructor(id: string,tipos:number,nome:string,Numero: string,Horario: string,LinkMaps: string, interacao: string, subInteracao: string){
         
   
         this.id = id;
@@ -16,6 +18,8 @@ export class InteressesEntity{
         this.Horario = Horario;
         this.LinkMaps = LinkMaps;
         this.tipos = tipos;
+        this.interacao = interacao;
+        this.subInteracao = subInteracao;
     }
     
       transicaoTipos (tipos) {

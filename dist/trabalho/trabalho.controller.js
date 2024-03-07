@@ -27,7 +27,7 @@ let TrabalhoController = class TrabalhoController {
     }
     async Retornotrabalho() {
         const trabalhoListados = await this.clstrabalhoArmazenados.Trabalho;
-        const listaRetorno = trabalhoListados.map((trabalho) => new lista_trabalho_dto_1.ListaTrabalhoDTO(trabalho.id, trabalho.trabalho, trabalho.preRequisitos, trabalho.siteEmpresa, trabalho.salario, trabalho.descricao, trabalho.foto, trabalho.nome));
+        const listaRetorno = trabalhoListados.map((trabalho) => new lista_trabalho_dto_1.ListaTrabalhoDTO(trabalho.id, trabalho.trabalho, trabalho.preRequisitos, trabalho.siteEmpresa, trabalho.salario, trabalho.descricao, trabalho.foto, trabalho.nome, trabalho.interacao, trabalho.subInteracao));
         return listaRetorno;
     }
     async removeTrabalho(id) {
@@ -45,7 +45,7 @@ let TrabalhoController = class TrabalhoController {
         };
     }
     async criaTrabalho(dadosTrabalho) {
-        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.tipos, dadosTrabalho.nome, dadosTrabalho.trabalho, dadosTrabalho.preRequisitos, dadosTrabalho.siteEmpresa, dadosTrabalho.salario, dadosTrabalho.descricao, dadosTrabalho.foto);
+        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.tipos, dadosTrabalho.nome, dadosTrabalho.trabalho, dadosTrabalho.preRequisitos, dadosTrabalho.siteEmpresa, dadosTrabalho.salario, dadosTrabalho.descricao, dadosTrabalho.foto, dadosTrabalho.interacao, dadosTrabalho.subInteracao);
         this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
         var retorno = {
             id: trabalho.id,

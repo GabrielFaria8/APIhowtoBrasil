@@ -13,10 +13,12 @@ exports.MoradiaEntity = void 0;
 const interesses_entity_1 = require("../interesses/interesses.entity");
 const common_1 = require("@nestjs/common");
 let MoradiaEntity = class MoradiaEntity extends interesses_entity_1.InteressesEntity {
-    constructor(id, tipos, nome, endereco, linkCorrelatos, area, quartos, valor, banheiro, vagas, foto) {
-        super(id, tipos, nome, null, null, null);
+    constructor(id, tipos, nome, interacao, subInteracao, endereco, linkCorrelatos, area, quartos, valor, banheiro, vagas, foto) {
+        super(id, tipos, nome, interacao, subInteracao, null, null, null);
         this.tipos = tipos;
         this.nome = nome;
+        this.interacao = interacao;
+        this.subInteracao = subInteracao;
         this.area = area;
         this.quartos = quartos;
         this.valor = valor;
@@ -30,6 +32,6 @@ let MoradiaEntity = class MoradiaEntity extends interesses_entity_1.InteressesEn
 exports.MoradiaEntity = MoradiaEntity;
 exports.MoradiaEntity = MoradiaEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, Number, String, String, String, String, Number, String, Number, Number, String])
+    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String, Number, String, Number, Number, String])
 ], MoradiaEntity);
 //# sourceMappingURL=moradia.entity.js.map

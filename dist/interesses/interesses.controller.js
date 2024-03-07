@@ -27,13 +27,13 @@ let InteressesController = class InteressesController {
     }
     async Retornointeresses() {
         const interessesListados = await this.clsinteressesArmazenados.Interesses;
-        const listaRetorno = interessesListados.map((interesses) => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.Numero, interesses.Horario, interesses.LinkMaps));
+        const listaRetorno = interessesListados.map((interesses) => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.Numero, interesses.Horario, interesses.LinkMaps, interesses.interacao, interesses.subInteracao));
         return listaRetorno;
     }
     async tiposInteresses(tipo) {
         const interessesListados = await this.clsinteressesArmazenados.tiposInteresses(tipo);
         const interessesFiltrados = interessesListados.filter(interesse => interesse.tipos === tipo);
-        const listaRetorno = interessesFiltrados.map((interesse) => new lista_interesses_dto_1.ListaInteressesDTO(interesse.id, interesse.tipos, interesse.nome, interesse.Numero, interesse.Horario, interesse.LinkMaps));
+        const listaRetorno = interessesFiltrados.map((interesse) => new lista_interesses_dto_1.ListaInteressesDTO(interesse.id, interesse.tipos, interesse.nome, interesse.Numero, interesse.Horario, interesse.LinkMaps, interesse.interacao, interesse.subInteracao));
         return listaRetorno;
     }
     async removeInteresses(id) {
@@ -51,7 +51,7 @@ let InteressesController = class InteressesController {
         };
     }
     async criaInteresses(dadosInteresses) {
-        var interesses = new interesses_entity_1.InteressesEntity((0, uuid_1.v4)(), dadosInteresses.tipos, dadosInteresses.nome, dadosInteresses.Numero, dadosInteresses.Horario, dadosInteresses.LinkMaps);
+        var interesses = new interesses_entity_1.InteressesEntity((0, uuid_1.v4)(), dadosInteresses.tipos, dadosInteresses.nome, dadosInteresses.Numero, dadosInteresses.Horario, dadosInteresses.LinkMaps, dadosInteresses.interacao, dadosInteresses.subInteracao);
         this.clsinteressesArmazenados.AdicionarInteresses(interesses);
         var retorno = {
             id: interesses.id,

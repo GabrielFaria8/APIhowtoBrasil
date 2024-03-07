@@ -103,4 +103,22 @@ export class criaMoradiaDTO{
   })
   foto: string;
 
+  @IsString()
+  @IsNotEmpty({ message: 'Foto não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'O que devo fazer caso eu fique doente?',
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  interacao: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Foto não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'Leve seu Protocolo Provisório ou Carteira de Registro Nacional Migratório (antigo Registro Nacional de Estrangeiro  RNE) e CPF quando for a uma UBS pela primeira vez. Você receberá uma carteirinha do SUS. Esse documento contém toda informação médica sobre seu portador e provê acesso a consultas e exames. Você deverá levar a carteirinha do SUS toda vez que procurar assistência médica.',
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  subInteracao: string;
+
 }

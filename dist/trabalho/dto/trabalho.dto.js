@@ -95,4 +95,24 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], criaTrabalhoDTO.prototype, "descricao", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'interação Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'O que devo fazer caso eu fique doente?',
+        description: `A interação é usado para especificar o endereço do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "interacao", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Leve seu Protocolo Provisório ou Carteira de Registro Nacional Migratório (antigo Registro Nacional de Estrangeiro  RNE) e CPF quando for a uma UBS pela primeira vez. Você receberá uma carteirinha do SUS. Esse documento contém toda informação médica sobre seu portador e provê acesso a consultas e exames. Você deverá levar a carteirinha do SUS toda vez que procurar assistência médica.',
+        description: `A  sub interação é usado para especificar o endereço do estabelecimento.`,
+    }),
+    __metadata("design:type", String)
+], criaTrabalhoDTO.prototype, "subInteracao", void 0);
 //# sourceMappingURL=trabalho.dto.js.map

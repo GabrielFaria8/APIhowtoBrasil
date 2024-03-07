@@ -99,6 +99,8 @@ export class MoradiaController {
       uuid(),      
       dadosmoradia.tipos,
       dadosmoradia.nome,
+      dadosmoradia.interacao,
+      dadosmoradia.subInteracao,
       dadosmoradia.endereco,
       dadosmoradia.linkCorrelatos,
       dadosmoradia.area,
