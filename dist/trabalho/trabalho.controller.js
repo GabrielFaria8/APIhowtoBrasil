@@ -45,7 +45,7 @@ let TrabalhoController = class TrabalhoController {
         };
     }
     async criaTrabalho(dadosTrabalho) {
-        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.tipos, dadosTrabalho.nome, dadosTrabalho.trabalho, dadosTrabalho.preRequisitos, dadosTrabalho.siteEmpresa, dadosTrabalho.salario, dadosTrabalho.descricao, dadosTrabalho.foto, dadosTrabalho.interacao, dadosTrabalho.subInteracao);
+        var trabalho = new trabalho_entity_1.TrabalhoEntity((0, uuid_1.v4)(), dadosTrabalho.nome, dadosTrabalho.trabalho, dadosTrabalho.preRequisitos, dadosTrabalho.siteEmpresa, dadosTrabalho.salario, dadosTrabalho.descricao, dadosTrabalho.foto, dadosTrabalho.interacao, dadosTrabalho.subInteracao);
         this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
         var retorno = {
             id: trabalho.id,

@@ -26,16 +26,6 @@ __decorate([
     __metadata("design:type", String)
 ], criaTrabalhoDTO.prototype, "trabalho", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'tipo Não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 3,
-        description: ``,
-    }),
-    __metadata("design:type", Number)
-], criaTrabalhoDTO.prototype, "tipos", void 0);
-__decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'nome Não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),

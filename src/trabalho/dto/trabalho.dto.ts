@@ -21,15 +21,6 @@ export class criaTrabalhoDTO{
     description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
   })
   trabalho: string;
-  
-  @IsNumber()
-  @IsNotEmpty({ message: 'tipo Não pode ser vazio' })
-  @IsOptional()
-  @ApiPropertyOptional({
-    example: 3,
-    description: ``,
-  })
-  tipos: number;
 
   @IsString()
   @IsNotEmpty({ message: 'nome Não pode ser vazio' })

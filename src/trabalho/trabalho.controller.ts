@@ -79,7 +79,6 @@ import {
     async criaTrabalho(@Body() dadosTrabalho: criaTrabalhoDTO) {
       var trabalho = new TrabalhoEntity(
         uuid(),
-        dadosTrabalho.tipos,
         dadosTrabalho.nome,
         dadosTrabalho.trabalho,
         dadosTrabalho.preRequisitos,
