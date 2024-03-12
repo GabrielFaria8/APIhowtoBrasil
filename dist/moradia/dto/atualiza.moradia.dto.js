@@ -86,14 +86,14 @@ __decorate([
     __metadata("design:type", Number)
 ], AlteraMoradiaDTO.prototype, "quartos", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Valor não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
-        example: 'R$ 600,00',
+        example: 60000,
         description: `Específica o valor da residência.`,
     }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], AlteraMoradiaDTO.prototype, "valor", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),

@@ -6,7 +6,7 @@ export declare class AlteraMoradiaDTO {
     linkCorrelatos: string;
     area: string;
     quartos: number;
-    valor: string;
+    valor: number;
     banheiro: number;
     vagas: number;
     foto: string;

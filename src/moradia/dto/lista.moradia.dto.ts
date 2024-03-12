@@ -6,7 +6,7 @@ export class ListaMoradiaDTO{
         readonly linkCorrelatos: string,
         readonly area: string,
         readonly quartos: number,
-        readonly valor: string,
+        readonly valor: number,
         readonly banheiro: number,
         readonly vagas: number,
         readonly foto: string,

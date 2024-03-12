@@ -79,14 +79,14 @@ export class AlteraMoradiaDTO{
   })
   quartos: number;
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty({ message: 'Valor não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
-    example:  'R$ 600,00',
+    example:  60000,
     description: `Específica o valor da residência.`,
   })
-  valor: string;
+  valor: number;
   
   @IsNumber()
   @IsNotEmpty({ message: 'Banheiro não pode ser vazio' })

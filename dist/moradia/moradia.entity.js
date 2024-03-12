@@ -32,6 +32,6 @@ let MoradiaEntity = class MoradiaEntity extends interesses_entity_1.InteressesEn
 exports.MoradiaEntity = MoradiaEntity;
 exports.MoradiaEntity = MoradiaEntity = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String, Number, String, Number, Number, String])
+    __metadata("design:paramtypes", [String, Number, String, String, String, String, String, String, Number, Number, Number, Number, String])
 ], MoradiaEntity);
 //# sourceMappingURL=moradia.entity.js.map
