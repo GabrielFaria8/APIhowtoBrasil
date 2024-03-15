@@ -135,6 +135,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "atualizaFoto", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao cadastrar usuário.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o usuário não pôde ser cadastrado por erro.' }),
     (0, swagger_1.ApiCreatedResponse)({ description: 'Retorna que houve sucesso ao cadastrar usuario e inclui o ID criado.' }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

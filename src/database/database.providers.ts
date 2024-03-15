@@ -1,28 +1,28 @@
-import { DataSource } from 'typeorm';
+// import { DataSource } from 'typeorm';
 
-export const databaseProviders = [
-{
+// export const databaseProviders = [
+// {
 
-    provide: 'DATA SOURCE',
-    useFactory: async () => {
+//     provide: 'DATA SOURCE',
+//     useFactory: async () => {
 
-        const dataSource = new DataSource({
+//         const dataSource = new DataSource({
 
-            type: 'mysql',
-            host: 'localhost',
-            port: 3306,
-            username: 'root',
-            password: '',
-            database: 'projetoapi',
-            entities: [
-                __dirname + '/../**/*.entity(.ts,.js)',
+//             type: 'mysql',
+//             host: 'localhost',
+//             port: 3306,
+//             username: 'root',
+//             password: '',
+//             database: 'projetoapi',
+//             entities: [
+//                 __dirname + '/../**/*.entity(.ts,.js)',
 
-            ],
-            synchronize: false,
-        });
+//             ],
+//             synchronize: false,
+//         });
 
-            return dataSource.initialize();
+//             return dataSource.initialize();
 
-    },
-    },
-];
+//     },
+//     },
+// ];

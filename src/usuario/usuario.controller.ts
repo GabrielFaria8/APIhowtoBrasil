@@ -120,6 +120,9 @@ async trocaSenha(@Body() dadosTrocaSenha: atualizaSenhaDTO) {
             usuario: usuario            
         }
     }
+
+    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao cadastrar usuário.'})
+    @ApiResponse({ status: 500, description: 'Retorna que o usuário não pôde ser cadastrado por erro.'})
     @ApiCreatedResponse({ description: 'Retorna que houve sucesso ao cadastrar usuario e inclui o ID criado.'})
     @Post()
     async criaUsuario(@Body() dadosUsuario: criaUsuarioDTO) {
