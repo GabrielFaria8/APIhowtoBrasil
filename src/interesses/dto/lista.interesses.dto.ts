@@ -6,9 +6,5 @@ export class ListaInteressesDTO{
         readonly Numero: string,
         readonly Horario: string,
         readonly LinkMaps: string,
-        readonly interacao: string,
-        readonly subInteracao: string
-
-
         ){}
   }

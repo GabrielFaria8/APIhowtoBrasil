@@ -33,8 +33,6 @@ import {
             interesses.Numero,
             interesses.Horario,
             interesses.LinkMaps,
-            interesses.interacao,
-            interesses.subInteracao
           ),
       );
   
@@ -55,8 +53,6 @@ import {
           interesse.Numero,
           interesse.Horario,
           interesse.LinkMaps,
-          interesse.interacao,
-          interesse.subInteracao,
         ),
     );
   
@@ -102,8 +98,6 @@ import {
         dadosInteresses.Numero,
         dadosInteresses.Horario,
         dadosInteresses.LinkMaps,
-        dadosInteresses.interacao,
-        dadosInteresses.subInteracao,
       );
       this.clsinteressesArmazenados.AdicionarInteresses(interesses);
       var retorno = {

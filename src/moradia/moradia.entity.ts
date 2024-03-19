@@ -16,12 +16,10 @@ export class MoradiaEntity extends InteressesEntity{
         ){
         
         
-        super(id, tipos, nome,interacao,subInteracao,null,null,null);
+        super(id, tipos, nome,interacao,subInteracao,null);
 
         this.tipos=tipos;
         this.nome = nome;
-        this.interacao = interacao;
-        this.subInteracao = subInteracao;
         this.area = area;
         this.quartos = quartos;
         this.valor = valor;

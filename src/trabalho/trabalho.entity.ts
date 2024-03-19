@@ -15,7 +15,7 @@ export class TrabalhoEntity extends InteressesEntity{
     constructor(id: string, nome: string, trabalho: string,
     preRequisitos: string, siteEmpresa: string ,salario:string, descricao: string, foto: string,interacao: string,subInteracao: string){
 
-      super(id, null, nome,interacao,subInteracao, null, null, null);
+      super(id, null, nome,interacao,subInteracao, null);
         
         this.trabalho = trabalho;
         this.preRequisitos = preRequisitos;
@@ -23,10 +23,6 @@ export class TrabalhoEntity extends InteressesEntity{
         this.salario = salario;
         this.descricao = descricao;
         this.foto = foto;
-        this.interacao = interacao;
-        this.subInteracao = subInteracao;
-
-
     }
     
     
