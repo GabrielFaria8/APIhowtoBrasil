@@ -4,6 +4,4 @@ export declare class criaInteressesDTO {
     Numero: string;
     Horario: string;
     LinkMaps: string;
-    interacao: string;
-    subInteracao: string;
 }

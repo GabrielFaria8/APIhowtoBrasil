@@ -6,5 +6,5 @@ export declare class TrabalhoEntity extends InteressesEntity {
     salario: string;
     descricao: string;
     foto: string;
-    constructor(id: string, nome: string, trabalho: string, preRequisitos: string, siteEmpresa: string, salario: string, descricao: string, foto: string, interacao: string, subInteracao: string);
+    constructor(id: string, nome: string, trabalho: string, preRequisitos: string, siteEmpresa: string, salario: string, descricao: string, foto: string);
 }

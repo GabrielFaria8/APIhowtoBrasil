@@ -6,6 +6,4 @@ export declare class criaTrabalhoDTO {
     siteEmpresa: string;
     foto: string;
     descricao: string;
-    interacao: string;
-    subInteracao: string;
 }

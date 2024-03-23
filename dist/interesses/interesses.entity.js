@@ -2,15 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InteressesEntity = void 0;
 class InteressesEntity {
-    constructor(id, tipos, nome, Numero, Horario, LinkMaps, interacao, subInteracao) {
+    constructor(id, tipos, nome, Numero, Horario, LinkMaps) {
         this.id = id;
         this.nome = nome;
         this.Numero = Numero;
         this.Horario = Horario;
         this.LinkMaps = LinkMaps;
         this.tipos = tipos;
-        this.interacao = interacao;
-        this.subInteracao = subInteracao;
     }
     transicaoTipos(tipos) {
         if (this.tipos == 1) {

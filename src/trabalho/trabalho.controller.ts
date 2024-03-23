@@ -35,8 +35,6 @@ import {
             trabalho.descricao,
             trabalho.foto,
             trabalho.nome,
-            trabalho.interacao,
-            trabalho.subInteracao,
             
             
           ),
@@ -86,8 +84,6 @@ import {
         dadosTrabalho.salario,
         dadosTrabalho.descricao,
         dadosTrabalho.foto,
-        dadosTrabalho.interacao,
-        dadosTrabalho.subInteracao,
       );
       this.clstrabalhoArmazenados.AdicionarTrabalho(trabalho);
       var retorno = {

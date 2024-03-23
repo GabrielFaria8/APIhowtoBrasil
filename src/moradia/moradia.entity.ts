@@ -12,11 +12,11 @@ export class MoradiaEntity extends InteressesEntity{
     vagas: number;
     foto: string;
 
-    constructor(id: string, tipos: number, nome: string,interacao:string,subInteracao:string, endereco: string, linkCorrelatos:string,area:string, quartos: number, valor: number, banheiro: number, vagas: number, foto: string,
+    constructor(id: string, tipos: number, nome: string, endereco: string, linkCorrelatos:string,area:string, quartos: number, valor: number, banheiro: number, vagas: number, foto: string,
         ){
         
         
-        super(id, tipos, nome,interacao,subInteracao,null);
+        super(id, tipos, nome,null,null,null);
 
         this.tipos=tipos;
         this.nome = nome;

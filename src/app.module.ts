@@ -5,9 +5,10 @@ import { InteressesModule } from './interesses/interesses.module';
 import { DocumentacaoModule } from './documentacao/documentacao.module';
 import { MoradiaModule } from './moradia/moradia.module';
 import { TrabalhoModule } from './trabalho/trabalho.module';
+import { DuvidasModule } from './duvidas/duvidas.module';
 
 @Module({
-  imports: [UsuarioModule,FilesModule,InteressesModule, DocumentacaoModule,MoradiaModule, TrabalhoModule ],
+  imports: [UsuarioModule,FilesModule,InteressesModule, DocumentacaoModule,MoradiaModule, TrabalhoModule,DuvidasModule ],
   controllers: [],
   providers: [],
 })

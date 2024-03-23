@@ -8,8 +8,6 @@ export class ListaTrabalhoDTO{
         readonly descricao: string,
         readonly foto: string,
         readonly nome: string,
-        readonly interacao: string,
-        readonly subInteracao: string
         
     ){}
   }
