@@ -1,40 +1,42 @@
 import { json } from "stream/consumers";
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
 
-export class InteressesEntity{
-    id: string;
-    tipos: number;
-    nome: string;
-    Numero: string;
-    Horario: string;
-    LinkMaps: string;
-    constructor(id: string,tipos:number,nome:string,Numero: string,Horario: string,LinkMaps: string){
-        
-  
-        this.id = id;
-        this.nome = nome;
-        this.Numero = Numero;
-        this.Horario = Horario;
-        this.LinkMaps = LinkMaps;
-        this.tipos = tipos;
-    }
+@Entity()
+export class INTERESSES{
+    @PrimaryColumn()
+    ID: string;
+
+    @Column('int')
+    TIPOS: number;
+
+    @Column({length: 255})
+    NOME: string;
+
+    @Column({length: 255})
+    NUMERO: string;
     
-      transicaoTipos (tipos) {
-        if (this.tipos == 1) {
-            return (tipos) + 'é igual a saúde'
-        }
+    @Column({length: 255})
+    HORARIO: string;
 
-        if (this.tipos == 2) {
-            return (tipos) + 'é igual a educação'
-        }
-        if (this.tipos == 3) {
-            return(tipos) + 'é igual a apoio comunitario'
-        }
+    @Column({length: 255})
+    LINKMAPS: string;
+    
+    @Column({length: 255})
+    TRABALHO: string;
 
-        else {
-            return 'tipo não habilitado'
-        }
-      }
-      
-      
-  }
-  
+    @Column({length: 255})
+    PREREQUISITOS: string;
+
+    @Column({length: 255})
+    SITEEMPRESA: string;
+    
+    @Column({length: 255})
+    SALARIO: string;
+
+    @Column({length: 255})
+    DESCRICAO: string;
+
+    @Column({length: 255})
+    FOTO: string;
+    
+}

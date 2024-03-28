@@ -28,11 +28,7 @@ async function bootstrap() {
       'API do Projeto Integrador How to Brasil.',
     )
     .setVersion('1.0')
-    .addTag('usuario')
-    .addTag('trabalho')
-    .addTag('moradia')
     .addTag('interesses')
-    .addTag('documentacao')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

@@ -1,10 +1,14 @@
-export declare class InteressesEntity {
-    id: string;
-    tipos: number;
-    nome: string;
-    Numero: string;
-    Horario: string;
-    LinkMaps: string;
-    constructor(id: string, tipos: number, nome: string, Numero: string, Horario: string, LinkMaps: string);
-    transicaoTipos(tipos: any): string;
+export declare class INTERESSES {
+    ID: string;
+    TIPOS: number;
+    NOME: string;
+    NUMERO: string;
+    HORARIO: string;
+    LINKMAPS: string;
+    TRABALHO: string;
+    PREREQUISITOS: string;
+    SITEEMPRESA: string;
+    SALARIO: string;
+    DESCRICAO: string;
+    FOTO: string;
 }

@@ -7,104 +7,40 @@ import {
     Post,
     Put,
   } from '@nestjs/common';
-  import { InteressesArmazenados } from './interesses.dm';
+  import { InteressesService } from './interesses.service';
   import { ListaInteressesDTO } from './dto/lista.interesses.dto';
-  import { InteressesEntity } from './interesses.entity';
   import { v4 as uuid } from 'uuid';
   import { criaInteressesDTO } from './dto/interesses.dto';
   import { AlteraInteressesDTO } from './dto/atualiza.interesses.dto';
   import { ApiCreatedResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { RetornoCadastroDTO, RetornoObjDTO } from 'src/dto/retorno.dto';
   
-  @Controller('/interesses')
   @ApiTags('interesses')
-  export class InteressesController {
-    constructor(private clsinteressesArmazenados: InteressesArmazenados) {}
-  
-    @ApiResponse({ status: 200, description: 'Retorna a lista de cadastros de interesses existentes.'})
-    @Get()
-    async Retornointeresses() {
-      const interessesListados = await this.clsinteressesArmazenados.Interesses;
-      const listaRetorno = interessesListados.map(
-        (interesses) =>
-          new ListaInteressesDTO(
-            interesses.id,
-            interesses.tipos,
-            interesses.nome,
-            interesses.Numero,
-            interesses.Horario,
-            interesses.LinkMaps,
-          ),
-      );
-  
-      return listaRetorno;
+@Controller('/interesses')
+export class InteressesController{    
+    constructor(private readonly interessesService: InteressesService){
     }
 
-    @Get(':tipo')
-  async tiposInteresses(@Param('tipo') tipo: number) {
-    const interessesListados = await this.clsinteressesArmazenados.tiposInteresses(tipo);
-    const interessesFiltrados = interessesListados.filter(interesse => interesse.tipos === tipo);
-    
-    const listaRetorno = interessesFiltrados.map(
-      (interesse) =>
-        new ListaInteressesDTO(
-          interesse.id,
-          interesse.tipos,
-          interesse.nome,
-          interesse.Numero,
-          interesse.Horario,
-          interesse.LinkMaps,
-        ),
-    );
-  
-    return listaRetorno;
-  }
-    
-    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao excluir o cadastro de interesses.'})
-      @ApiResponse({ status: 500, description: 'Retorna que o cadastro de interesses não foi encontrado ou ocorreu um erro interno durante a exclusão.'})
-    @Delete(':id')
-    async removeInteresses(@Param('id') id: string) {
-      const interessesRemovido = await this.clsinteressesArmazenados.removeInteresses(id);
-  
-      return {
-        usuario : interessesRemovido,
-        message: 'Interesses removido',
-      }
+    @Get()
+    async Retorno():Promise<ListaInteressesDTO[]> {
+        return this.interessesService.listar();
     }
-  
-    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao alterar o cadastro de interesses.'})
-    @ApiResponse({ status: 500, description: 'Retorna que o cadastro de interesses não foi encontrado ou ocorreu um erro interno.'})
-    @Put('/:id')
-    async atualizaInteresses(
-      @Param('id') id: string,
-      @Body()  novosDadados: AlteraInteressesDTO,
-    ){
-      const interessesAtualizado = await this.clsinteressesArmazenados.atualizaInteresses(
-        id,
-        novosDadados,
-      );
-      return{
-        Interesses: interessesAtualizado,
-        message: 'Interesses atualizado',
-      };
+
+
+    @Delete('/:id')
+    async remove(@Param('id') id: string): Promise<RetornoObjDTO>{
+        return this.interessesService.remover(id);
     }
-  
-    @ApiCreatedResponse({ description: 'Retorna que houve sucesso ao cadastrar informações de interesses e inclui o ID criado.'})
+
+
+    // @Put('/:id')
+    // async atualiza(@Param('id') id: string, @Body() novosDados: AlteraInteressesDTO):Promise<RetornoCadastroDTO>{
+    //     return this.interessesService.alterar(id, novosDados);
+    // }
+
     @Post()
-    async criaInteresses(@Body() dadosInteresses: criaInteressesDTO) {
-      var interesses = new InteressesEntity(
-        uuid(),
-        dadosInteresses.tipos,
-        dadosInteresses.nome,
-        dadosInteresses.Numero,
-        dadosInteresses.Horario,
-        dadosInteresses.LinkMaps,
-      );
-      this.clsinteressesArmazenados.AdicionarInteresses(interesses);
-      var retorno = {
-        id: interesses.id,
-        message: 'Interesses Criado',
-      };
-      return retorno;
+    async cria(@Body() dados: criaInteressesDTO):Promise<RetornoCadastroDTO>{
+        return this.interessesService.inserir(dados);        
     }
-  }
-  
+
+}
