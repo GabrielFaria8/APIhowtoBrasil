@@ -8,6 +8,6 @@ export declare class InteressesService {
     constructor(interessesRepository: Repository<INTERESSES>);
     listar(): Promise<ListaInteressesDTO[]>;
     inserir(dados: criaInteressesDTO): Promise<RetornoCadastroDTO>;
-    localizarID(ID: string): Promise<INTERESSES>;
+    localizarID(id: string): Promise<INTERESSES>;
     remover(id: string): Promise<RetornoObjDTO>;
 }

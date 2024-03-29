@@ -1,13 +1,13 @@
 export declare class AlteraInteressesDTO {
-    TIPOS: number;
-    NOME: string;
-    NUMERO: string;
-    HORARIO: string;
-    LINKMAPS: string;
-    TRABALHO: string;
-    SALARIO: string;
-    PREREQUISITOS: string;
-    SITEEMPRESA: string;
-    FOTO: string;
-    DESCRICAO: string;
+    tipos: number;
+    nome: string;
+    numero: string;
+    horario: string;
+    linkMaps: string;
+    trabalho: string;
+    salario: string;
+    preRequisitos: string;
+    siteEmpresa: string;
+    foto: string;
+    descricao: string;
 }

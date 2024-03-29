@@ -1,14 +1,14 @@
 export declare class INTERESSES {
-    ID: string;
-    TIPOS: number;
-    NOME: string;
-    NUMERO: string;
-    HORARIO: string;
-    LINKMAPS: string;
-    TRABALHO: string;
-    PREREQUISITOS: string;
-    SITEEMPRESA: string;
-    SALARIO: string;
-    DESCRICAO: string;
-    FOTO: string;
+    id: string;
+    tipos: number;
+    nome: string;
+    numero: string;
+    horario: string;
+    linkMaps: string;
+    trabalho: string;
+    preRequisitos: string;
+    siteEmpresa: string;
+    salario: string;
+    descricao: string;
+    foto: string;
 }

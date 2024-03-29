@@ -24,26 +24,26 @@ let InteressesService = class InteressesService {
     }
     async listar() {
         var interessesListados = await this.interessesRepository.find();
-        return interessesListados.map(interesses => new lista_interesses_dto_1.ListaInteressesDTO(interesses.ID, interesses.TIPOS, interesses.NOME, interesses.NUMERO, interesses.HORARIO, interesses.LINKMAPS, interesses.TRABALHO, interesses.PREREQUISITOS, interesses.SITEEMPRESA, interesses.SALARIO, interesses.DESCRICAO, interesses.FOTO));
+        return interessesListados.map(interesses => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.numero, interesses.horario, interesses.linkMaps, interesses.trabalho, interesses.preRequisitos, interesses.siteEmpresa, interesses.salario, interesses.descricao, interesses.foto));
     }
     async inserir(dados) {
         let interesses = new interesses_entity_1.INTERESSES();
-        interesses.ID = (0, uuid_1.v4)();
-        interesses.TIPOS = dados.TIPOS;
-        interesses.NOME = dados.NOME;
-        interesses.NUMERO = dados.NUMERO;
-        interesses.HORARIO = dados.HORARIO;
-        interesses.LINKMAPS = dados.LINKMAPS;
-        interesses.TRABALHO = dados.TRABALHO;
-        interesses.PREREQUISITOS = dados.PREREQUISITOS;
-        interesses.SITEEMPRESA = dados.SITEEMPRESA;
-        interesses.SALARIO = dados.SALARIO;
-        interesses.DESCRICAO = dados.DESCRICAO;
-        interesses.FOTO = dados.FOTO;
+        interesses.id = (0, uuid_1.v4)();
+        interesses.tipos = dados.tipos;
+        interesses.nome = dados.nome;
+        interesses.numero = dados.numero;
+        interesses.horario = dados.horario;
+        interesses.linkMaps = dados.linkMaps;
+        interesses.trabalho = dados.trabalho;
+        interesses.preRequisitos = dados.preRequisitos;
+        interesses.siteEmpresa = dados.siteEmpresa;
+        interesses.salario = dados.salario;
+        interesses.descricao = dados.descricao;
+        interesses.foto = dados.foto;
         return this.interessesRepository.save(interesses)
             .then((result) => {
             return {
-                id: interesses.ID,
+                id: interesses.id,
                 message: "Interesse cadastrado!"
             };
         })
@@ -54,10 +54,10 @@ let InteressesService = class InteressesService {
             };
         });
     }
-    localizarID(ID) {
+    localizarID(id) {
         return this.interessesRepository.findOne({
             where: {
-                ID,
+                id,
             },
         });
     }

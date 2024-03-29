@@ -17,51 +17,51 @@ exports.INTERESSES = INTERESSES;
 __decorate([
     (0, typeorm_1.PrimaryColumn)(),
     __metadata("design:type", String)
-], INTERESSES.prototype, "ID", void 0);
+], INTERESSES.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)('int'),
     __metadata("design:type", Number)
-], INTERESSES.prototype, "TIPOS", void 0);
+], INTERESSES.prototype, "tipos", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "NOME", void 0);
+], INTERESSES.prototype, "nome", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "NUMERO", void 0);
+], INTERESSES.prototype, "numero", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "HORARIO", void 0);
+], INTERESSES.prototype, "horario", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "LINKMAPS", void 0);
+], INTERESSES.prototype, "linkMaps", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "TRABALHO", void 0);
+], INTERESSES.prototype, "trabalho", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "PREREQUISITOS", void 0);
+], INTERESSES.prototype, "preRequisitos", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "SITEEMPRESA", void 0);
+], INTERESSES.prototype, "siteEmpresa", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "SALARIO", void 0);
+], INTERESSES.prototype, "salario", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "DESCRICAO", void 0);
+], INTERESSES.prototype, "descricao", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "FOTO", void 0);
+], INTERESSES.prototype, "foto", void 0);
 exports.INTERESSES = INTERESSES = __decorate([
     (0, typeorm_1.Entity)()
 ], INTERESSES);

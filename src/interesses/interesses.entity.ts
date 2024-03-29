@@ -4,39 +4,39 @@ import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn } from
 @Entity()
 export class INTERESSES{
     @PrimaryColumn()
-    ID: string;
+    id: string;
 
     @Column('int')
-    TIPOS: number;
+    tipos: number;
 
     @Column({length: 255})
-    NOME: string;
+    nome: string;
 
     @Column({length: 255})
-    NUMERO: string;
+    numero: string;
     
     @Column({length: 255})
-    HORARIO: string;
+    horario: string;
 
     @Column({length: 255})
-    LINKMAPS: string;
+    linkMaps: string;
     
     @Column({length: 255})
-    TRABALHO: string;
+    trabalho: string;
 
     @Column({length: 255})
-    PREREQUISITOS: string;
+    preRequisitos: string;
 
     @Column({length: 255})
-    SITEEMPRESA: string;
+    siteEmpresa: string;
     
     @Column({length: 255})
-    SALARIO: string;
+    salario: string;
 
     @Column({length: 255})
-    DESCRICAO: string;
+    descricao: string;
 
     @Column({length: 255})
-    FOTO: string;
+    foto: string;
     
 }

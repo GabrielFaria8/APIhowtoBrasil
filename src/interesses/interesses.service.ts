@@ -21,18 +21,18 @@ export class InteressesService {
     var interessesListados = await this.interessesRepository.find();
     return interessesListados.map(
       interesses => new ListaInteressesDTO(
-          interesses.ID,
-          interesses.TIPOS,
-          interesses.NOME,
-          interesses.NUMERO,
-          interesses.HORARIO,
-          interesses.LINKMAPS,
-          interesses.TRABALHO,
-          interesses.PREREQUISITOS,
-          interesses.SITEEMPRESA,
-          interesses.SALARIO,
-          interesses.DESCRICAO,
-          interesses.FOTO
+          interesses.id,
+          interesses.tipos,
+          interesses.nome,
+          interesses.numero,
+          interesses.horario,
+          interesses.linkMaps,
+          interesses.trabalho,
+          interesses.preRequisitos,
+          interesses.siteEmpresa,
+          interesses.salario,
+          interesses.descricao,
+          interesses.foto
       ))
         
   }
@@ -40,24 +40,24 @@ export class InteressesService {
 
   async inserir(dados: criaInteressesDTO): Promise<RetornoCadastroDTO>{
     let interesses = new INTERESSES();
-        interesses.ID = uuid();
-        interesses.TIPOS = dados.TIPOS;
-        interesses.NOME = dados.NOME;
-        interesses.NUMERO = dados.NUMERO;
-        interesses.HORARIO = dados.HORARIO;
-        interesses.LINKMAPS = dados.LINKMAPS;
-        interesses.TRABALHO = dados.TRABALHO;
-        interesses.PREREQUISITOS = dados.PREREQUISITOS;
-        interesses.SITEEMPRESA = dados.SITEEMPRESA;
-        interesses.SALARIO = dados.SALARIO;
-        interesses.DESCRICAO = dados.DESCRICAO;
-        interesses.FOTO = dados.FOTO;
+        interesses.id = uuid();
+        interesses.tipos = dados.tipos;
+        interesses.nome = dados.nome;
+        interesses.numero = dados.numero;
+        interesses.horario = dados.horario;
+        interesses.linkMaps = dados.linkMaps;
+        interesses.trabalho = dados.trabalho;
+        interesses.preRequisitos = dados.preRequisitos;
+        interesses.siteEmpresa = dados.siteEmpresa;
+        interesses.salario = dados.salario;
+        interesses.descricao = dados.descricao;
+        interesses.foto = dados.foto;
         // interesses.files = await this.filesService.localizarID(dados.FILES);
 
     return this.interessesRepository.save(interesses)
     .then((result) => {
       return <RetornoCadastroDTO>{
-        id: interesses.ID,
+        id: interesses.id,
         message: "Interesse cadastrado!"
       };
     })
@@ -71,10 +71,10 @@ export class InteressesService {
     
   }
 
-  localizarID(ID: string): Promise<INTERESSES> {
+  localizarID(id: string): Promise<INTERESSES> {
     return this.interessesRepository.findOne({
       where: {
-        ID,
+        id,
       },
     });
   }

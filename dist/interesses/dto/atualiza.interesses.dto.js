@@ -24,7 +24,7 @@ __decorate([
         description: `A informação sobre interesses é utilizada para identificar a área específica  à qual o tipo pertence.`,
     }),
     __metadata("design:type", Number)
-], AlteraInteressesDTO.prototype, "TIPOS", void 0);
+], AlteraInteressesDTO.prototype, "tipos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
@@ -34,7 +34,7 @@ __decorate([
         description: `O nome é utilizado para identificar o tipo em telas, cadastros e outros contextos.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "NOME", void 0);
+], AlteraInteressesDTO.prototype, "nome", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Numero Não pode ser vazio' }),
@@ -44,7 +44,7 @@ __decorate([
         description: `O número de telefone é usado para contato com o estabelecimento.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "NUMERO", void 0);
+], AlteraInteressesDTO.prototype, "numero", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Horario Não pode ser vazio' }),
@@ -54,7 +54,7 @@ __decorate([
         description: `O horário é usado para especificar o intervalo de funcionamento do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "HORARIO", void 0);
+], AlteraInteressesDTO.prototype, "horario", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Link Não pode ser vazio' }),
@@ -64,7 +64,7 @@ __decorate([
         description: `O Link é usado para especificar o endereço do estabelecimento.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "LINKMAPS", void 0);
+], AlteraInteressesDTO.prototype, "linkMaps", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'trabalho Não pode ser vazio' }),
@@ -74,7 +74,7 @@ __decorate([
         description: `A informação sobre trabalho é utilizada para identificar a área específica de trabalho à qual o estabelecimento pertence.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "TRABALHO", void 0);
+], AlteraInteressesDTO.prototype, "trabalho", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Salario Não pode ser vazio' }),
@@ -84,7 +84,7 @@ __decorate([
         description: `Salario refere-se ao valor da remuneração da vaga.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "SALARIO", void 0);
+], AlteraInteressesDTO.prototype, "salario", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Pré requisitos Não pode ser vazio' }),
@@ -94,7 +94,7 @@ __decorate([
         description: `Os pré requisitos são usados para identificar o que é necessário para entrar em uma vaga de emprego.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "PREREQUISITOS", void 0);
+], AlteraInteressesDTO.prototype, "preRequisitos", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Site da empresa Não pode ser vazio' }),
@@ -104,7 +104,7 @@ __decorate([
         description: `O link do site é usado identificar o site da empresa.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "SITEEMPRESA", void 0);
+], AlteraInteressesDTO.prototype, "siteEmpresa", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Foto não pode ser vazio' }),
@@ -114,7 +114,7 @@ __decorate([
         description: `Específica a quantidade de vagas na residência.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "FOTO", void 0);
+], AlteraInteressesDTO.prototype, "foto", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Descrição não pode ser vazio' }),
@@ -124,5 +124,5 @@ __decorate([
         description: `Específica a quantidade de vagas na residência.`,
     }),
     __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "DESCRICAO", void 0);
+], AlteraInteressesDTO.prototype, "descricao", void 0);
 //# sourceMappingURL=atualiza.interesses.dto.js.map

@@ -12,11 +12,11 @@ exports.databaseProviders = [
                 port: 3306,
                 username: 'root',
                 password: '',
-                database: 'projetoapi',
+                database: 'apihowtobrasil',
                 entities: [
-                    __dirname + '/../**/*.entity(.ts,.js)',
+                    __dirname + '/../**/*.entity{.ts,.js}',
                 ],
-                synchronize: true,
+                synchronize: false,
             });
             return dataSource.initialize();
         },
