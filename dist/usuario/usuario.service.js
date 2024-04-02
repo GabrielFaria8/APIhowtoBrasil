@@ -51,21 +51,6 @@ let UsuarioService = class UsuarioService {
             };
         });
     }
-    localizarID(id) {
-        return this.usuarioRepository.findOne({
-            where: {
-                id,
-            },
-        });
-    }
-    async validaEmail(email) {
-        const usuario = await this.usuarioRepository.findOne({
-            where: {
-                email,
-            },
-        });
-        return usuario;
-    }
     async remover(id) {
         const usuario = await this.localizarID(id);
         return this.usuarioRepository
@@ -82,6 +67,46 @@ let UsuarioService = class UsuarioService {
                 message: 'Houve um erro ao excluir.' + error.message,
             };
         });
+    }
+    async alterar(id, dados) {
+        const usuario = await this.localizarID(id);
+        Object.entries(dados).forEach(([chave, valor]) => {
+            if (chave === 'id') {
+                return;
+            }
+            if (valor) {
+                usuario[chave] = valor;
+            }
+        });
+        return this.usuarioRepository
+            .save(usuario)
+            .then((result) => {
+            return {
+                id: usuario.id,
+                message: 'Interesse alterado!',
+            };
+        })
+            .catch((error) => {
+            return {
+                id: '',
+                message: 'Houve um erro ao alterar: ' + error.message,
+            };
+        });
+    }
+    localizarID(id) {
+        return this.usuarioRepository.findOne({
+            where: {
+                id,
+            },
+        });
+    }
+    async validaEmail(email) {
+        const usuario = await this.usuarioRepository.findOne({
+            where: {
+                email,
+            },
+        });
+        return usuario;
     }
 };
 exports.UsuarioService = UsuarioService;

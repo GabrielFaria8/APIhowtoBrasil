@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { ListaUsuarioDTO } from './dto/lista.usuario.dto';
 import { criaUsuarioDTO } from './dto/usuario.dto';
 import { USUARIO } from './usuario.entity';
+import { AlteraUsuarioDTO } from './dto/atualiza.usuario.dto';
 
 @Injectable()
 export class UsuarioService {
@@ -58,23 +59,6 @@ export class UsuarioService {
       });
   }
 
-  localizarID(id: string): Promise<USUARIO> {
-    return this.usuarioRepository.findOne({
-      where: {
-        id,
-      },
-    });
-  }
-
-  async validaEmail(email: string): Promise<USUARIO> {
-    const usuario = await this.usuarioRepository.findOne({
-      where: {
-        email,
-      },
-    });
-    return usuario ;
-  }
-
   async remover(id: string): Promise<RetornoObjDTO> {
     const usuario = await this.localizarID(id);
 
@@ -94,38 +78,53 @@ export class UsuarioService {
       });
   }
 
-  // async alterar(id: string, dados: AlteraInteressesDTO): Promise<RetornoCadastroDTO> {
-  //   const interesses = await this.localizarID(id);
+  async alterar(
+    id: string,
+    dados: AlteraUsuarioDTO,
+  ): Promise<RetornoCadastroDTO> {
+    const usuario = await this.localizarID(id);
 
-  //   Object.entries(dados).forEach(
-  //     async ([chave, valor]) => {
-  //         if(chave=== 'id'){
-  //             return;
-  //         }
+    Object.entries(dados).forEach(([chave, valor]) => {
+      if (chave === 'id') {
+        return;
+      }
 
-  //         if(chave=== 'FILES'){
-  //           interesses['FILES'] = await this.filesService.localizarNome(valor);
-  //           return;
-  //          }
+      if (valor) {
+        usuario[chave] = valor;
+      }
+    });
 
-  //         if (valor)
-  //         interesses[chave] = valor;
+    return this.usuarioRepository
+      .save(usuario)
+      .then((result) => {
+        return <RetornoCadastroDTO>{
+          id: usuario.id,
+          message: 'Interesse alterado!',
+        };
+      })
+      .catch((error) => {
+        return <RetornoCadastroDTO>{
+          id: '',
+          message: 'Houve um erro ao alterar: ' + error.message,
+        };
+      });
+  }
 
-  //     }
-  //   )
+  
+  localizarID(id: string): Promise<USUARIO> {
+    return this.usuarioRepository.findOne({
+      where: {
+        id,
+      },
+    });
+  }
 
-  //   return this.interessesRepository.save(interesses)
-  //   .then((result) => {
-  //     return <RetornoCadastroDTO>{
-  //       id: interesses.ID,
-  //       message: "Interesse alterado!"
-  //     };
-  //   })
-  //   .catch((error) => {
-  //     return <RetornoCadastroDTO>{
-  //       id: "",
-  //       message: "Houve um erro ao alterar." + error.message
-  //     };
-  //   });
-  // }
+  async validaEmail(email: string): Promise<USUARIO> {
+    const usuario = await this.usuarioRepository.findOne({
+      where: {
+        email,
+      },
+    });
+    return usuario;
+  }
 }

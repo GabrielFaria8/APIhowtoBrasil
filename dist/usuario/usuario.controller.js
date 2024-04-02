@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const usuario_service_1 = require("./usuario.service");
 const usuario_dto_1 = require("./dto/usuario.dto");
+const atualiza_usuario_dto_1 = require("./dto/atualiza.usuario.dto");
 let UsuarioController = class UsuarioController {
     constructor(usuarioService) {
         this.usuarioService = usuarioService;
@@ -26,6 +27,9 @@ let UsuarioController = class UsuarioController {
     }
     async remove(id) {
         return this.usuarioService.remover(id);
+    }
+    async atualiza(id, novosDados) {
+        return this.usuarioService.alterar(id, novosDados);
     }
     async cria(dados) {
         return this.usuarioService.inserir(dados);
@@ -45,6 +49,14 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "remove", null);
+__decorate([
+    (0, common_1.Put)('/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, atualiza_usuario_dto_1.AlteraUsuarioDTO]),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "atualiza", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

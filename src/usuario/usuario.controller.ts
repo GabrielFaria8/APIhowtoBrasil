@@ -13,6 +13,7 @@ import { RetornoCadastroDTO, RetornoObjDTO } from 'src/dto/retorno.dto';
 import { UsuarioService } from './usuario.service';
 import { ListaUsuarioDTO } from './dto/lista.usuario.dto';
 import { criaUsuarioDTO } from './dto/usuario.dto';
+import { AlteraUsuarioDTO } from './dto/atualiza.usuario.dto';
   
   @ApiTags('usuario')
 @Controller('/usuario')
@@ -32,10 +33,10 @@ export class UsuarioController{
     }
 
 
-    // @Put('/:id')
-    // async atualiza(@Param('id') id: string, @Body() novosDados: AlterausuarioDTO):Promise<RetornoCadastroDTO>{
-    //     return this.usuarioService.alterar(id, novosDados);
-    // }
+    @Put('/:id')
+    async atualiza(@Param('id') id: string, @Body() novosDados: AlteraUsuarioDTO):Promise<RetornoCadastroDTO>{
+        return this.usuarioService.alterar(id, novosDados);
+    }
 
     @Post()
     async cria(@Body() dados: criaUsuarioDTO):Promise<RetornoCadastroDTO>{
