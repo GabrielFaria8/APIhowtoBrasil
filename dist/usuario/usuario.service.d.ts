@@ -9,6 +9,6 @@ export declare class UsuarioService {
     listar(): Promise<ListaUsuarioDTO[]>;
     inserir(dados: criaUsuarioDTO): Promise<RetornoCadastroDTO>;
     localizarID(id: string): Promise<USUARIO>;
+    validaEmail(email: string): Promise<USUARIO>;
     remover(id: string): Promise<RetornoObjDTO>;
-    validaEmail(email: string): Promise<boolean>;
 }

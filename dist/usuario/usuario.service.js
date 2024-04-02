@@ -24,7 +24,7 @@ let UsuarioService = class UsuarioService {
     }
     async listar() {
         var usuarioListados = await this.usuarioRepository.find();
-        return usuarioListados.map(usuario => new lista_usuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratorio, usuario.interesses, usuario.email, usuario.senha, usuario.foto));
+        return usuarioListados.map((usuario) => new lista_usuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome, usuario.ultimoNome, usuario.statusMigratorio, usuario.interesses, usuario.email, usuario.senha, usuario.foto));
     }
     async inserir(dados) {
         let usuario = new usuario_entity_1.USUARIO();
@@ -36,17 +36,18 @@ let UsuarioService = class UsuarioService {
         usuario.email = dados.email;
         usuario.senha = dados.senha;
         usuario.foto = dados.foto;
-        return this.usuarioRepository.save(usuario)
+        return this.usuarioRepository
+            .save(usuario)
             .then((result) => {
             return {
                 id: usuario.id,
-                message: "Interesse cadastrado!"
+                message: 'Interesse cadastrado!',
             };
         })
             .catch((error) => {
             return {
-                id: "",
-                message: "Houve um erro ao cadastrar." + error.message
+                id: '',
+                message: 'Houve um erro ao cadastrar.' + error.message,
             };
         });
     }
@@ -57,30 +58,30 @@ let UsuarioService = class UsuarioService {
             },
         });
     }
+    async validaEmail(email) {
+        const usuario = await this.usuarioRepository.findOne({
+            where: {
+                email,
+            },
+        });
+        return usuario;
+    }
     async remover(id) {
         const usuario = await this.localizarID(id);
-        return this.usuarioRepository.remove(usuario)
+        return this.usuarioRepository
+            .remove(usuario)
             .then((result) => {
             return {
                 return: usuario,
-                message: "Interesse excluido!"
+                message: 'Interesse excluido!',
             };
         })
             .catch((error) => {
             return {
                 return: usuario,
-                message: "Houve um erro ao excluir." + error.message
+                message: 'Houve um erro ao excluir.' + error.message,
             };
         });
-    }
-    async validaEmail(email) {
-        const possivelUsuario = this.usuarioRepository.findOne({
-            where: {
-                email: email,
-            },
-        });
-        return possivelUsuario !== undefined;
-        ;
     }
 };
 exports.UsuarioService = UsuarioService;
