@@ -34,7 +34,7 @@ let UsuarioService = class UsuarioService {
         usuario.statusMigratorio = dados.statusMigratorio;
         usuario.interesses = dados.interesses;
         usuario.email = dados.email;
-        usuario.senha = dados.senha;
+        usuario.trocasenha(dados.senha);
         usuario.foto = dados.foto;
         return this.usuarioRepository
             .save(usuario)
@@ -101,12 +101,31 @@ let UsuarioService = class UsuarioService {
         });
     }
     async validaEmail(email) {
-        const usuario = await this.usuarioRepository.findOne({
+        const possivelUsuario = await this.usuarioRepository.findOne({
             where: {
                 email,
             },
         });
-        return usuario;
+        return (possivelUsuario !== null);
+    }
+    async validaLogin(email, senha) {
+        const usuario = await this.localizarEmail(email);
+        var objRetorno;
+        if (usuario) {
+            objRetorno = [usuario, usuario.login(senha)];
+        }
+        return {
+            message: objRetorno[1] ? "login efetuado com sucesso" : "usuario ou senha inválidos",
+            return: objRetorno[1] ? objRetorno[0] : null
+        };
+    }
+    async localizarEmail(email) {
+        const usuariovalido = await this.usuarioRepository.findOne({
+            where: {
+                email,
+            },
+        });
+        return usuariovalido;
     }
 };
 exports.UsuarioService = UsuarioService;

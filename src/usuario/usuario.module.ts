@@ -3,6 +3,7 @@ import { DatabaseModule } from "src/database/database.module";
 import { UsuarioController } from "./usuario.controller";
 import { usuarioProviders } from "./usuario.providers";
 import { UsuarioService } from "./usuario.service";
+import { EmailUnicoValidator } from "./validator/email-unico.validator";
 
 
 
@@ -12,6 +13,7 @@ import { UsuarioService } from "./usuario.service";
     providers: [
     ...usuarioProviders,
     UsuarioService,
+    EmailUnicoValidator,
     
     ],
 })

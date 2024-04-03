@@ -1,7 +1,7 @@
 import { ValidationArguments, ValidationOptions, ValidatorConstraintInterface } from "class-validator";
 import { UsuarioService } from "../usuario.service";
 export declare class EmailUnicoValidator implements ValidatorConstraintInterface {
-    private Usuarios;
+    private readonly Usuarios;
     constructor(Usuarios: UsuarioService);
     validate(value: any, validationArguments?: ValidationArguments): Promise<boolean>;
 }

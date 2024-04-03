@@ -5,7 +5,7 @@ import { UsuarioService } from "../usuario.service";
 @Injectable()
 @ValidatorConstraint({async:true})
 export class EmailUnicoValidator implements ValidatorConstraintInterface{
-    constructor (private Usuarios: UsuarioService){}
+    constructor (private readonly Usuarios: UsuarioService){}
     
     async validate(value: any, validationArguments?: ValidationArguments): Promise<boolean> {
         const validarEmail = await this.Usuarios.validaEmail(value);

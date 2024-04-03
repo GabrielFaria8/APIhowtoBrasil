@@ -1,8 +1,11 @@
 import { json } from "stream/consumers";
 import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
+import * as bcrypt from 'bcrypt';
 
 @Entity()
 export class USUARIO{
+
+
     @PrimaryColumn()
     id: string;
 
@@ -28,5 +31,12 @@ export class USUARIO{
     @Column({length: 255})
     foto: string;
     
-    
+    login(senha){
+      return bcrypt.compareSync(senha,this.senha);
+  }
+
+    trocasenha(senha){
+      const saltOrRounds = 10;
+      this.senha = bcrypt.hashSync(senha,saltOrRounds);
+  }
 }

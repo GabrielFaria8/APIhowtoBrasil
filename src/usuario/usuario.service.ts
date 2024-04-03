@@ -39,7 +39,7 @@ export class UsuarioService {
     usuario.statusMigratorio = dados.statusMigratorio;
     usuario.interesses = dados.interesses;
     usuario.email = dados.email;
-    usuario.senha = dados.senha;
+    usuario.trocasenha (dados.senha);
     usuario.foto = dados.foto;
     // interesses.files = await this.filesService.localizarID(dados.FILES);
 
@@ -119,12 +119,46 @@ export class UsuarioService {
     });
   }
 
-  async validaEmail(email: string): Promise<USUARIO> {
-    const usuario = await this.usuarioRepository.findOne({
+  async validaEmail(email: string) {
+    const possivelUsuario = await this.usuarioRepository.findOne({
       where: {
         email,
       },
     });
-    return usuario;
+    return (possivelUsuario !== null);
   }
+
+  
+
+  async validaLogin(email: string, senha: string): Promise<RetornoObjDTO> {
+    const usuario = await this.localizarEmail (email);
+    var objRetorno;
+    if (usuario) {
+      objRetorno = [usuario, usuario.login(senha)]
+    }
+    return <RetornoObjDTO>{
+      message: objRetorno[1] ? "login efetuado com sucesso" : "usuario ou senha inválidos",
+      return: objRetorno[1] ? objRetorno [0] : null
+    };
+
+  }
+
+  async localizarEmail(email: string) {
+    const usuariovalido = await this.usuarioRepository.findOne({
+      where: {
+        email,
+      },
+    });
+    return usuariovalido;
+}
+
+//   trocaSenha(email: string, senha: string) {
+//     const usuario = this.localizarEmail(email);
+//   if (usuario) {
+//       usuario.trocasenha(senha); 
+//       return true; 
+//   } else {
+//       return false; 
+//   }
+// }
 }

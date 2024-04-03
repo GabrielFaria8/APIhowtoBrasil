@@ -14,6 +14,9 @@ import { UsuarioService } from './usuario.service';
 import { ListaUsuarioDTO } from './dto/lista.usuario.dto';
 import { criaUsuarioDTO } from './dto/usuario.dto';
 import { AlteraUsuarioDTO } from './dto/atualiza.usuario.dto';
+import { get } from 'http';
+import { LoginUsuarioDTO } from './dto/login.usuario.dto';
+import { atualizaSenhaDTO } from './dto/atualiza.senha.dto';
   
   @ApiTags('usuario')
 @Controller('/usuario')
@@ -43,4 +46,32 @@ export class UsuarioController{
         return this.usuarioService.inserir(dados);        
     }
 
+    @ApiResponse({ status: 200, description: 'Retorna se houve sucesso no login. O retorno "Status" diz se houve sucesso ou não.'})
+    @Post('/login')
+    async Login(@Body() dadosUsuario: LoginUsuarioDTO): Promise<RetornoObjDTO>{
+        return this.usuarioService.validaLogin( dadosUsuario.email,dadosUsuario.senha)
+    }
+
+    // @Post('/troca-senha')
+    // async trocaSenha(@Body() dadosTrocaSenha: atualizaSenhaDTO) {
+    
+    //   const senhaTrocadaComSucesso = await this.usuarioService.trocaSenha(
+    //     dadosTrocaSenha.email,
+    //     dadosTrocaSenha.senha,
+    //   );
+      
+    
+    //   if (senhaTrocadaComSucesso) {
+    //     return {
+    //       message: 'Senha atualizada com sucesso!'
+    //     };
+    //   } else {
+    //     return {
+    //       message: 'O email fornecido não foi encontrado.'
+    //     };
+    //   }
+    
+    
+
+  
 }

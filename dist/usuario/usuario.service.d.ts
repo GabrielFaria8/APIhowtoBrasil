@@ -12,5 +12,7 @@ export declare class UsuarioService {
     remover(id: string): Promise<RetornoObjDTO>;
     alterar(id: string, dados: AlteraUsuarioDTO): Promise<RetornoCadastroDTO>;
     localizarID(id: string): Promise<USUARIO>;
-    validaEmail(email: string): Promise<USUARIO>;
+    validaEmail(email: string): Promise<boolean>;
+    validaLogin(email: string, senha: string): Promise<RetornoObjDTO>;
+    localizarEmail(email: string): Promise<USUARIO>;
 }

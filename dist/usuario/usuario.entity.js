@@ -11,7 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.USUARIO = void 0;
 const typeorm_1 = require("typeorm");
+const bcrypt = require("bcrypt");
 let USUARIO = class USUARIO {
+    login(senha) {
+        return bcrypt.compareSync(senha, this.senha);
+    }
+    trocasenha(senha) {
+        const saltOrRounds = 10;
+        this.senha = bcrypt.hashSync(senha, saltOrRounds);
+    }
 };
 exports.USUARIO = USUARIO;
 __decorate([

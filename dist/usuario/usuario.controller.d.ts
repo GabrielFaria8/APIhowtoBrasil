@@ -3,6 +3,7 @@ import { UsuarioService } from './usuario.service';
 import { ListaUsuarioDTO } from './dto/lista.usuario.dto';
 import { criaUsuarioDTO } from './dto/usuario.dto';
 import { AlteraUsuarioDTO } from './dto/atualiza.usuario.dto';
+import { LoginUsuarioDTO } from './dto/login.usuario.dto';
 export declare class UsuarioController {
     private readonly usuarioService;
     constructor(usuarioService: UsuarioService);
@@ -10,4 +11,5 @@ export declare class UsuarioController {
     remove(id: string): Promise<RetornoObjDTO>;
     atualiza(id: string, novosDados: AlteraUsuarioDTO): Promise<RetornoCadastroDTO>;
     cria(dados: criaUsuarioDTO): Promise<RetornoCadastroDTO>;
+    Login(dadosUsuario: LoginUsuarioDTO): Promise<RetornoObjDTO>;
 }

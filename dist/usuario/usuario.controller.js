@@ -18,6 +18,7 @@ const swagger_1 = require("@nestjs/swagger");
 const usuario_service_1 = require("./usuario.service");
 const usuario_dto_1 = require("./dto/usuario.dto");
 const atualiza_usuario_dto_1 = require("./dto/atualiza.usuario.dto");
+const login_usuario_dto_1 = require("./dto/login.usuario.dto");
 let UsuarioController = class UsuarioController {
     constructor(usuarioService) {
         this.usuarioService = usuarioService;
@@ -33,6 +34,9 @@ let UsuarioController = class UsuarioController {
     }
     async cria(dados) {
         return this.usuarioService.inserir(dados);
+    }
+    async Login(dadosUsuario) {
+        return this.usuarioService.validaLogin(dadosUsuario.email, dadosUsuario.senha);
     }
 };
 exports.UsuarioController = UsuarioController;
@@ -64,6 +68,14 @@ __decorate([
     __metadata("design:paramtypes", [usuario_dto_1.criaUsuarioDTO]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "cria", null);
+__decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna se houve sucesso no login. O retorno "Status" diz se houve sucesso ou não.' }),
+    (0, common_1.Post)('/login'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [login_usuario_dto_1.LoginUsuarioDTO]),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "Login", null);
 exports.UsuarioController = UsuarioController = __decorate([
     (0, swagger_1.ApiTags)('usuario'),
     (0, common_1.Controller)('/usuario'),

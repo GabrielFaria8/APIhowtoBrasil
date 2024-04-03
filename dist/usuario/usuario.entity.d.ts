@@ -7,4 +7,6 @@ export declare class USUARIO {
     email: string;
     senha: string;
     foto: string;
+    login(senha: any): any;
+    trocasenha(senha: any): void;
 }
