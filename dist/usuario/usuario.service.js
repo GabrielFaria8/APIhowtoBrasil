@@ -127,6 +127,16 @@ let UsuarioService = class UsuarioService {
         });
         return usuariovalido;
     }
+    async trocaSenha(email, senha) {
+        const usuario = this.localizarEmail(email);
+        if (usuario) {
+            (await usuario).trocasenha(senha);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 };
 exports.UsuarioService = UsuarioService;
 exports.UsuarioService = UsuarioService = __decorate([

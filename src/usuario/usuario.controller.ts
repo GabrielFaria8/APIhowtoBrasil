@@ -52,26 +52,27 @@ export class UsuarioController{
         return this.usuarioService.validaLogin( dadosUsuario.email,dadosUsuario.senha)
     }
 
-    // @Post('/troca-senha')
-    // async trocaSenha(@Body() dadosTrocaSenha: atualizaSenhaDTO) {
+    @Post('/troca-senha')
+    async trocaSenha(@Body() dadosTrocaSenha: atualizaSenhaDTO) {
     
-    //   const senhaTrocadaComSucesso = await this.usuarioService.trocaSenha(
-    //     dadosTrocaSenha.email,
-    //     dadosTrocaSenha.senha,
-    //   );
+      const senhaTrocadaComSucesso = await this.usuarioService.trocaSenha(
+        dadosTrocaSenha.email,
+        dadosTrocaSenha.senha,
+      );
       
     
-    //   if (senhaTrocadaComSucesso) {
-    //     return {
-    //       message: 'Senha atualizada com sucesso!'
-    //     };
-    //   } else {
-    //     return {
-    //       message: 'O email fornecido não foi encontrado.'
-    //     };
-    //   }
+      if (senhaTrocadaComSucesso) {
+        return {
+          message: 'Senha atualizada com sucesso!'
+        };
+      } else {
+        return {
+          message: 'O email fornecido não foi encontrado.'
+        };
+      }
     
     
 
   
+}
 }

@@ -15,4 +15,5 @@ export declare class UsuarioService {
     validaEmail(email: string): Promise<boolean>;
     validaLogin(email: string, senha: string): Promise<RetornoObjDTO>;
     localizarEmail(email: string): Promise<USUARIO>;
+    trocaSenha(email: string, senha: string): Promise<boolean>;
 }

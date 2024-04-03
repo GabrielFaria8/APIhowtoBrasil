@@ -19,6 +19,7 @@ const usuario_service_1 = require("./usuario.service");
 const usuario_dto_1 = require("./dto/usuario.dto");
 const atualiza_usuario_dto_1 = require("./dto/atualiza.usuario.dto");
 const login_usuario_dto_1 = require("./dto/login.usuario.dto");
+const atualiza_senha_dto_1 = require("./dto/atualiza.senha.dto");
 let UsuarioController = class UsuarioController {
     constructor(usuarioService) {
         this.usuarioService = usuarioService;
@@ -37,6 +38,19 @@ let UsuarioController = class UsuarioController {
     }
     async Login(dadosUsuario) {
         return this.usuarioService.validaLogin(dadosUsuario.email, dadosUsuario.senha);
+    }
+    async trocaSenha(dadosTrocaSenha) {
+        const senhaTrocadaComSucesso = await this.usuarioService.trocaSenha(dadosTrocaSenha.email, dadosTrocaSenha.senha);
+        if (senhaTrocadaComSucesso) {
+            return {
+                message: 'Senha atualizada com sucesso!'
+            };
+        }
+        else {
+            return {
+                message: 'O email fornecido não foi encontrado.'
+            };
+        }
     }
 };
 exports.UsuarioController = UsuarioController;
@@ -76,6 +90,13 @@ __decorate([
     __metadata("design:paramtypes", [login_usuario_dto_1.LoginUsuarioDTO]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Login", null);
+__decorate([
+    (0, common_1.Post)('/troca-senha'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [atualiza_senha_dto_1.atualizaSenhaDTO]),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "trocaSenha", null);
 exports.UsuarioController = UsuarioController = __decorate([
     (0, swagger_1.ApiTags)('usuario'),
     (0, common_1.Controller)('/usuario'),
