@@ -138,7 +138,7 @@ export class UsuarioService {
     }
     return <RetornoObjDTO>{
       message: objRetorno[1] ? "login efetuado com sucesso" : "usuario ou senha inválidos",
-      return: objRetorno[1] ? objRetorno [0] : null
+      return: objRetorno[1] ? objRetorno : null
     };
 
   }
