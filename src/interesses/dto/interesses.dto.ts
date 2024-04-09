@@ -91,7 +91,6 @@ export class criaInteressesDTO {
   siteEmpresa: string;
 
   @IsString()
-  @IsNotEmpty({ message: 'Foto não pode ser vazio' })
   @IsOptional()
   @ApiPropertyOptional({
     example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
@@ -116,7 +115,7 @@ export class criaInteressesDTO {
     description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
     e onde cada uma deve ser entregue para a autoridade competente.`,
   })
-  documentacao: string;
+  documento: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Link do site Não pode ser vazio' })
@@ -134,7 +133,7 @@ export class criaInteressesDTO {
     example: 'https://www.moradiabrasil.com.br/',
     description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
   })
-  linkCorrelatos: string;
+  linkCorrelato: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Área  não pode ser vazio' })

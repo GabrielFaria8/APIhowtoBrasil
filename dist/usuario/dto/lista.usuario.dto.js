@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListaUsuarioDTO = void 0;
 class ListaUsuarioDTO {
-    constructor(id, nome, ultimoNome, statusMigratório, interesses, email, senha, foto) {
+    constructor(id, nome, ultimoNome, statusMigratorio, interesses, email, senha, foto) {
         this.id = id;
         this.nome = nome;
         this.ultimoNome = ultimoNome;
-        this.statusMigratório = statusMigratório;
+        this.statusMigratorio = statusMigratorio;
         this.interesses = interesses;
         this.email = email;
         this.senha = senha;

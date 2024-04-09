@@ -11,4 +11,12 @@ export declare class INTERESSES {
     salario: string;
     descricao: string;
     foto: string;
+    documento: string;
+    linkGoverno: string;
+    linkCorrelato: string;
+    area: string;
+    quartos: number;
+    valor: string;
+    banheiro: number;
+    vagas: number;
 }

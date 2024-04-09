@@ -10,4 +10,12 @@ export declare class criaInteressesDTO {
     siteEmpresa: string;
     foto: string;
     descricao: string;
+    documento: string;
+    linkGoverno: string;
+    linkCorrelato: string;
+    area: string;
+    quartos: number;
+    valor: string;
+    banheiro: number;
+    vagas: number;
 }

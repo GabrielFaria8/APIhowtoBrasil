@@ -106,7 +106,6 @@ __decorate([
 ], criaInteressesDTO.prototype, "siteEmpresa", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Foto não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
@@ -124,4 +123,85 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], criaInteressesDTO.prototype, "descricao", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Documentação não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Passaporte',
+        description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
+    e onde cada uma deve ser entregue para a autoridade competente.`,
+    }),
+    __metadata("design:type", String)
+], criaInteressesDTO.prototype, "documento", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link do site Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'Gov.br',
+        description: `O link do site é usado identificar o site do Orgão Governamental.`,
+    }),
+    __metadata("design:type", String)
+], criaInteressesDTO.prototype, "linkGoverno", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Link correlato não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'https://www.moradiabrasil.com.br/',
+        description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
+    }),
+    __metadata("design:type", String)
+], criaInteressesDTO.prototype, "linkCorrelato", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Área  não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: '47m²',
+        description: `A área é utilizada para se dar uma base do tamanho da residência.`,
+    }),
+    __metadata("design:type", String)
+], criaInteressesDTO.prototype, "area", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Quartos não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 2,
+        description: `Específica quantidade de quartos na residência.`,
+    }),
+    __metadata("design:type", Number)
+], criaInteressesDTO.prototype, "quartos", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Valor não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'R$ 600,00',
+        description: `Específica o valor da residência.`,
+    }),
+    __metadata("design:type", String)
+], criaInteressesDTO.prototype, "valor", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Banheiro não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 1,
+        description: `Específica a quantidade de banheiros na residência.`,
+    }),
+    __metadata("design:type", Number)
+], criaInteressesDTO.prototype, "banheiro", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Vagas não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 1,
+        description: `Específica a quantidade de vagas na residência.`,
+    }),
+    __metadata("design:type", Number)
+], criaInteressesDTO.prototype, "vagas", void 0);
 //# sourceMappingURL=interesses.dto.js.map

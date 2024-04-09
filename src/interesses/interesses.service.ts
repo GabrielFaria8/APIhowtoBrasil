@@ -32,7 +32,15 @@ export class InteressesService {
           interesses.siteEmpresa,
           interesses.salario,
           interesses.descricao,
-          interesses.foto
+          interesses.foto,
+          interesses.documento,
+          interesses.linkGoverno,
+          interesses.linkCorrelato,
+          interesses.area,
+          interesses.quartos,
+          interesses.valor,
+          interesses.banheiro,
+          interesses.vagas
       ))
         
   }
@@ -52,6 +60,14 @@ export class InteressesService {
         interesses.salario = dados.salario;
         interesses.descricao = dados.descricao;
         interesses.foto = dados.foto;
+        interesses.documento = dados.documento;
+        interesses.linkGoverno = dados.linkGoverno
+        interesses.linkCorrelato = dados.linkCorrelato
+        interesses.area = dados.area
+        interesses.quartos = dados.quartos
+        interesses.valor = dados.valor
+        interesses.banheiro = dados.banheiro
+        interesses.vagas = dados.vagas
         // interesses.files = await this.filesService.localizarID(dados.FILES);
 
     return this.interessesRepository.save(interesses)

@@ -3,7 +3,7 @@ export class ListaUsuarioDTO{
         readonly id: string,
         readonly nome: string,
         readonly ultimoNome: string,
-        readonly statusMigratório: string,
+        readonly statusMigratorio: string,
         readonly interesses: string,
         readonly email: string,
         readonly senha: string,
