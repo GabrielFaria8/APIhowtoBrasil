@@ -38,5 +38,29 @@ export class INTERESSES{
 
     @Column({length: 255})
     foto: string;
+
+    @Column({length: 255})
+    documento: string;
+
+    @Column({length: 255})
+    linkGoverno: string;
+
+    @Column({length: 255})
+    linkCorrelato: string;
+
+    @Column({length: 255})
+    area: string;
+
+    @Column('int')
+    quartos: number;
+
+    @Column({length: 255})
+    valor: string;
+
+    @Column('int')
+    banheiro: number;
+
+    @Column('int')
+    vagas: number;
     
 }

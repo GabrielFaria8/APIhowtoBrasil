@@ -107,4 +107,78 @@ export class criaInteressesDTO {
     description: `Específica a quantidade de vagas na residência.`,
   })
   descricao: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Documentação não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Passaporte',
+    description: `A informação sobre documentação é primariamente um auxílio para identificar quais documentos são pedidos em território nacional
+    e onde cada uma deve ser entregue para a autoridade competente.`,
+  })
+  documentacao: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Link do site Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Gov.br',
+    description: `O link do site é usado identificar o site do Orgão Governamental.`,
+  })
+  linkGoverno: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Link correlato não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'https://www.moradiabrasil.com.br/',
+    description: `O link correlato possui função de localizar hospedagens de sites online onde é possível localizar habitações.`,
+  })
+  linkCorrelatos: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Área  não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: '47m²',
+    description: `A área é utilizada para se dar uma base do tamanho da residência.`,
+  })
+  area: string;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Quartos não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 2,
+    description: `Específica quantidade de quartos na residência.`,
+  })
+  quartos: number;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Valor não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'R$ 600,00',
+    description: `Específica o valor da residência.`,
+  })
+  valor: string;
+  
+  @IsNumber()
+  @IsNotEmpty({ message: 'Banheiro não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  1,
+    description: `Específica a quantidade de banheiros na residência.`,
+  })
+  banheiro: number;
+
+  @IsNumber()
+  @IsNotEmpty({ message: 'Vagas não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  1,
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  vagas: number;
+
 }
