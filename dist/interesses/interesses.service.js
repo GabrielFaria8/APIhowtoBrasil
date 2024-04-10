@@ -69,6 +69,13 @@ let InteressesService = class InteressesService {
             },
         });
     }
+    localizarTipo(tipos) {
+        return this.interessesRepository.findOne({
+            where: {
+                tipos,
+            },
+        });
+    }
     async remover(id) {
         const interesses = await this.localizarID(id);
         return this.interessesRepository.remove(interesses)

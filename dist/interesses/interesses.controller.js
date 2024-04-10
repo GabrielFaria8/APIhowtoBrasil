@@ -24,6 +24,9 @@ let InteressesController = class InteressesController {
     async Retorno() {
         return this.interessesService.listar();
     }
+    async tipo(tipos) {
+        return this.interessesService.localizarTipo(tipos);
+    }
     async remove(id) {
         return this.interessesService.remover(id);
     }
@@ -38,6 +41,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], InteressesController.prototype, "Retorno", null);
+__decorate([
+    (0, common_1.Get)(':tipo'),
+    __param(0, (0, common_1.Param)('tipo')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], InteressesController.prototype, "tipo", null);
 __decorate([
     (0, common_1.Delete)('/:id'),
     __param(0, (0, common_1.Param)('id')),

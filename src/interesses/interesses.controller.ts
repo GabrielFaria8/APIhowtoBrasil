@@ -26,6 +26,11 @@ export class InteressesController{
         return this.interessesService.listar();
     }
 
+    @Get(':tipo')
+    async tipo(@Param('tipo') tipos: number): Promise<ListaInteressesDTO>{
+        return this.interessesService.localizarTipo(tipos);
+    }
+
 
     @Delete('/:id')
     async remove(@Param('id') id: string): Promise<RetornoObjDTO>{
