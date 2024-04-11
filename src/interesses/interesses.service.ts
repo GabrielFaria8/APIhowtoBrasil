@@ -95,8 +95,8 @@ export class InteressesService {
     });
   }
 
-  localizarTipo(tipos: number): Promise<ListaInteressesDTO> {
-    return this.interessesRepository.findOne({
+  localizarTipo(tipos: number): Promise<ListaInteressesDTO[]> {
+    return this.interessesRepository.find({
       where: {
         tipos,
       },

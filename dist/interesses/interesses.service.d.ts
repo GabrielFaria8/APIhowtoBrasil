@@ -9,6 +9,6 @@ export declare class InteressesService {
     listar(): Promise<ListaInteressesDTO[]>;
     inserir(dados: criaInteressesDTO): Promise<RetornoCadastroDTO>;
     localizarID(id: string): Promise<INTERESSES>;
-    localizarTipo(tipos: number): Promise<ListaInteressesDTO>;
+    localizarTipo(tipos: number): Promise<ListaInteressesDTO[]>;
     remover(id: string): Promise<RetornoObjDTO>;
 }

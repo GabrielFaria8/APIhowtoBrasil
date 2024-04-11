@@ -27,7 +27,7 @@ export class InteressesController{
     }
 
     @Get(':tipo')
-    async tipo(@Param('tipo') tipos: number): Promise<ListaInteressesDTO>{
+    async tipo(@Param('tipo') tipos: number): Promise<ListaInteressesDTO[]>{
         return this.interessesService.localizarTipo(tipos);
     }
 

@@ -70,7 +70,7 @@ let InteressesService = class InteressesService {
         });
     }
     localizarTipo(tipos) {
-        return this.interessesRepository.findOne({
+        return this.interessesRepository.find({
             where: {
                 tipos,
             },
