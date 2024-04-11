@@ -125,38 +125,38 @@ export class InteressesService {
 
   
 
-  // async alterar(id: string, dados: AlteraInteressesDTO): Promise<RetornoCadastroDTO> {
-  //   const interesses = await this.localizarID(id);
+  // // async alterar(id: string, dados: AlteraInteressesDTO): Promise<RetornoCadastroDTO> {
+  //    const interesses = await this.localizarID(id);
 
-  //   Object.entries(dados).forEach(
-  //     async ([chave, valor]) => {
-  //         if(chave=== 'id'){
-  //             return;
-  //         }
-
-  //         if(chave=== 'FILES'){
-  //           interesses['FILES'] = await this.filesService.localizarNome(valor);
-  //           return;
+  //    Object.entries(dados).forEach(
+  //      async ([chave, valor]) => {
+  //          if(chave=== 'id'){
+  //              return;
   //          }
 
-  //         if (valor) 
-  //         interesses[chave] = valor;
-          
-  //     }
-  //   )
+  //          if(chave=== 'FILES'){
+  //            interesses['FILES'] = await this.filesService.localizarNome(valor);
+  //            return;
+  //           }
 
-  //   return this.interessesRepository.save(interesses)
-  //   .then((result) => {
-  //     return <RetornoCadastroDTO>{
-  //       id: interesses.ID,
-  //       message: "Interesse alterado!"
-  //     };
-  //   })
-  //   .catch((error) => {
-  //     return <RetornoCadastroDTO>{
-  //       id: "",
-  //       message: "Houve um erro ao alterar." + error.message
-  //     };
-  //   });
-  // }
-}
+  //          if (valor) 
+  //          interesses[chave] = valor;
+          
+  //      }
+  //    )
+
+//      return this.interessesRepository.save(interesses)
+//      .then((result) => {
+//        return <RetornoCadastroDTO>{
+//          id: interesses.id,
+//          message: "Interesse alterado!"
+//        };
+//      })
+//      .catch((error) => {
+//        return <RetornoCadastroDTO>{
+//          id: "",
+//          message: "Houve um erro ao alterar." + error.message
+//        };
+//      });
+//    }
+ }

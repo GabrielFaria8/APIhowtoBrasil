@@ -38,10 +38,10 @@ export class InteressesController{
     }
 
 
-    // @Put('/:id')
-    // async atualiza(@Param('id') id: string, @Body() novosDados: AlteraInteressesDTO):Promise<RetornoCadastroDTO>{
-    //     return this.interessesService.alterar(id, novosDados);
-    // }
+    //  @Put('/:id')
+    //  async atualiza(@Param('id') id: string, @Body() novosDados: AlteraInteressesDTO):Promise<RetornoCadastroDTO>{
+    //      return this.interessesService.alterar(id, novosDados);
+    //  }
 
     @Post()
     async cria(@Body() dados: criaInteressesDTO):Promise<RetornoCadastroDTO>{
