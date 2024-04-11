@@ -95,6 +95,15 @@ export class InteressesService {
     });
   }
 
+  localizarTipo(tipos: number): Promise<ListaInteressesDTO> {
+    return this.interessesRepository.findOne({
+      where: {
+        tipos,
+      },
+    });
+  }
+  
+
 
   async remover(id: string): Promise<RetornoObjDTO> {
     const interesses = await this.localizarID(id);
