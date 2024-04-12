@@ -8,11 +8,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   
-  // app.enableCors({
-  //   origin: 'https://howtobrasil.pvferreira.com.br',
-  //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  //   credentials: true,
-  // });
+  app.enableCors({
+    origin: ['https://howtobrasil.pvferreira.com.br', 'http://localhost:3000'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
 
   app.useGlobalPipes(
     new ValidationPipe({
