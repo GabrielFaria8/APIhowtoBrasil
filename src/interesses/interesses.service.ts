@@ -59,7 +59,7 @@ export class InteressesService {
         interesses.siteEmpresa = dados.siteEmpresa;
         interesses.salario = dados.salario;
         interesses.descricao = dados.descricao;
-        interesses.foto = dados.foto;
+        // interesses.foto = await this.FilesArmazenados.localizarID(dados.files);
         interesses.documento = dados.documento;
         interesses.linkGoverno = dados.linkGoverno
         interesses.linkCorrelato = dados.linkCorrelato
@@ -68,7 +68,7 @@ export class InteressesService {
         interesses.valor = dados.valor
         interesses.banheiro = dados.banheiro
         interesses.vagas = dados.vagas
-        // interesses.files = await this.filesService.localizarID(dados.FILES);
+        
 
     return this.interessesRepository.save(interesses)
     .then((result) => {
@@ -125,38 +125,30 @@ export class InteressesService {
 
   
 
-  // // async alterar(id: string, dados: AlteraInteressesDTO): Promise<RetornoCadastroDTO> {
-  //    const interesses = await this.localizarID(id);
+  async alterar(id: string, dados: AlteraInteressesDTO): Promise<RetornoCadastroDTO> {
+    const interesse = await this.localizarID(id);
 
-  //    Object.entries(dados).forEach(
-  //      async ([chave, valor]) => {
-  //          if(chave=== 'id'){
-  //              return;
-  //          }
+    Object.entries(dados).forEach(
+        async ([chave, valor]) => {
+            if (chave === 'id') {
+                return;
+            }
+            interesse[chave] = valor;
+        }
+    )
 
-  //          if(chave=== 'FILES'){
-  //            interesses['FILES'] = await this.filesService.localizarNome(valor);
-  //            return;
-  //           }
-
-  //          if (valor) 
-  //          interesses[chave] = valor;
-          
-  //      }
-  //    )
-
-//      return this.interessesRepository.save(interesses)
-//      .then((result) => {
-//        return <RetornoCadastroDTO>{
-//          id: interesses.id,
-//          message: "Interesse alterado!"
-//        };
-//      })
-//      .catch((error) => {
-//        return <RetornoCadastroDTO>{
-//          id: "",
-//          message: "Houve um erro ao alterar." + error.message
-//        };
-//      });
-//    }
- }
+    return this.interessesRepository.save(interesse)
+        .then((result) => {
+            return <RetornoCadastroDTO>{
+                id: interesse.id,
+                message: "interesse alterado !"
+            };
+        })
+        .catch((error) => {
+            return <RetornoCadastroDTO>{
+                id: "",
+                message: "Houve um erro ao alterar." + error.message
+            };
+        });
+}
+}
