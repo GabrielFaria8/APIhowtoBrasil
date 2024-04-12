@@ -48,7 +48,7 @@ export class UsuarioService {
       .then((result) => {
         return <RetornoCadastroDTO>{
           id: usuario.id,
-          message: 'Interesse cadastrado!',
+          message: 'Usuario cadastrado!',
         };
       })
       .catch((error) => {
@@ -67,7 +67,7 @@ export class UsuarioService {
       .then((result) => {
         return <RetornoObjDTO>{
           return: usuario,
-          message: 'Interesse excluido!',
+          message: 'Usuario excluido!',
         };
       })
       .catch((error) => {
@@ -99,7 +99,7 @@ export class UsuarioService {
       .then((result) => {
         return <RetornoCadastroDTO>{
           id: usuario.id,
-          message: 'Interesse alterado!',
+          message: 'Usuario alterado!',
         };
       })
       .catch((error) => {
