@@ -39,7 +39,6 @@ let InteressesService = class InteressesService {
         interesses.siteEmpresa = dados.siteEmpresa;
         interesses.salario = dados.salario;
         interesses.descricao = dados.descricao;
-        interesses.foto = dados.foto;
         interesses.documento = dados.documento;
         interesses.linkGoverno = dados.linkGoverno;
         interesses.linkCorrelato = dados.linkCorrelato;
@@ -89,6 +88,28 @@ let InteressesService = class InteressesService {
             return {
                 return: interesses,
                 message: "Houve um erro ao excluir." + error.message
+            };
+        });
+    }
+    async alterar(id, dados) {
+        const interesse = await this.localizarID(id);
+        Object.entries(dados).forEach(async ([chave, valor]) => {
+            if (chave === 'id') {
+                return;
+            }
+            interesse[chave] = valor;
+        });
+        return this.interessesRepository.save(interesse)
+            .then((result) => {
+            return {
+                id: interesse.id,
+                message: "interesse alterado !"
+            };
+        })
+            .catch((error) => {
+            return {
+                id: "",
+                message: "Houve um erro ao alterar." + error.message
             };
         });
     }
