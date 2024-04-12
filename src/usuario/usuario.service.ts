@@ -153,26 +153,24 @@ export class UsuarioService {
 }
 
 async trocaSenha(email: string, senha: string) {
-    const usuario = this.localizarEmail(email);
+  const usuario = await this.localizarEmail(email);
   if (usuario) {
       (await usuario).trocasenha(senha); 
-      return true; 
-  } else {
-      return false; 
-  }
-  // return this.usuarioRepository
-  // .save(usuario)
-  // .then((result) => {
-  //   return <RetornoCadastroDTO>{
-  //     id: usuario.id,
-  //     message: 'Interesse alterado!',
-  //   };
-  // })
-  // .catch((error) => {
-  //   return <RetornoCadastroDTO>{
-  //     id: '',
-  //     message: 'Houve um erro ao alterar: ' + error.message,
-  //   };
-  // });
+     
+  } 
+  return this.usuarioRepository
+  .save(usuario)
+  .then((result) => {
+    return <RetornoCadastroDTO>{
+      id: usuario.id,
+      message: 'usuario alterado!',
+    };
+  })
+  .catch((error) => {
+    return <RetornoCadastroDTO>{
+      id: '',
+      message: 'Houve um erro ao alterar: ' + error.message,
+    };
+  });
 }
 }

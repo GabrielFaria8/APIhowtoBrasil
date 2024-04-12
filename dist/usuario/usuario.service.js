@@ -128,14 +128,24 @@ let UsuarioService = class UsuarioService {
         return usuariovalido;
     }
     async trocaSenha(email, senha) {
-        const usuario = this.localizarEmail(email);
+        const usuario = await this.localizarEmail(email);
         if (usuario) {
             (await usuario).trocasenha(senha);
-            return true;
         }
-        else {
-            return false;
-        }
+        return this.usuarioRepository
+            .save(usuario)
+            .then((result) => {
+            return {
+                id: usuario.id,
+                message: 'usuario alterado!',
+            };
+        })
+            .catch((error) => {
+            return {
+                id: '',
+                message: 'Houve um erro ao alterar: ' + error.message,
+            };
+        });
     }
 };
 exports.UsuarioService = UsuarioService;
