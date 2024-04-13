@@ -41,7 +41,7 @@ let UsuarioService = class UsuarioService {
             .then((result) => {
             return {
                 id: usuario.id,
-                message: 'Interesse cadastrado!',
+                message: 'Usuario cadastrado!',
             };
         })
             .catch((error) => {
@@ -58,7 +58,7 @@ let UsuarioService = class UsuarioService {
             .then((result) => {
             return {
                 return: usuario,
-                message: 'Interesse excluido!',
+                message: 'Usuario excluido!',
             };
         })
             .catch((error) => {
@@ -83,7 +83,7 @@ let UsuarioService = class UsuarioService {
             .then((result) => {
             return {
                 id: usuario.id,
-                message: 'Interesse alterado!',
+                message: 'Usuario alterado!',
             };
         })
             .catch((error) => {
