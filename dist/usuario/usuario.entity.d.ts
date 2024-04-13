@@ -1,3 +1,4 @@
+import { Files } from "src/files/files.entity";
 export declare class USUARIO {
     id: string;
     nome: string;
@@ -9,4 +10,5 @@ export declare class USUARIO {
     foto: string;
     login(senha: any): any;
     trocasenha(senha: any): void;
+    files: Files;
 }

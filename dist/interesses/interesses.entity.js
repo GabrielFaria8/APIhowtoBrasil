@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.INTERESSES = void 0;
+const files_entity_1 = require("../files/files.entity");
 const typeorm_1 = require("typeorm");
 let INTERESSES = class INTERESSES {
 };
@@ -61,10 +62,6 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "foto", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ length: 255 }),
-    __metadata("design:type", String)
 ], INTERESSES.prototype, "documento", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
@@ -94,6 +91,11 @@ __decorate([
     (0, typeorm_1.Column)('int'),
     __metadata("design:type", Number)
 ], INTERESSES.prototype, "vagas", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => files_entity_1.Files),
+    (0, typeorm_1.JoinColumn)({ name: 'idFiles', referencedColumnName: 'id' }),
+    __metadata("design:type", files_entity_1.Files)
+], INTERESSES.prototype, "files", void 0);
 exports.INTERESSES = INTERESSES = __decorate([
     (0, typeorm_1.Entity)()
 ], INTERESSES);

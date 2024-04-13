@@ -11,7 +11,7 @@ export class ListaInteressesDTO{
         readonly siteEmpresa: string,
         readonly salario: string,
         readonly descricao: string,
-        readonly foto: string,
+        //readonly files: string,
         readonly documento: string,
         readonly linkGoverno: string,
         readonly linkCorrelato: string,
@@ -20,5 +20,6 @@ export class ListaInteressesDTO{
         readonly valor: string,
         readonly banheiro: number,
         readonly vagas: number,
+        
         ){}
   }

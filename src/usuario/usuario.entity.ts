@@ -1,6 +1,7 @@
 import { json } from "stream/consumers";
-import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToOne, PrimaryColumn } from "typeorm";
 import * as bcrypt from 'bcrypt';
+import { Files } from "src/files/files.entity";
 
 @Entity()
 export class USUARIO{
@@ -39,4 +40,11 @@ export class USUARIO{
       const saltOrRounds = 10;
       this.senha = bcrypt.hashSync(senha,saltOrRounds);
   }
+
+ 
+    @OneToOne(() => Files)
+    @JoinColumn({ name: 'idFiles', referencedColumnName:'id'})
+    files: Files;
+
+
 }

@@ -8,16 +8,15 @@ exports.databaseProviders = [
         useFactory: async () => {
             const dataSource = new typeorm_1.DataSource({
                 type: 'mysql',
-                host: '50.116.112.16',
+                host: 'localhost',
                 port: 3306,
-                username: 'vitali04_howtobrasil',
-                password: 'brasil2306',
-                database: 'vitali04_howtobrasil',
+                username: 'root',
+                password: '',
+                database: 'apihowtobrasil',
                 entities: [
                     __dirname + '/../**/*.entity{.ts,.js}',
                 ],
-                synchronize: true,
-                connectTimeout: 20000,
+                synchronize: false,
             });
             return dataSource.initialize();
         },

@@ -92,13 +92,6 @@ export class AlteraInteressesDTO{
   })
   siteEmpresa: string;
 
-  @IsString()
-  @IsOptional()
-  @ApiPropertyOptional({
-    example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
-    description: `Específica a quantidade de vagas na residência.`,
-  })
-  foto: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Descrição não pode ser vazio' })
@@ -181,5 +174,13 @@ export class AlteraInteressesDTO{
     description: `Específica a quantidade de vagas na residência.`,
   })
   vagas: number;
+
+  @IsString()
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
+    description: `Específica a quantidade de vagas na residência.`,
+  })
+  files: string;
 
 }

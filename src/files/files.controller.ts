@@ -1,12 +1,12 @@
 import {Controller,Post,UseInterceptors,UploadedFile,Req, Get, Param, Res} from '@nestjs/common';
-import { FilesArmazenados } from './files.dm';
+import { filesService } from './files.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import multerConfig from './multer-config';
 import { Request } from 'express';
   
 @Controller('/files')
 export class FilesController {
-    constructor(private readonly arquivos: FilesArmazenados) {}
+    constructor(private readonly arquivos: filesService) {}
 
     @Post()
     @UseInterceptors(FileInterceptor('arquivo', multerConfig))

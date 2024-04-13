@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { FilesEntity } from './files.entity';
+import { Files } from './files.entity';
 import { Request } from 'express';
 
 @Injectable()
-export class FilesArmazenados {
+export class filesService {
   arquivos = [];  
   
   async salvarDados(file: Express.Multer.File, req: Request) {
-    const arquivo = new FilesEntity();
+    const arquivo = new Files();
     arquivo.fileName = file.filename;
     arquivo.contenLength = file.size;
     arquivo.contentType = file.mimetype;
@@ -23,6 +23,4 @@ export class FilesArmazenados {
     );
     return(possivelArquivo!==undefined)
   }
-
-
 }

@@ -6,15 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilesArmazenados = void 0;
+exports.filesService = void 0;
 const common_1 = require("@nestjs/common");
 const files_entity_1 = require("./files.entity");
-let FilesArmazenados = class FilesArmazenados {
+let filesService = class filesService {
     constructor() {
         this.arquivos = [];
     }
     async salvarDados(file, req) {
-        const arquivo = new files_entity_1.FilesEntity();
+        const arquivo = new files_entity_1.Files();
         arquivo.fileName = file.filename;
         arquivo.contenLength = file.size;
         arquivo.contentType = file.mimetype;
@@ -27,8 +27,8 @@ let FilesArmazenados = class FilesArmazenados {
         return (possivelArquivo !== undefined);
     }
 };
-exports.FilesArmazenados = FilesArmazenados;
-exports.FilesArmazenados = FilesArmazenados = __decorate([
+exports.filesService = filesService;
+exports.filesService = filesService = __decorate([
     (0, common_1.Injectable)()
-], FilesArmazenados);
-//# sourceMappingURL=files.dm.js.map
+], filesService);
+//# sourceMappingURL=files.service.js.map

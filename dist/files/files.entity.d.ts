@@ -1,4 +1,4 @@
-export declare class FilesEntity {
+export declare class Files {
     id: number;
     fileName: string;
     contenLength: number;

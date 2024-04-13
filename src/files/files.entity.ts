@@ -1,7 +1,27 @@
-export class FilesEntity{
+// export class files{
+//     id: number;
+//     fileName: string;
+//     contenLength: number;
+//     contentType:string;
+//     url: string;
+// }
+
+import { Column, Entity, PrimaryColumn } from "typeorm";
+
+@Entity()
+export class Files {
+    @PrimaryColumn()
     id: number;
+
+    @Column({ length: 1255 })
     fileName: string;
+
+    @Column('int')
     contenLength: number;
-    contentType:string;
+
+    @Column({ length: 1255 })
+    contentType: string;
+
+    @Column({ length: 1255 })
     url: string;
 }

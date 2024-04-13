@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InteressesModule = void 0;
 const common_1 = require("@nestjs/common");
 const database_module_1 = require("../database/database.module");
+const files_providers_1 = require("../files/files.providers");
+const files_service_1 = require("../files/files.service");
 const interesses_controller_1 = require("./interesses.controller");
 const interesses_providers_1 = require("./interesses.providers");
 const interesses_service_1 = require("./interesses.service");
@@ -22,6 +24,8 @@ exports.InteressesModule = InteressesModule = __decorate([
         providers: [
             ...interesses_providers_1.interessesProviders,
             interesses_service_1.InteressesService,
+            ...files_providers_1.filesProviders,
+            files_service_1.filesService,
         ],
     })
 ], InteressesModule);

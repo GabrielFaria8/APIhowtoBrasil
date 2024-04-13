@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.USUARIO = void 0;
 const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
+const files_entity_1 = require("../files/files.entity");
 let USUARIO = class USUARIO {
     login(senha) {
         return bcrypt.compareSync(senha, this.senha);
@@ -54,6 +55,11 @@ __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
 ], USUARIO.prototype, "foto", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => files_entity_1.Files),
+    (0, typeorm_1.JoinColumn)({ name: 'idFiles', referencedColumnName: 'id' }),
+    __metadata("design:type", files_entity_1.Files)
+], USUARIO.prototype, "files", void 0);
 exports.USUARIO = USUARIO = __decorate([
     (0, typeorm_1.Entity)()
 ], USUARIO);

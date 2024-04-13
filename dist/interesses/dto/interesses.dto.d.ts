@@ -8,7 +8,6 @@ export declare class criaInteressesDTO {
     salario: string;
     preRequisitos: string;
     siteEmpresa: string;
-    foto: string;
     descricao: string;
     documento: string;
     linkGoverno: string;
@@ -18,4 +17,5 @@ export declare class criaInteressesDTO {
     valor: string;
     banheiro: number;
     vagas: number;
+    files: string;
 }

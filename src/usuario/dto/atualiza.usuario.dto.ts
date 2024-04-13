@@ -50,7 +50,6 @@ export class AlteraUsuarioDTO{
   interesses: string;
 
   @IsEmail(undefined, { message: 'Email é inválido' })
-  @EmailUnico({ message: 'O email informado já existe' })
   @IsOptional()
   @ApiPropertyOptional({
     example: 'teste@teste.com',

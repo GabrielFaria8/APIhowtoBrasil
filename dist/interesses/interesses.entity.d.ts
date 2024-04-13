@@ -1,3 +1,4 @@
+import { Files } from "src/files/files.entity";
 export declare class INTERESSES {
     id: string;
     tipos: number;
@@ -10,7 +11,6 @@ export declare class INTERESSES {
     siteEmpresa: string;
     salario: string;
     descricao: string;
-    foto: string;
     documento: string;
     linkGoverno: string;
     linkCorrelato: string;
@@ -19,4 +19,5 @@ export declare class INTERESSES {
     valor: string;
     banheiro: number;
     vagas: number;
+    files: Files;
 }

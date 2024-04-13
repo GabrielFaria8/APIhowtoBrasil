@@ -14,7 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FilesController = void 0;
 const common_1 = require("@nestjs/common");
-const files_dm_1 = require("./files.dm");
+const files_service_1 = require("./files.service");
 const platform_express_1 = require("@nestjs/platform-express");
 const multer_config_1 = require("./multer-config");
 let FilesController = class FilesController {
@@ -48,6 +48,6 @@ __decorate([
 ], FilesController.prototype, "retornaArquivo", null);
 exports.FilesController = FilesController = __decorate([
     (0, common_1.Controller)('/files'),
-    __metadata("design:paramtypes", [files_dm_1.FilesArmazenados])
+    __metadata("design:paramtypes", [files_service_1.filesService])
 ], FilesController);
-//# sourceMappingURL=file.controller.js.map
+//# sourceMappingURL=files.controller.js.map

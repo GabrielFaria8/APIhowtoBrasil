@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AlteraUsuarioDTO = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
-const email_unico_validator_1 = require("../validator/email-unico.validator");
 const strongpass_validator_1 = require("../validator/strongpass.validator");
 class AlteraUsuarioDTO {
 }
@@ -59,7 +58,6 @@ __decorate([
 ], AlteraUsuarioDTO.prototype, "interesses", void 0);
 __decorate([
     (0, class_validator_1.IsEmail)(undefined, { message: 'Email é inválido' }),
-    (0, email_unico_validator_1.EmailUnico)({ message: 'O email informado já existe' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({
         example: 'teste@teste.com',

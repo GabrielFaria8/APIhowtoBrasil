@@ -6,6 +6,7 @@ import { AlteraInteressesDTO } from './dto/atualiza.interesses.dto';
 import { criaInteressesDTO } from './dto/interesses.dto';
 import { ListaInteressesDTO } from './dto/lista.interesses.dto';
 import { INTERESSES } from './interesses.entity';
+import { filesService } from 'src/files/files.service';
 
 
 
@@ -32,7 +33,6 @@ export class InteressesService {
           interesses.siteEmpresa,
           interesses.salario,
           interesses.descricao,
-          interesses.foto,
           interesses.documento,
           interesses.linkGoverno,
           interesses.linkCorrelato,
@@ -59,7 +59,6 @@ export class InteressesService {
         interesses.siteEmpresa = dados.siteEmpresa;
         interesses.salario = dados.salario;
         interesses.descricao = dados.descricao;
-        // interesses.foto = await this.FilesArmazenados.localizarID(dados.files);
         interesses.documento = dados.documento;
         interesses.linkGoverno = dados.linkGoverno
         interesses.linkCorrelato = dados.linkCorrelato
@@ -68,6 +67,7 @@ export class InteressesService {
         interesses.valor = dados.valor
         interesses.banheiro = dados.banheiro
         interesses.vagas = dados.vagas
+      //  interesses.files = await this.filesService.localizarNome(dados.files);
         
 
     return this.interessesRepository.save(interesses)

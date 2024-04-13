@@ -5,7 +5,7 @@ const path = require("path");
 const uuid_1 = require("uuid");
 const multerConfig = {
     storage: (0, multer_1.diskStorage)({
-        destination: '/tmp',
+        destination: './upload/files',
         filename: (req, file, cb) => {
             const filename = path.parse(file.originalname).name.replace(/\s/g, '') + '-' + (0, uuid_1.v4)();
             const extension = path.parse(file.originalname).ext;

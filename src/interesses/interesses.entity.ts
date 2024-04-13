@@ -1,5 +1,6 @@
+import { Files } from "src/files/files.entity";
 import { json } from "stream/consumers";
-import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToOne, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class INTERESSES{
@@ -37,9 +38,6 @@ export class INTERESSES{
     descricao: string;
 
     @Column({length: 255})
-    foto: string;
-
-    @Column({length: 255})
     documento: string;
 
     @Column({length: 255})
@@ -63,4 +61,9 @@ export class INTERESSES{
     @Column('int')
     vagas: number;
     
+    @OneToOne(() => Files) // Corrija aqui para usar a entidade correta
+    @JoinColumn({ name: 'idFiles', referencedColumnName:'id'})
+    files: Files; // Corrija aqui também
+
+
 }
