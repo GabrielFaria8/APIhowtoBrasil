@@ -9,7 +9,7 @@ async function bootstrap() {
 
   
   app.enableCors({
-    origin: 'https://howtobrasil.pvferreira.com.br',
+    origin: ['https://howtobrasil.pvferreira.com.br', 'http://localhost:3000'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
