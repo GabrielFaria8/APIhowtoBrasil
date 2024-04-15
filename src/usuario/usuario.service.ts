@@ -130,7 +130,7 @@ export class UsuarioService {
 
   
 
-  async validaLogin(email: string, senha: string): Promise<RetornoObjDTO> {
+  async validaLogin(email: string, senha: string,nome: string,ultimoNome: string): Promise<RetornoObjDTO> {
     const usuario = await this.localizarEmail (email);
     var objRetorno;
     if (usuario) {

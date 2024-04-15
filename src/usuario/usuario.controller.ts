@@ -49,7 +49,11 @@ export class UsuarioController{
     @ApiResponse({ status: 200, description: 'Retorna se houve sucesso no login. O retorno "Status" diz se houve sucesso ou não.'})
     @Post('/login')
     async Login(@Body() dadosUsuario: LoginUsuarioDTO): Promise<RetornoObjDTO>{
-        return this.usuarioService.validaLogin( dadosUsuario.email,dadosUsuario.senha)
+        return this.usuarioService.validaLogin( 
+          dadosUsuario.email,
+          dadosUsuario.senha,
+          dadosUsuario.nome,
+          dadosUsuario.ultimoNome)
     }
 
     @Post('/troca-senha')
