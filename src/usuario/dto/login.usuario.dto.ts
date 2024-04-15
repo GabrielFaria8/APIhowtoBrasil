@@ -1,5 +1,5 @@
-import { IsEmail, MinLength } from "class-validator";
-import { ApiProperty } from "@nestjs/swagger";
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength } from "class-validator";
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { SenhaForte } from "../validator/strongpass.validator";
 
 export class LoginUsuarioDTO{
@@ -18,4 +18,22 @@ export class LoginUsuarioDTO{
         description: `Senha utilizada no cadastro.`,
     })
     senha: string; 
+    
+    @IsString()
+  @IsNotEmpty({ message: 'Nome Não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'moradia',
+    description: `O nome é utilizado para identificar o tipo em telas, cadastros e outros contextos.`,
+  })
+  nome: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Ultimo nome Não pode ser vazi' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: "Visto de Trabalho",
+    description: `O último nome é utilizado para identificar o usuário em telas, cadastros e outros contextos.`,
+  })
+  ultimoNome: string;
 }
