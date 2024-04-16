@@ -24,7 +24,7 @@ let InteressesService = class InteressesService {
     }
     async listar() {
         var interessesListados = await this.interessesRepository.find();
-        return interessesListados.map(interesses => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.numero, interesses.horario, interesses.linkMaps, interesses.trabalho, interesses.preRequisitos, interesses.siteEmpresa, interesses.salario, interesses.descricao, interesses.documento, interesses.linkGoverno, interesses.linkCorrelato, interesses.area, interesses.quartos, interesses.valor, interesses.banheiro, interesses.vagas));
+        return interessesListados.map(interesses => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.numero, interesses.horario, interesses.linkMaps, interesses.trabalho, interesses.preRequisitos, interesses.siteEmpresa, interesses.salario, interesses.descricao, interesses.documento, interesses.linkGoverno, interesses.moradia, interesses.linkCorrelato, interesses.area, interesses.quartos, interesses.valor, interesses.banheiro, interesses.vagas));
     }
     async inserir(dados) {
         let interesses = new interesses_entity_1.INTERESSES();
@@ -41,6 +41,7 @@ let InteressesService = class InteressesService {
         interesses.descricao = dados.descricao;
         interesses.documento = dados.documento;
         interesses.linkGoverno = dados.linkGoverno;
+        interesses.moradia = dados.moradia;
         interesses.linkCorrelato = dados.linkCorrelato;
         interesses.area = dados.area;
         interesses.quartos = dados.quartos;

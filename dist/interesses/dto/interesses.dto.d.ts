@@ -11,6 +11,7 @@ export declare class criaInteressesDTO {
     descricao: string;
     documento: string;
     linkGoverno: string;
+    moradia: string;
     linkCorrelato: string;
     area: string;
     quartos: number;

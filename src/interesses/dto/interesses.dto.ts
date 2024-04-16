@@ -117,6 +117,15 @@ export class criaInteressesDTO {
     description: `O link do site é usado identificar o site do Orgão Governamental.`,
   })
   linkGoverno: string;
+  
+  @IsString()
+  @IsNotEmpty({ message: 'Moradia não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example: 'Apartamento',
+    description: `A informação sobre moradia é utilizada para identificar o nome da moradia.`,
+  })
+  moradia: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Link correlato não pode ser vazio' })

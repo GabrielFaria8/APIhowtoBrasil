@@ -14,6 +14,7 @@ export class ListaInteressesDTO{
         //readonly files: string,
         readonly documento: string,
         readonly linkGoverno: string,
+        readonly moradia: string,
         readonly linkCorrelato: string,
         readonly area: string,
         readonly quartos: number,
