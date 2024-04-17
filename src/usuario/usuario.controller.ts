@@ -23,24 +23,26 @@ import { atualizaSenhaDTO } from './dto/atualiza.senha.dto';
 export class UsuarioController{    
     constructor(private readonly usuarioService: UsuarioService){
     }
-
+    @ApiResponse({ status: 200, description: 'Retorna os usuários cadastrados.'})
     @Get()
     async Retorno():Promise<ListaUsuarioDTO[]> {
         return this.usuarioService.listar();
     }
 
-
+    @ApiCreatedResponse({ status: 200, description: 'Retorna que houve sucesso ao remover o usuário.'})
     @Delete('/:id')
     async remove(@Param('id') id: string): Promise<RetornoObjDTO>{
         return this.usuarioService.remover(id);
     }
 
-
+    @ApiResponse({ status: 200, description: 'Retorna que houve sucesso ao alterar o usuário.'})
+    @ApiResponse({ status: 500, description: 'Retorna que o usuário não foi encontrado.'})
     @Put('/:id')
     async atualiza(@Param('id') id: string, @Body() novosDados: AlteraUsuarioDTO):Promise<RetornoCadastroDTO>{
         return this.usuarioService.alterar(id, novosDados);
     }
 
+    @ApiCreatedResponse({ status: 200, description: 'Retorna que houve sucesso ao cadastrar o usuário e retorna o ID criado.'})
     @Post()
     async cria(@Body() dados: criaUsuarioDTO):Promise<RetornoCadastroDTO>{
         return this.usuarioService.inserir(dados);        

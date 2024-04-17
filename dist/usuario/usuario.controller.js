@@ -55,12 +55,14 @@ let UsuarioController = class UsuarioController {
 };
 exports.UsuarioController = UsuarioController;
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna os usuários cadastrados.' }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "Retorno", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ status: 200, description: 'Retorna que houve sucesso ao remover o usuário.' }),
     (0, common_1.Delete)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -68,6 +70,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "remove", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Retorna que houve sucesso ao alterar o usuário.' }),
+    (0, swagger_1.ApiResponse)({ status: 500, description: 'Retorna que o usuário não foi encontrado.' }),
     (0, common_1.Put)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -76,6 +80,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "atualiza", null);
 __decorate([
+    (0, swagger_1.ApiCreatedResponse)({ status: 200, description: 'Retorna que houve sucesso ao cadastrar o usuário e retorna o ID criado.' }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
