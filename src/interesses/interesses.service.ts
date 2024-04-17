@@ -35,7 +35,6 @@ export class InteressesService {
           interesses.descricao,
           interesses.documento,
           interesses.linkGoverno,
-          interesses.moradia,
           interesses.linkCorrelato,
           interesses.area,
           interesses.quartos,
@@ -62,7 +61,6 @@ export class InteressesService {
         interesses.descricao = dados.descricao;
         interesses.documento = dados.documento;
         interesses.linkGoverno = dados.linkGoverno
-        interesses.moradia = dados.moradia
         interesses.linkCorrelato = dados.linkCorrelato
         interesses.area = dados.area
         interesses.quartos = dados.quartos

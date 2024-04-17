@@ -138,16 +138,6 @@ __decorate([
 ], AlteraInteressesDTO.prototype, "linkGoverno", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'Moradia não pode ser vazio' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, swagger_1.ApiPropertyOptional)({
-        example: 'Apartamento',
-        description: `A informação sobre moradia é utilizada para identificar o nome da moradia.`,
-    }),
-    __metadata("design:type", String)
-], AlteraInteressesDTO.prototype, "moradia", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'Link correlato não pode ser vazio' }),
     (0, class_validator_1.IsOptional)(),
     (0, swagger_1.ApiPropertyOptional)({

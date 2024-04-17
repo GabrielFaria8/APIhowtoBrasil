@@ -70,10 +70,6 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),
     __metadata("design:type", String)
-], INTERESSES.prototype, "moradia", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ length: 255 }),
-    __metadata("design:type", String)
 ], INTERESSES.prototype, "linkCorrelato", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255 }),

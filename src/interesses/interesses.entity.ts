@@ -43,8 +43,7 @@ export class INTERESSES{
     @Column({length: 255})
     linkGoverno: string;
 
-    @Column({length: 255})
-    moradia: string;
+    
 
     @Column({length: 255})
     linkCorrelato: string;

@@ -13,7 +13,6 @@ export declare class INTERESSES {
     descricao: string;
     documento: string;
     linkGoverno: string;
-    moradia: string;
     linkCorrelato: string;
     area: string;
     quartos: number;

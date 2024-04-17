@@ -11,7 +11,6 @@ export declare class AlteraInteressesDTO {
     descricao: string;
     documento: string;
     linkGoverno: string;
-    moradia: string;
     linkCorrelato: string;
     area: string;
     quartos: number;
