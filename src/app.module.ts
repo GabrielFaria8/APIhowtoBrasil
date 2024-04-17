@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { FilesModule } from './files/validacao/files.modulo';
+import { filesModule } from './files/files.molude';
 import { InteressesModule } from './interesses/interesses.module';
 import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
-  imports: [InteressesModule,UsuarioModule,FilesModule],
+  imports: [InteressesModule,UsuarioModule,filesModule],
   controllers: [],
   providers: [],
 })

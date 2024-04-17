@@ -37,7 +37,7 @@ let UsuarioController = class UsuarioController {
         return this.usuarioService.inserir(dados);
     }
     async Login(dadosUsuario) {
-        return this.usuarioService.validaLogin(dadosUsuario.email, dadosUsuario.senha);
+        return this.usuarioService.validaLogin(dadosUsuario.email, dadosUsuario.senha, dadosUsuario.nome, dadosUsuario.ultimoNome);
     }
     async trocaSenha(dadosTrocaSenha) {
         const senhaTrocadaComSucesso = await this.usuarioService.trocaSenha(dadosTrocaSenha.email, dadosTrocaSenha.senha);

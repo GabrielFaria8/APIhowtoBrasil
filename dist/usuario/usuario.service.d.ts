@@ -13,7 +13,7 @@ export declare class UsuarioService {
     alterar(id: string, dados: AlteraUsuarioDTO): Promise<RetornoCadastroDTO>;
     localizarID(id: string): Promise<USUARIO>;
     validaEmail(email: string): Promise<boolean>;
-    validaLogin(email: string, senha: string): Promise<RetornoObjDTO>;
+    validaLogin(email: string, senha: string, nome: string, ultimoNome: string): Promise<RetornoObjDTO>;
     localizarEmail(email: string): Promise<USUARIO>;
     trocaSenha(email: string, senha: string): Promise<RetornoCadastroDTO>;
 }

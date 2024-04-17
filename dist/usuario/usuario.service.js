@@ -108,7 +108,7 @@ let UsuarioService = class UsuarioService {
         });
         return (possivelUsuario !== null);
     }
-    async validaLogin(email, senha) {
+    async validaLogin(email, senha, nome, ultimoNome) {
         const usuario = await this.localizarEmail(email);
         var objRetorno;
         if (usuario) {

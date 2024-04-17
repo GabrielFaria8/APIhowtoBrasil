@@ -33,4 +33,24 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], LoginUsuarioDTO.prototype, "senha", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Nome Não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 'moradia',
+        description: `O nome é utilizado para identificar o tipo em telas, cadastros e outros contextos.`,
+    }),
+    __metadata("design:type", String)
+], LoginUsuarioDTO.prototype, "nome", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'Ultimo nome Não pode ser vazi' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: "Visto de Trabalho",
+        description: `O último nome é utilizado para identificar o usuário em telas, cadastros e outros contextos.`,
+    }),
+    __metadata("design:type", String)
+], LoginUsuarioDTO.prototype, "ultimoNome", void 0);
 //# sourceMappingURL=login.usuario.dto.js.map

@@ -11,7 +11,7 @@ import { Column, Entity, PrimaryColumn } from "typeorm";
 @Entity()
 export class Files {
     @PrimaryColumn()
-    id: number;
+    id: string;
 
     @Column({ length: 1255 })
     fileName: string;

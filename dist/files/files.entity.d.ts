@@ -1,5 +1,5 @@
 export declare class Files {
-    id: number;
+    id: string;
     fileName: string;
     contenLength: number;
     contentType: string;

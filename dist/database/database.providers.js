@@ -16,7 +16,7 @@ exports.databaseProviders = [
                 entities: [
                     __dirname + '/../**/*.entity{.ts,.js}',
                 ],
-                synchronize: true,
+                synchronize: false,
                 connectTimeout: 20000,
             });
             return dataSource.initialize();

@@ -16,7 +16,7 @@ let Files = class Files {
 exports.Files = Files;
 __decorate([
     (0, typeorm_1.PrimaryColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], Files.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 1255 }),

@@ -14,7 +14,7 @@ export const databaseProviders = [
                 entities: [
                 __dirname + '/../**/*.entity{.ts,.js}',
                 ],
-                synchronize: true,
+                synchronize: false,
  
                 connectTimeout: 20000, // Tempo limite de 15 segundos (em milissegundos)
             });
