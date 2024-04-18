@@ -23,8 +23,10 @@ let InteressesService = class InteressesService {
         this.interessesRepository = interessesRepository;
     }
     async listar() {
-        var interessesListados = await this.interessesRepository.find();
-        return interessesListados.map(interesses => new lista_interesses_dto_1.ListaInteressesDTO(interesses.id, interesses.tipos, interesses.nome, interesses.numero, interesses.horario, interesses.linkMaps, interesses.trabalho, interesses.preRequisitos, interesses.siteEmpresa, interesses.salario, interesses.descricao, interesses.documento, interesses.linkGoverno, interesses.linkCorrelato, interesses.area, interesses.quartos, interesses.valor, interesses.banheiro, interesses.vagas));
+        var interessesListados = await (this.interessesRepository
+            .createQueryBuilder('interesses')
+            .getRawMany());
+        return interessesListados.map(interesses => new lista_interesses_dto_1.ListaInteressesDTO(interesses.interesses_id, interesses.interesses_tipos, interesses.interesses_nome, interesses.interesses_numero, interesses.interesses_horario, interesses.interesses_linkMaps, interesses.interesses_trabalho, interesses.interesses_preRequisitos, interesses.interesses_siteEmpresa, interesses.interesses_salario, interesses.interesses_descricao, interesses.interesses_documento, interesses.interesses_linkGoverno, interesses.interesses_linkCorrelato, interesses.interesses_area, interesses.interesses_quartos, interesses.interesses_valor, interesses.interesses_banheiro, interesses.interesses_vagas));
     }
     async inserir(dados) {
         let interesses = new interesses_entity_1.INTERESSES();
@@ -68,7 +70,7 @@ let InteressesService = class InteressesService {
             },
         });
     }
-    localizarTipo(tipos) {
+    async localizarTipo(tipos) {
         return this.interessesRepository.find({
             where: {
                 tipos,

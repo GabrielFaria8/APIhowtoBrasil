@@ -32,6 +32,20 @@ let filesService = class filesService {
         this.filesRepository.save(arquivo);
         return arquivo.id;
     }
+    localizarID(id) {
+        return this.filesRepository.findOne({
+            where: {
+                id,
+            },
+        });
+    }
+    async busca(id) {
+        return this.filesRepository.findOne({
+            where: {
+                id,
+            },
+        });
+    }
     async validaArquivo(fileName) {
         return this.filesRepository.find({
             where: {

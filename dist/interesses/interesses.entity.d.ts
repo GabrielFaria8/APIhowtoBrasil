@@ -1,4 +1,3 @@
-import { Files } from "src/files/files.entity";
 export declare class INTERESSES {
     id: string;
     tipos: number;
@@ -19,5 +18,4 @@ export declare class INTERESSES {
     valor: string;
     banheiro: number;
     vagas: number;
-    files: Files;
 }

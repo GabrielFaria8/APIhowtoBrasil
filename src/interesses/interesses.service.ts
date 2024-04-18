@@ -6,7 +6,6 @@ import { AlteraInteressesDTO } from './dto/atualiza.interesses.dto';
 import { criaInteressesDTO } from './dto/interesses.dto';
 import { ListaInteressesDTO } from './dto/lista.interesses.dto';
 import { INTERESSES } from './interesses.entity';
-import { filesService } from 'src/files/files.service';
 
 
 
@@ -19,28 +18,32 @@ export class InteressesService {
   ) {}
 
   async listar(): Promise<ListaInteressesDTO[]> {
-    var interessesListados = await this.interessesRepository.find();
+    // var interessesListados = await this.interessesRepository.find();
+    var interessesListados = await (this.interessesRepository 
+      .createQueryBuilder('interesses')           
+      .getRawMany());
     return interessesListados.map(
       interesses => new ListaInteressesDTO(
-          interesses.id,
-          interesses.tipos,
-          interesses.nome,
-          interesses.numero,
-          interesses.horario,
-          interesses.linkMaps,
-          interesses.trabalho,
-          interesses.preRequisitos,
-          interesses.siteEmpresa,
-          interesses.salario,
-          interesses.descricao,
-          interesses.documento,
-          interesses.linkGoverno,
-          interesses.linkCorrelato,
-          interesses.area,
-          interesses.quartos,
-          interesses.valor,
-          interesses.banheiro,
-          interesses.vagas
+          interesses.interesses_id,
+          interesses.interesses_tipos,
+          interesses.interesses_nome,
+          interesses.interesses_numero,
+          interesses.interesses_horario,
+          interesses.interesses_linkMaps,
+          interesses.interesses_trabalho,
+          interesses.interesses_preRequisitos,
+          interesses.interesses_siteEmpresa,
+          interesses.interesses_salario,
+          interesses.interesses_descricao,
+          interesses.interesses_documento,
+          interesses.interesses_linkGoverno,
+          interesses.interesses_linkCorrelato,
+          interesses.interesses_area,
+          interesses.interesses_quartos,
+          interesses.interesses_valor,
+          interesses.interesses_banheiro,
+          interesses.interesses_vagas
+          
       ))
         
   }
@@ -67,7 +70,6 @@ export class InteressesService {
         interesses.valor = dados.valor
         interesses.banheiro = dados.banheiro
         interesses.vagas = dados.vagas
-      //  interesses.files = await this.filesService.localizarNome(dados.files);
         
 
     return this.interessesRepository.save(interesses)
@@ -95,12 +97,40 @@ export class InteressesService {
     });
   }
 
-  localizarTipo(tipos: number): Promise<ListaInteressesDTO[]> {
+  async localizarTipo(tipos: number): Promise<ListaInteressesDTO[]> {
     return this.interessesRepository.find({
       where: {
         tipos,
       },
     });
+
+    // var interesses = await (this.interessesRepository 
+    //   .createQueryBuilder('interesses')           
+    //   .getRawMany());
+    // let retorno = interesses.map(
+    //   interesse => new ListaInteressesDTO(
+    //       interesse.id,
+    //       interesse.tipos,
+    //       interesse.nome,
+    //       interesse.numero,
+    //       interesse.horario,
+    //       interesse.linkMaps,
+    //       interesse.trabalho,
+    //       interesse.preRequisitos,
+    //       interesse.siteEmpresa,
+    //       interesse.salario,
+    //       interesse.descricao,
+    //       interesse.files,
+    //       interesse.documento,
+    //       interesse.linkGoverno,
+    //       interesse.linkCorrelato,
+    //       interesse.area,
+    //       interesse.quartos,
+    //       interesse.valor,
+    //       interesse.banheiro,
+    //       interesse.vagas,
+    //   ))
+    // return retorno;
   }
   
 

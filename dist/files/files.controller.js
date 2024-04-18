@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FilesController = void 0;
 const common_1 = require("@nestjs/common");
@@ -24,8 +25,9 @@ let FilesController = class FilesController {
     uploadArquivo(file, req) {
         return this.arquivos.salvarDados(file, req);
     }
-    retornaArquivo(image, res) {
-        return res.sendFile(image, { root: './upload/files' });
+    async retornaArquivo(image, res) {
+        let arquivo = await this.arquivos.busca(image);
+        return res.sendFile(arquivo.url, { root: './upload/files' });
     }
 };
 exports.FilesController = FilesController;
@@ -44,10 +46,10 @@ __decorate([
     __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], FilesController.prototype, "retornaArquivo", null);
 exports.FilesController = FilesController = __decorate([
     (0, common_1.Controller)('/files'),
-    __metadata("design:paramtypes", [files_service_1.filesService])
+    __metadata("design:paramtypes", [typeof (_a = typeof files_service_1.filesService !== "undefined" && files_service_1.filesService) === "function" ? _a : Object])
 ], FilesController);
 //# sourceMappingURL=files.controller.js.map

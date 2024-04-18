@@ -1,7 +1,6 @@
 import { json } from "stream/consumers";
 import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToOne, PrimaryColumn } from "typeorm";
 import * as bcrypt from 'bcrypt';
-import { Files } from "src/files/files.entity";
 
 @Entity()
 export class USUARIO{
@@ -42,9 +41,7 @@ export class USUARIO{
   }
 
  
-    @OneToOne(() => Files)
-    @JoinColumn({ name: 'idFiles', referencedColumnName:'id'})
-    files: Files;
+    
 
 
 }

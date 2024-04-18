@@ -17,5 +17,4 @@ export declare class criaInteressesDTO {
     valor: string;
     banheiro: number;
     vagas: number;
-    files: string;
 }

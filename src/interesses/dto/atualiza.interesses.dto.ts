@@ -176,12 +176,6 @@ export class AlteraInteressesDTO{
   })
   vagas: number;
 
-  @IsString()
-  @IsOptional()
-  @ApiPropertyOptional({
-    example:  'https://i.im.ge/2024/02/22/g9vgTP.6687959233.jpg',
-    description: `Específica a quantidade de vagas na residência.`,
-  })
-  files: string;
+  
 
 }
