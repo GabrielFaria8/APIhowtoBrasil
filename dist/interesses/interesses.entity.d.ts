@@ -18,4 +18,6 @@ export declare class INTERESSES {
     valor: string;
     banheiro: number;
     vagas: number;
+    destinationLat: string;
+    destinationLon: string;
 }

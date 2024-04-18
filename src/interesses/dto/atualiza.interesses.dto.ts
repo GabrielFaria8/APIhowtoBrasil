@@ -176,6 +176,22 @@ export class AlteraInteressesDTO{
   })
   vagas: number;
 
-  
+  @IsString()
+  @IsNotEmpty({ message: 'destinationLat não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  1,
+    description: `estinationLon pego pelo maps`,
+  })
+  destinationLat: number;
+
+  @IsString()
+  @IsNotEmpty({ message: 'destinationLon não pode ser vazio' })
+  @IsOptional()
+  @ApiPropertyOptional({
+    example:  1,
+    description: `destinationLon pego pelo maps`,
+  })
+  destinationLon: number;
 
 }

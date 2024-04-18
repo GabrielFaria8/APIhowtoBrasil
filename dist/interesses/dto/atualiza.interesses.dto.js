@@ -196,4 +196,24 @@ __decorate([
     }),
     __metadata("design:type", Number)
 ], AlteraInteressesDTO.prototype, "vagas", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'destinationLat não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 1,
+        description: `estinationLon pego pelo maps`,
+    }),
+    __metadata("design:type", Number)
+], AlteraInteressesDTO.prototype, "destinationLat", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'destinationLon não pode ser vazio' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, swagger_1.ApiPropertyOptional)({
+        example: 1,
+        description: `destinationLon pego pelo maps`,
+    }),
+    __metadata("design:type", Number)
+], AlteraInteressesDTO.prototype, "destinationLon", void 0);
 //# sourceMappingURL=atualiza.interesses.dto.js.map

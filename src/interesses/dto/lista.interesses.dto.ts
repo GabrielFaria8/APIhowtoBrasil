@@ -19,6 +19,8 @@ export class ListaInteressesDTO{
         readonly valor: string,
         readonly banheiro: number,
         readonly vagas: number,
+        readonly destinationLat: string,
+        readonly destinationLon: string,
         
         ){}
   }

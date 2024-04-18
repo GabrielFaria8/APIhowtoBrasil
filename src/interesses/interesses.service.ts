@@ -39,7 +39,9 @@ export class InteressesService {
           interesses.quartos,
           interesses.valor,
           interesses.banheiro,
-          interesses.vagas
+          interesses.vagas,
+          interesses.destinationLat,
+          interesses.destinationLon
       ))
         
   }

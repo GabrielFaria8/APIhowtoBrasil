@@ -90,6 +90,14 @@ __decorate([
     (0, typeorm_1.Column)('int'),
     __metadata("design:type", Number)
 ], INTERESSES.prototype, "vagas", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ length: 255 }),
+    __metadata("design:type", String)
+], INTERESSES.prototype, "destinationLat", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ length: 255 }),
+    __metadata("design:type", String)
+], INTERESSES.prototype, "destinationLon", void 0);
 exports.INTERESSES = INTERESSES = __decorate([
     (0, typeorm_1.Entity)()
 ], INTERESSES);

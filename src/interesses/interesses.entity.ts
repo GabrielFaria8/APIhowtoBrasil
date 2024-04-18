@@ -43,8 +43,6 @@ export class INTERESSES{
     @Column({length: 255})
     linkGoverno: string;
 
-    
-
     @Column({length: 255})
     linkCorrelato: string;
 
@@ -62,6 +60,12 @@ export class INTERESSES{
 
     @Column('int')
     vagas: number;
+
+    @Column({length: 255})
+    destinationLat: string;
+
+    @Column({length: 255})
+    destinationLon: string;
 
 
 }
