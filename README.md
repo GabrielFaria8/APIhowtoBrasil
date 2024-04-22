@@ -53,11 +53,11 @@ $ npm run start:dev
 ## Testando a API
 
 ### Documentação interativa com Swagger
-```bash
-# <a href="http://localhost:3001/api#/">Teste a API</a>
+
+ <a href="http://localhost:3001/api#/">Teste a API</a>
 
 
-```
+
 
 ###  Linguagens e Ferramentas
 <img align="left" alt="TypeScript" width="30px" src="https://github.com/andrecomegno/andrecomegno/blob/main/icon/typescript.png" />
