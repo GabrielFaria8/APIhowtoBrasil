@@ -50,52 +50,13 @@ $ npm install
 $ npm run start:dev
 ```
 
-### Usuario
-```bash
-# consultar/logar
-POST http://localhost:3001/usuarios/login
-Selecione Body, raw, json
+## Testando a API
 
-{
-  "email": "teste@teste.com",
-  "senha": "Asd@444555666"
-}
-```
+### Documentação interativa com Swagger
 ```bash
-# inclusão
-POST http://localhost:3001/usuarios
-Selecione Body, raw, json
+# <a href="http://localhost:3001/api#/">Teste a API</a>
 
-{
-  {
-  "nome": "Carlos",
-  "ultimoNome": "Visto de Trabalho",
-  "statusMigratório": "Edurado",
-  "interesses": "Trabalho",
-  "email": "teste@teste.com",
-  "senha": "Asd@444555666"
-}
 
-}
-```
-```bash
-# exclusão
-DELET http://localhost:3001/usuarios/{"id do usuario"}
-Selecione Params
-```
-```bash
-# alteração
-PUT http://localhost:3001/usuarios/{"id do usuario"}
-Selecione Params
-{
-  "nome": "Karllos",
-  "ultimoNome": "Visto de Trabalho",
-  "statusMigratório": "Eddurado",
-  "interesses": "moradia",
-  "email": "teste@teste.com",
-  "senha": "Asd@444555666",
-  "foto": "asdasdaslo-4d06e95a-4ee7-4195-b48e-6cc05a264de8.png"
-}
 ```
 
 ###  Linguagens e Ferramentas
